@@ -71,6 +71,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # デプロイ勉強会で記述
-# group :production do
-#   gem 'unicorn','>=5.6.0'
-# end
+group :production do
+  gem 'unicorn','>=5.6.0'
+end
