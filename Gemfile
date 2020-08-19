@@ -72,5 +72,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # デプロイ勉強会で記述
 group :production do
-  gem 'unicorn'
+  gem 'unicorn','>=5.6.0'
 end
+
+gem 'haml-rails'
