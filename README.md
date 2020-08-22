@@ -45,7 +45,7 @@ belongs_to :user
 |first_name|string|null: false|
 |first_name_kana|integer|null: false|
 |postal_code|integer|
-|prefectures|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
 |city||string|
 |address||string|
 |building||string|
@@ -79,7 +79,7 @@ belongs_to :item
 |brand|references|foreign_key: true|
 |condition|references|null: false, foreign_key: true|
 |shipping_cost|references|null: false, foreign_key: true|
-|prefectures|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
 |shipping_day|references|null: false, foreign_key: true|
 |shipping_method|references|null: false, foreign_key: true|
 |price|string|null: false|
@@ -184,7 +184,7 @@ has_many : items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|prefectures|string|null: false|
+|prefecture|string|null: false|
 
 #### アソシエーション
 has_many : items
