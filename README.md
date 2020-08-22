@@ -31,7 +31,7 @@ has_many :items
 |expiration_date_year|integer|null: false|
 |security_code|integer|null: false|
 |user|references|null: false, unique: true, foreign_key: true|
-z1
+
 #### アソシエーション
 belongs_to :user
 
@@ -46,9 +46,9 @@ belongs_to :user
 |first_name_kana|integer|null: false|
 |postal_code|integer|
 |prefecture|references|null: false, foreign_key: true|
-|city||string|
-|address||string|
-|building||string|
+|city|string|
+|address|string|
+|building|string|
 |phone_number|integer|
 |user|references|null: false, foreign_key: true|
 
