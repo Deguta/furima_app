@@ -16,9 +16,9 @@
 |icon|string|
 
 #### アソシエーション
-has_many :cards
-has_many :shipping_infos
-has_many :comments
+has_many :cards, dependent::destroy
+has_many :shipping_infos, dependent::destroy
+has_many :comments, dependent::destroy
 has_many :items
 
 
@@ -87,8 +87,8 @@ belongs_to :item
 |user|references|null: false, foreign_key: true|
 
 #### アソシエーション
-has_many : item_images
-has_many : comments
+has_many : item_images, dependent::destroy
+has_many : comments, dependent::destroy
 belongs_to :categorys
 belongs_to :brands
 belongs_to :conditions
