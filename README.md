@@ -189,3 +189,6 @@ has_many : items
 #### アソシエーション
 has_many : items
 has_many : shipping_info
+
+## ER図
+https://i.gyazo.com/50788e7517ab326ce42e3f5c70e977e1.png
