@@ -15,8 +15,8 @@ class User < ApplicationRecord
 
 
   # アソシエーション
-  has_many :cards, dependent: :destroy
+  has_many :cards,          dependent: :destroy
   has_many :shipping_infos, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments,       dependent: :destroy
   has_many :items
 end
