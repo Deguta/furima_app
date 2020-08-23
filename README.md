@@ -4,8 +4,8 @@
 |id|integer|null: false|
 |nickname|string|null: false|
 |mail|string|null: false, unique: true|
-|pass|string|null: false, unique: true|
-|confirmation_pass|string|null: false, unique: true|
+|pass|string|null: false|
+|confirmation_pass|string|null: false|
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name|string|null: false|
