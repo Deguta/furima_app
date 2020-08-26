@@ -4,8 +4,8 @@
 |id|integer|null: false|
 |nickname|string|null: false|
 |mail|string|null: false, unique: true|
-|pass|string|null: false, unique: true|
-|confirmation_pass|string|null: false, unique: true|
+|pass|string|null: false|
+|confirmation_pass|string|null: false|
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name|string|null: false|
@@ -43,7 +43,7 @@ belongs_to :user
 |family_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name|string|null: false|
-|first_name_kana|integer|null: false|
+|first_name_kana|string|null: false|
 |postal_code|integer|
 |prefecture|references|null: false, foreign_key: true|
 |city|string|
@@ -54,6 +54,7 @@ belongs_to :user
 
 #### アソシエーション
 belongs_to :user
+belongs_to :prefectures
 
 
 ## commentsテーブル
@@ -98,6 +99,7 @@ belongs_to :shipping_days
 belongs_to :item_sizes
 belongs_to :shipping_methods
 belongs_to :user
+belongs_to :prefectures
 
 
 ## item_imagesテーブル

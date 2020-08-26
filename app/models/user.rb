@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+         
   # バリデーションの設定(空の文字列を保存させない為と一意性制約)
   validates :nickname,          presence: true
   validates :mail,              presence: true, uniqueness: true
