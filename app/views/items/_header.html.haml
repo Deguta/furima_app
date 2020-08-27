@@ -18,8 +18,8 @@
   .header__user
     %ul.right__list
       %li.user__login
+      = link_to sign_in_path, class: "user__login-btn" do
         ログイン
-      //機能実装予定
       %li.user__new
-        新規会員登録
-      //機能実装予定
+      = link_to new_user_registration_path, class: "user__login-btn" do
+        新規登録
