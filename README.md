@@ -43,7 +43,7 @@ belongs_to :user
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
 |postal_code|integer|
-|prefecture|references|null: false|
+|prefecture|string|null: false|
 |city|string|
 |address|string|
 |building|string|
@@ -55,14 +55,13 @@ belongs_to :user
 belongs_to_active_hash :prefecture
 
 
-
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
 |comment|text|
 |user|references|null: false, foreign_key: true|
-|item|references|foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 #### アソシエーション
 belongs_to :user
@@ -79,7 +78,7 @@ belongs_to :item
 |brand|references|foreign_key: true|
 |condition|references|null: false, foreign_key: true|
 |shipping_cost|references|null: false, foreign_key: true|
-|prefecture|references|null: false|
+|prefecture|string|null: false|
 |shipping_day|references|null: false, foreign_key: true|
 |shipping_method|references|null: false, foreign_key: true|
 |price|string|null: false|
