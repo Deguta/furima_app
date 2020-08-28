@@ -129,16 +129,16 @@
   &__actions__btn {
     width: 60%;
     height: 40px;
-    background-color: $log-in-color;
+    background-color: $main-color;
     color: $white-color;
     font-size: 14px;
     margin: 20px;
     border-radius: 4px;
-    border: solid 1px $log-in-color;
+    border: solid 1px $main-color;
     &:hover {
       background-color: $white-color;
-      color: $log-in-color;
-      border: solid 1px $log-in-color;
+      color: $main-color;
+      border: solid 1px $main-color;
       transition: all  0.4s ease;
     }
   }
@@ -202,7 +202,7 @@
     // width: 7%;
     line-height: 20px;
     color: $white-color;
-    background-color: $sign-up-color;
+    background-color: $main-color;
     font-size: 12px;
     margin-top: 10px;
     margin-left: 10px;
@@ -249,18 +249,17 @@
   &__actions__btn {
     width: 60%;
     height: 40px;
-    background-color: $sign-up-color;
+    background-color: $main-color;
     color: $white-color;
     font-size: 14px;
     margin: 15px;
     border-radius: 4px;
-    border: solid 1px $sign-up-color;
+    border: solid 1px $main-color;
     &:hover {
       background-color: $white-color;
-      color: $sign-up-color;
-      border: solid 1px $sign-up-color;
+      color: $main-color;
+      border: solid 1px $main-color;
       transition: all  0.4s ease;
     }
   }
-
 }
