@@ -1,3 +1,49 @@
 .wrapper
   = render partial: "header"
-  
+  .main__contents
+    .main__contents__body
+      .main__contents__body__title
+        %p 人生を変えるフリマアプリ
+      .main__contents__body__subtitle
+        %p FURIMAは誰でも簡単に出品・購入できる
+        %p フリマアプリです
+      -# .main__contents__body__snsbtn
+
+  .seconds__contents
+    .seconds__contents__box
+      .seconds__contents__box--title
+        FURIMAが選ばれる3つの理由
+    %ul.seconds__contents__box__image
+      %li.seconds__contents__box__image__left
+        = image_tag 'pict/pict-reason-01.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__left--sub-title
+          .seconds__contents__box__image__left--sub-title--green
+            3分
+            %span.seconds__contents__box__image__left--sub-title--black
+              ですぐに出品
+        %p.seconds__contents__box__image__left--text
+          スマホで入力するだけで簡単に出品できる！
+        .seconds__contents__box__image__left--number
+          1
+      %li.seconds__contents__box__image__center
+        = image_tag 'pict/pict-reason-02.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__center--sub-title
+          .seconds__contents__box__image__center--sub-title--green
+            シンプル
+            %span.seconds__contents__box__image__center--sub-title--black
+              で使いやすい
+        %p.seconds__contents__box__image__center--text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        .seconds__contents__box__image__center--number
+          ２
+      %li.seconds__contents__box__image__right
+        = image_tag 'pict/pict-reason-03.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__right--sub-title
+          .seconds__contents__box__image__right--sub-title--black
+            手数料
+            %span.seconds__contents__box__image__right--sub-title--green
+              業界最安
+        %p.seconds__contents__box__image__right--text
+          最大３％でお得に出品＆購入！
+        .seconds__contents__box__image__right--number
+          ３
