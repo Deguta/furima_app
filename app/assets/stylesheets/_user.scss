@@ -1,0 +1,43 @@
+* {
+  text-decoration: none;
+  list-style: none;
+}
+
+.login-page {
+  width: 100%;
+  height: 100%;
+
+  &__menu-bar {
+    width: 100%;
+    height: 40px;
+    background-color: $white-color1;
+    border-top: solid 1px $border-color;
+    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.20);
+  }
+
+  &__menu {
+    width: 300px;
+    height: 40px;
+    // background-color: yellow;
+    margin-left: 50px;
+  }
+
+  &__menu__navigations {
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu__first-navigation > a {
+    color: $font-black;
+  }
+
+  &__menu__second-navigation > a{
+    color: $font-black;
+  }
+
+  &__menu__third-navigation {
+    color: $font-black;
+  }
+}
+

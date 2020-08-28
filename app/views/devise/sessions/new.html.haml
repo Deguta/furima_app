@@ -1,19 +1,25 @@
-.account-page_
+.login-page
   = render partial: "items/header"
-  .account-page__menu-bar
-    .account-page__menu
-    
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email, autofocus: true
-          .field
-            .field-label
-              = f.label :password
-              %i (英数字8文字以上)
-            .field-input
-              = f.password_field :password, autocomplete: "off"
-          .actions
-            = f.submit "Log in", class: 'btn'
+  .login-page__menu-bar
+    %nav.login-page__menu
+      %ol.login-page__menu__navigations
+        %li.login-page__menu__first-navigation
+          %a{:href => root_path} furima >
+        %li.login-page__menu__second-navigation
+          %a{:href => root_path} トップページ >
+        %li.login-page__menu__third-navigation ログインページ
+  
+      -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      -#   .field
+      -#     .field-label
+      -#       = f.label :email
+      -#     .field-input
+      -#       = f.email_field :email, autofocus: true
+      -#     .field
+      -#       .field-label
+      -#         = f.label :password
+      -#         %i (英数字8文字以上)
+      -#       .field-input
+      -#         = f.password_field :password, autocomplete: "off"
+      -#     .actions
+      -#       = f.submit "Log in", class: 'btn'
