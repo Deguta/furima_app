@@ -5,6 +5,7 @@
   list-style: none;
 }
 
+// ログインページの実装 ▼
 .login-page {
   width: 100%;
   height: 100%;
@@ -20,14 +21,12 @@
   &__menu {
     width: 300px;
     height: 40px;
-    // background-color: yellow;
     margin-left: 50px;
   }
 
   &__menu__navigations {
     line-height: 40px;
-    display: flex;
-    justify-content: space-between;
+    @include space-between;
   }
 
   &__menu__first-navigation > a {
@@ -55,13 +54,12 @@
     width: 100vw;
     height: 80vh;
     background-color: $background-white;
-    display: flex;
-    align-items: center;
+    @include align-items;
   }
   
   &__login-form {
-    width: 30%;
-    height: 70%;
+    width: 40%;
+    height: 80%;
     background-color: $white-color;
     margin: 0 auto;
   }
@@ -71,8 +69,7 @@
     height: 25%;
     background-color: none;
     border-bottom: solid 1px $border-color;
-    display: flex;
-    align-items: center;
+    @include align-items;
   }
 
   &__sign-up-form__link {
@@ -84,18 +81,18 @@
     text-align: center;
     line-height: 40px;
     border-radius: 4px;
+    border: solid 1px $sign-up-color;
     &:hover {
       background-color: $white-color;
       color: $sign-up-color;
       border: solid 1px $sign-up-color;
+      transition: all  0.4s ease;
     }
   }
   
   .new_user {
     width: 100%;
     height: 75%;
-    justify-content: center;
-    align-items: center;
   }
 
   &__field-email {
@@ -109,9 +106,7 @@
     font-size: 14px;
     margin: 20px;
     margin-top: 50px;
-    padding-left: 2%;
-    border: solid 1px $border-color;
-    border-radius: 4px;
+    @include form-border;
   }
 
   &__field-pass {
@@ -124,9 +119,7 @@
     height: 40px;
     font-size: 14px;
     margin: 20px;
-    padding-left: 2%;
-    border: solid 1px $border-color;
-    border-radius: 4px;
+    @include form-border;
   }
 
   &__actions {
@@ -141,11 +134,133 @@
     font-size: 14px;
     margin: 20px;
     border-radius: 4px;
-    border: none;
+    border: solid 1px $log-in-color;
     &:hover {
       background-color: $white-color;
       color: $log-in-color;
       border: solid 1px $log-in-color;
+      transition: all  0.4s ease;
     }
   }
+}
+
+// 新規会員登録ページの実装 ▼
+.sign-up-page {
+  width: 100%;
+  height: 100%;
+
+  &__form {
+    width: 100vw;
+    height: 80vh;
+    background-color: $background-white;
+    @include align-items;
+  }
+
+  &__login-form {
+    width: 40%;
+    height: 80%;
+    background-color: $white-color;
+    margin: 0 auto;
+  }
+
+  &__text-box {
+    width: 100%;
+    height: 12%;
+    border-bottom: solid 1px $border-color;
+    @include align-items;
+  }
+  
+  &__text {
+    color: $font-black;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+  }
+
+  #new_user {
+    height: 88%;
+    @include align-items;
+  }
+
+  &__field {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__text-list {
+    display: flex;
+  }
+
+  &__nickname-text {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20%;
+    @include form-text;
+  }
+
+  &__required {
+    // width: 7%;
+    line-height: 20px;
+    color: $white-color;
+    background-color: $sign-up-color;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0.3px 4px;
+    border-radius: 2px;
+  }
+
+  // ニックネーム入力フォーム
+  #user_nickname {
+    width: 60%;
+    height: 40px;
+    font-size: 14px;
+    margin: 5px 10px 10px 10px;
+    @include form-border
+  }
+  
+  // email入力フォーム
+  #user_email {
+    width: 60%;
+    height: 40px;
+    font-size: 14px;
+    margin: 5px 10px 10px 10px;
+    @include form-border
+  }
+  
+  // pass入力フォーム
+  #user_pass {
+    width: 60%;
+    height: 40px;
+    font-size: 14px;
+    margin: 5px 10px 10px 10px;
+    @include form-border
+  }
+  
+  // 確認用pass入力フォーム
+  #user_confirmation_pass {
+    width: 60%;
+    height: 40px;
+    font-size: 14px;
+    margin: 5px 10px 10px 10px;
+    @include form-border
+  }
+
+  &__actions__btn {
+    width: 60%;
+    height: 40px;
+    background-color: $sign-up-color;
+    color: $white-color;
+    font-size: 14px;
+    margin: 15px;
+    border-radius: 4px;
+    border: solid 1px $sign-up-color;
+    &:hover {
+      background-color: $white-color;
+      color: $sign-up-color;
+      border: solid 1px $sign-up-color;
+      transition: all  0.4s ease;
+    }
+  }
+
 }
