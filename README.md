@@ -43,7 +43,7 @@ belongs_to :user
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
 |postal_code|integer|
-|prefecture|references|null: false, foreign_key: true|
+|prefecture|references|null: false|
 |city|string|
 |address|string|
 |building|string|
@@ -52,6 +52,8 @@ belongs_to :user
 
 #### アソシエーション
 belongs_to :user
+belongs_to_active_hash :prefecture
+
 
 
 ## commentsテーブル
@@ -59,7 +61,7 @@ belongs_to :user
 |------|----|-------|
 |id|integer|null: false|
 |comment|text|
-|user|references|foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |item|references|foreign_key: true|
 
 #### アソシエーション
@@ -77,7 +79,7 @@ belongs_to :item
 |brand|references|foreign_key: true|
 |condition|references|null: false, foreign_key: true|
 |shipping_cost|references|null: false, foreign_key: true|
-|prefecture|references|null: false, foreign_key: true|
+|prefecture|references|null: false|
 |shipping_day|references|null: false, foreign_key: true|
 |shipping_method|references|null: false, foreign_key: true|
 |price|string|null: false|
@@ -87,14 +89,14 @@ belongs_to :item
 #### アソシエーション
 has_many : item_images, dependent::destroy
 has_many : comments, dependent::destroy
-belongs_to :categorys
-belongs_to :brands
-belongs_to :conditions
-belongs_to :shipping_costs
-belongs_to :prefectures
-belongs_to :shipping_days
-belongs_to :item_sizes
-belongs_to :shipping_methods
+belongs_to :category
+belongs_to :brand
+belongs_to :condition
+belongs_to :shipping_cost
+belongs_to_active_hash :prefecture
+belongs_to :shipping_day
+belongs_to :item_size
+belongs_to :shipping_method
 belongs_to :user
 
 
@@ -106,7 +108,7 @@ belongs_to :user
 |item|references|null: false, foreign_key: true|
 
 #### アソシエーション
-belongs_to :items
+belongs_to :item
 
 
 ## categorysテーブル
