@@ -182,4 +182,4 @@ has_many : items
 has_many : items
 
 ## ER図
-https://i.gyazo.com/4e0bc6ee9b1d155701291265dfb9bd70.png
+https://i.gyazo.com/bb1581bd89d34f3845525af9bc6ba06e.png
