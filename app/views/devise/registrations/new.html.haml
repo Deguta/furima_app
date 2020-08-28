@@ -15,33 +15,107 @@
           会員情報入力
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .sign-up-page__field
-          %ul.sign-up-page__text-list
-            %li.sign-up-page__nickname-text
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
               ニックネーム
             %li.sign-up-page__required
               必須
           .sign-up-page__field-nickname
             = f.text_field :nickname, autofocus: true, placeholder:"例) フリマ太郎"
-          %ul.sign-up-page__text-list
-            %li.sign-up-page__nickname-text
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
               メールアドレス
             %li.sign-up-page__required
               必須
           .sign-up-page__field-email
             = f.email_field :email, autofocus: true, placeholder:"PC・携帯どちらでも可"
-          %ul.sign-up-page__text-list
-            %li.sign-up-page__nickname-text
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
               パスワード
             %li.sign-up-page__required
               必須
           .sign-up-page__field-pass
             = f.password_field :pass, autocomplete: "off", placeholder:"パスワード(英数字8文字以上)"
-          %ul.sign-up-page__text-list
-            %li.sign-up-page__nickname-text
-              確認用パスワード確認用パスワード
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
+              確認用パスワード
             %li.sign-up-page__required
               必須
           .sign-up-page__field-confirmation_pass
             = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"確認用パスワード(英数字8文字以上)"
+          %h3.sign-up-page__identification-heading
+            本人確認
+          %p.sign-up-page__identification-text
+            安心・安全にご利用いただくために、お客さまの本人
+            %br
+            情報の登録にご協力ください。他のお客さまに公開さ
+            %br
+            れることはありません。
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
+              お名前（全角）
+            %li.sign-up-page__required
+              必須
+          .sign-up-page__full-name
+            = f.text_field :family_name, autofocus: true, placeholder:"例) 山田"
+            = f.text_field :first_name, autofocus: true, placeholder:"例) 太郎"
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
+              お名前カナ（全角）
+            %li.sign-up-page__required
+              必須
+          .sign-up-page__full-name-kana
+            = f.text_field :family_name_kana, autofocus: true, placeholder:"例) ヤマダ"
+            = f.text_field :first_name_kana, autofocus: true, placeholder:"例) タロウ"
+          %ul.sign-up-page__list
+            %li.sign-up-page__text-list
+              生年月日
+            %li.sign-up-page__required
+              必須
+          .sign-up-page__birth
+            = f.date_select :birth_day, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1)
           .sign-up-page__actions
-            = f.submit "次へ進む", class: 'sign-up-page__actions__btn'
+            = f.submit "登録", class: 'sign-up-page__actions__btn'
+
+
+
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     郵便番号
+          -#   %li.sign-up-page__required
+          -#     必須
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 123-4567"
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     都道府県
+          -#   %li.sign-up-page__required
+          -#     必須
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off"
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     市町村
+          -#   %li.sign-up-page__required
+          -#     必須
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 神戸市"
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     番地
+          -#   %li.sign-up-page__required
+          -#     必須
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 兵庫区〇〇町1-1-10"
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     建物名 任意
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"建物名"
+          -# %ul.sign-up-page__list
+          -#   %li.sign-up-page__text-list
+          -#     電話番号 任意
+          -# .sign-up-page__field-confirmation_pass
+          -#   = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 080-××××-△△△△"
+
+
