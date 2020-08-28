@@ -32,14 +32,23 @@
 
   &__menu__first-navigation > a {
     color: $font-black;
+    font-size: 14px;
+    &:hover {
+      color: $hover-color;
+    }
   }
-
+  
   &__menu__second-navigation > a{
     color: $font-black;
+    font-size: 14px;
+    &:hover {
+      color: $hover-color;
+    }
   }
-
+  
   &__menu__third-navigation {
     color: $font-black;
+    font-size: 14px;
   }
 }
 
