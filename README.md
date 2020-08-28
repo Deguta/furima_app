@@ -26,10 +26,8 @@ has_many :items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|card_number|integer|null: false|
-|expiration_date_month|integer|null: false|
-|expiration_date_year|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|references|null: false, unique: true, foreign_key: true|
 
 #### アソシエーション
@@ -54,7 +52,6 @@ belongs_to :user
 
 #### アソシエーション
 belongs_to :user
-belongs_to :prefectures
 
 
 ## commentsテーブル
@@ -99,7 +96,6 @@ belongs_to :shipping_days
 belongs_to :item_sizes
 belongs_to :shipping_methods
 belongs_to :user
-belongs_to :prefectures
 
 
 ## item_imagesテーブル
@@ -118,6 +114,7 @@ belongs_to :items
 |------|----|-------|
 |id|integer|null: false|
 |name|string|null: false|
+|ancestry|string|
 
 #### アソシエーション
 has_many : items
@@ -181,16 +178,6 @@ has_many : items
 
 #### アソシエーション
 has_many : items
-
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|prefecture|string|null: false|
-
-#### アソシエーション
-has_many : items
-has_many : shipping_info
 
 ## ER図
 https://i.gyazo.com/50788e7517ab326ce42e3f5c70e977e1.png
