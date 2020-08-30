@@ -82,3 +82,38 @@
           様々な支払いに対応
         .information__contents__box__image__right__text
           %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .pickup__contents
+    .pickup__contents__title
+      ピックアップカテゴリー
+    .pickup__contents__box
+      .pickup__contents__box__sub-title
+        = link_to "#", class: 'pickup__contents__box__sub-title' do
+          新規投稿商品
+    .pickup__contents__image
+      %ul.pickup__contents__image__list
+        %li.pickup__contents__image__image-list--box
+          = link_to "#", class: 'pickup__contents__images__image-list--box' do
+            = image_tag 'icon/daitaidokei.png', class: 'image'
+            = image_tag 'icon/kakarotto.png', class: 'image'
+            = image_tag 'icon/syuzu.png', class: 'image'
+            = image_tag 'icon/carry.png', class: 'image'
+            = image_tag 'icon/kapuriko.png', class: 'image'
+            
+
+
+  .dl__contents
+    .dl__contents__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .dl__contents__sub-title
+      今すぐ無料ダウンロード！
+    .dl__contents__sns-list
+      = link_to root_path do
+        = image_tag 'icon/appstore.png', size: "180x53"
+        = image_tag 'icon/gogle.png', size: "180x53"
+
+  .footer
+    .footer__box
+    
+
+

@@ -1,0 +1,10 @@
+@mixin image {
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0 55px;
+  align-items: center;
+  display: flex;
+}

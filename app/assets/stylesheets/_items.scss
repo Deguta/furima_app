@@ -72,7 +72,7 @@
     cursor: pointer;
   }
 }
-
+//メインコンテンツ部分
 .main__contents {
   // background-image: url(pict/bg-mainVisual-pict_pc.jpg);
   background-image: url(pict/test2.jpg);
@@ -114,7 +114,7 @@
     }
   }
 }
-
+//セカンドコンテンツ部分
 .seconds__contents {
   padding: 60px 25px;
 
@@ -287,16 +287,18 @@
   }
 }
 
+//サードコンテンツ部分
 .third__contents {
   background-image: url(pict/bg-topMiddleDl-pict.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-  background-repeat: no-repeat;
-  position: relative;
-  padding: 0 55px;
-  align-items: center;
-  display: flex;
+  // background-position: center;
+  // background-size: cover;
+  // height: 400px;
+  // background-repeat: no-repeat;
+  // position: relative;
+  // padding: 0 55px;
+  // align-items: center;
+  // display: flex;
+  @include image();
 
 
   &__box{
@@ -323,6 +325,7 @@
   }
 }
 
+//インフォメーション部分
 .information__contents {
   padding: 60px 100px;
   background-color: #fff;
@@ -440,4 +443,65 @@
     margin: 0 auto;
     line-height: 120px;
   }
+}
+
+//ピックアップコンテンツ部分
+.pickup__contents {
+  height: 100%;
+  padding: 80px 0 0;
+  background-color: #f8f8f8;
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  &__box {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    &__sub-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #3CCACE;
+      padding: 10px 0;
+    }
+
+  &__image {
+    display: flex;
+    
+  }
+
+  }
+  .image {
+    width: 15%;
+  }
+}
+//ダウンロードコンテンツ部分
+.dl__contents {
+  background-image: url(pict/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__title {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #ffffff;
+  }
+
+  &__sub-title {
+    font-size: 35px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
 }
