@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users　#user登録に必要なコード
+  # devise_for :users　#rails sでエラーが出るためコメントアウト
   
   # ルーティングの変更(デプロイ勉強会時)
   root 'items#index'
