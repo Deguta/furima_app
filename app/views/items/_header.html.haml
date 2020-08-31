@@ -15,8 +15,9 @@
       ブランド
   %ul.header__list__right-items
     %li.header__list__login
-    = link_to sign_in_path, class: "header__list__login-btn" do
+    = link_to user_session_path, class: "header__list__login-btn" do
       ログイン
     %li.header__list__sign-up
     = link_to new_user_registration_path, class: "header__list__sign-up-btn" do
       新規会員登録
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'

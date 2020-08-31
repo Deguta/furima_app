@@ -213,13 +213,13 @@
   }
   
   // pass入力フォーム
-  #user_pass {
+  #user_password {
     @include sign-up_form;
     @include form-border;
   }
   
   // 確認用pass入力フォーム
-  #user_confirmation_pass {
+  #user_encrypted_password {
     @include sign-up_form;
     @include form-border;
   }

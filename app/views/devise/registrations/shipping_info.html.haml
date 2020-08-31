@@ -1,0 +1,42 @@
+= form_for(@shipping_info) do |f|
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      郵便番号
+    %li.sign-up-page__required
+      必須
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 123-4567"
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      都道府県
+    %li.sign-up-page__required
+      必須
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off"
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      市町村
+    %li.sign-up-page__required
+      必須
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 神戸市"
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      番地
+    %li.sign-up-page__required
+      必須
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 兵庫区〇〇町1-1-10"
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      建物名 任意
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"建物名"
+  %ul.sign-up-page__list
+    %li.sign-up-page__text-list
+      電話番号 任意
+  .sign-up-page__field-confirmation_pass
+    = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"例) 080-××××-△△△△"
+  
+  
+  

@@ -3,12 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
     # バリデーションの設定(空の文字列を保存させない為と一意性制約)
     validates :nickname,          presence: true
-    validates :email,             presence: true, uniqueness: true
-    validates :pass,              presence: true
-    validates :confirmation_pass, presence: true
     validates :family_name,       presence: true
     validates :family_name_kana,  presence: true
     validates :first_name,        presence: true

@@ -13,7 +13,7 @@
       .sign-up-page__text-box
         %p.sign-up-page__text
           会員情報入力
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = form_for(@user, url: user_registration_path) do |f|
         .sign-up-page__field
           %ul.sign-up-page__list
             %li.sign-up-page__text-list
@@ -35,14 +35,14 @@
             %li.sign-up-page__required
               必須
           .sign-up-page__field-pass
-            = f.password_field :pass, autocomplete: "off", placeholder:"パスワード(英数字8文字以上)"
+            = f.password_field :password, autocomplete: "off", placeholder:"パスワード(英数字8文字以上)"
           %ul.sign-up-page__list
             %li.sign-up-page__text-list
               確認用パスワード
             %li.sign-up-page__required
               必須
           .sign-up-page__field-confirmation_pass
-            = f.password_field :confirmation_pass, autocomplete: "off", placeholder:"確認用パスワード(英数字8文字以上)"
+            = f.password_field :encrypted_password, autocomplete: "off", placeholder:"確認用パスワード(英数字8文字以上)"
           %h3.sign-up-page__identification-heading
             本人確認
           %p.sign-up-page__identification-text
@@ -75,7 +75,8 @@
           .sign-up-page__birth
             = f.date_select :birth_day, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(2000, 1, 1)
           .sign-up-page__actions
-            = f.submit "登録", class: 'sign-up-page__actions__btn'
+            = f.submit "次へ進む", class: 'sign-up-page__actions__btn'
+            = render "devise/shared/links"
 
 
 
