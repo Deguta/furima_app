@@ -1,42 +1,53 @@
-.shipping_info-page
-= render partial: "items/header"
-= form_for(@shipping_info, url: shipping_infos_path) do |f|
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      郵便番号
-    %li.sign-up-page__required
-      必須
-  .sign-up-page__field-confirmation_pass
-    = f.text_field :postal_code, autocomplete: "off", placeholder:"例) 123-4567"
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      都道府県
-    %li.sign-up-page__required
-      必須
-  .sign-up-page__field-confirmation_pass
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      市町村
-    %li.sign-up-page__required
-      必須
-  .sign-up-page__field-confirmation_pass
-    = f.text_field :city, autocomplete: "off", placeholder:"例) 神戸市"
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      番地
-    %li.sign-up-page__required
-      必須
-  .sign-up-page__field-confirmation_pass
-    = f.text_field :address, autocomplete: "off", placeholder:"例) 兵庫区〇〇町1-1-10"
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      建物名 任意
-  .sign-up-page__field-confirmation_pass
-    = f.text_field :building, autocomplete: "off", placeholder:"建物名"
-  %ul.sign-up-page__list
-    %li.sign-up-page__text-list
-      電話番号 任意
-  .sign-up-page__field-confirmation_pass
-    = f.telephone_field :phone_number, autocomplete: "off", placeholder:"例) 080-××××-△△△△"
-  = f.submit "次へ進む", class: 'sign-up-page__actions__btn'
+-# .sign-up-page
+-# = render partial: "items/header"
+-# = form_for(@shipping_info, url: shipping_infos_path) do |f|
+-#   .sign-up-page__full-name
+-#     = f.text_field :family_name, autofocus: true, placeholder:"例) 山田"
+-#     = f.text_field :first_name, autofocus: true, placeholder:"例) 太郎"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       お名前カナ（全角）
+-#     %li.sign-up-page__required
+-#       必須
+-#   .sign-up-page__full-name-kana
+-#     = f.text_field :family_name_kana, autofocus: true, placeholder:"例) ヤマダ"
+-#     = f.text_field :first_name_kana, autofocus: true, placeholder:"例) タロウ"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       郵便番号
+-#     %li.sign-up-page__required
+-#       必須
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.text_field :postal_code, autocomplete: "off", placeholder:"例) 123-4567"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       都道府県
+-#     %li.sign-up-page__required
+-#       必須
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       市町村
+-#     %li.sign-up-page__required
+-#       必須
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.text_field :city, autocomplete: "off", placeholder:"例) 神戸市"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       番地
+-#     %li.sign-up-page__required
+-#       必須
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.text_field :address, autocomplete: "off", placeholder:"例) 兵庫区〇〇町1-1-10"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       建物名 任意
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.text_field :building, autocomplete: "off", placeholder:"建物名"
+-#   %ul.sign-up-page__list
+-#     %li.sign-up-page__text-list
+-#       電話番号 任意
+-#   .sign-up-page__field-confirmation_pass
+-#     = f.telephone_field :phone_number, autocomplete: "off", placeholder:"例) 080-××××-△△△△"
+-#   = f.submit "登録", class: 'sign-up-page__actions__btn'

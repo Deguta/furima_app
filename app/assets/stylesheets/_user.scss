@@ -142,7 +142,7 @@
 
   &__form {
     width: 100vw;
-    height: 150vh;
+    height: 165vh;
     background-color: $background-white;
     @include align-items;
   }
@@ -223,7 +223,7 @@
     @include sign-up_form;
     @include form-border;
   }
-
+  
   // ここから本人確認 ▼
   &__identification-heading {
     color: $font-black;
@@ -232,20 +232,20 @@
     margin-left: 25%;
     font-weight: 600;
   }
-
+  
   &__identification-text {
     color: $font-black;
     font-size: 14px;
     text-align: left;
     margin: 5px 0 5% 25%;
   }
-
+  
   // 苗字入力フォーム
   #user_family_name {
     @include full-name_form;
     @include form-border;
   }
-
+  
   // 名前入力フォーム
   #user_first_name {
     @include full-name_form;
@@ -257,13 +257,13 @@
     @include full-name_form;
     @include form-border;
   }
-
+  
   // 名前カナ入力フォーム
   #user_first_name_kana {
     @include full-name_form;
     @include form-border;
   }
-
+  
   // 誕生日入力フォーム(year)
   #user_birth_day_1i {
     @include birth_form;
@@ -281,7 +281,7 @@
     @include birth_form;
     @include form-border;
   }
-
+  
   &__actions__btn {
     width: 50%;
     height: 50px;
@@ -294,5 +294,65 @@
     &:hover {
       @include hover_animation;
     }
+  }
+  
+  // 苗字入力フォーム
+  #shipping_info_family_name {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 名前入力フォーム
+  #shipping_info_first_name {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 苗字カナ入力フォーム
+  #shipping_info_family_name_kana {
+    @include full-name_form;
+    @include form-border;
+  }
+
+  // 名前カナ入力フォーム
+  #shipping_info_first_name_kana {
+    @include full-name_form;
+    @include form-border;
+  }
+
+  // 郵便番号入力フォーム
+  #shipping_info_postal_code {
+    @include sign-up_form;
+    @include form-border;
+  }
+
+  // 都道府県入力フォーム
+  #shipping_info_prefecture_id {
+    @include sign-up_form;
+    @include form-border;
+  }
+
+  // 市町村入力フォーム
+  #shipping_info_city {
+    @include sign-up_form;
+    @include form-border;
+  }
+
+  // 番地入力フォーム
+  #shipping_info_address {
+    @include sign-up_form;
+    @include form-border;
+  }
+
+  // 建物名入力フォーム
+  #shipping_info_building {
+    @include sign-up_form;
+    @include form-border;
+  }
+
+  // 電話番号入力フォーム
+  #shipping_info_phone_number {
+    @include sign-up_form;
+    @include form-border;
   }
 }

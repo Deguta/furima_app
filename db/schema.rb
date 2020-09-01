@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_022721) do
     t.string "city"
     t.string "address"
     t.string "building"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_022721) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
-    t.string "encrypted_password", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "family_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name", null: false
