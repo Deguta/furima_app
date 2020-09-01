@@ -110,7 +110,7 @@
       font-size: 20px;
     }
     &__snsbtn {
-      
+      padding-top: 15px;
     }
   }
 }
@@ -315,12 +315,17 @@
       text-shadow: 0 0 5px rgba(0,0,0,0.6);
 
     }
+
     &__sub-title {
       font-size: 16px;
       font-weight: bold;
       color: white;
       text-shadow: 0 0 5px rgba(0,0,0,0.6);
       padding-top: 10px;
+    }
+
+    &__sns-list {
+      padding-top: 25px;
     }
   }
 }

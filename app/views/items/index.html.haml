@@ -7,7 +7,10 @@
       .main__contents__body__subtitle
         %p FURIMAは誰でも簡単に出品・購入できる
         %p フリマアプリです
-      -# .main__contents__body__snsbtn
+      .main__contents__body__snsbtn
+        = link_to root_path do
+          = image_tag 'icon/appstore.png', size: "180x53"
+          = image_tag 'icon/gogle.png', size: "180x53"
 
   .seconds__contents
     .seconds__contents__box
@@ -57,6 +60,10 @@
         %p FURIMAは、フリマアプリで最も人気。
         %p 出品・購入回数も業界最多です！
         %p 欲しかったあの商品に出会えるかもしれません。
+      .third__contents__box__sns-list
+        = link_to root_path do
+          = image_tag 'icon/appstore.png', size: "180x53"
+          = image_tag 'icon/gogle.png', size: "180x53"
 
   .information__contents
     .information__contents__box
