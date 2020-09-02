@@ -7,6 +7,7 @@
         配送情報の入力
     = form_for(@shipping_info, url: shipping_infos_path) do |f|
       .sign-up-page__field
+        = devise_error_messages!
         %ul.sign-up-page__list
           %li.sign-up-page__text-list
             お名前（全角）
