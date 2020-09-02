@@ -15,6 +15,7 @@
           会員情報入力
       = form_for(@user, url: user_registration_path) do |f|
         .sign-up-page__field
+          = devise_error_messages!
           %ul.sign-up-page__list
             %li.sign-up-page__text-list
               ニックネーム

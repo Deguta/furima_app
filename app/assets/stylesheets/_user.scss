@@ -136,24 +136,26 @@
 }
 
 // 新規会員登録ページの実装 ▼
+
+// 入力フォームの実装
 .sign-up-page {
   width: 100%;
   height: 100%;
-
+  
   &__form {
     width: 100vw;
-    height: 170vh;
+    height: 200vh;
     background-color: $background-white;
     @include align-items;
   }
-
+  
   &__login-form {
     width: 50%;
     height: 90%;
     background-color: $white-color;
     margin: 0 auto;
   }
-
+  
   &__text-box {
     width: 100%;
     height: 8%;
@@ -167,29 +169,29 @@
     font-weight: 600;
     margin: 0 auto;
   }
-
+  
   #new_user {
     margin-top: 5%;
     @include align-items;
   }
-
+  
   &__field {
     width: 100%;
     text-align: center;
   }
-
+  
   &__list {
     display: flex;
     margin-top: 20px;
   }
-
+  
   &__text-list {
     text-align: left;
     margin-top: 10px;
     margin-left: 25%;
     @include form-text;
   }
-
+  
   &__required {
     line-height: 20px;
     color: $white-color;
@@ -200,7 +202,7 @@
     padding: 0.3px 4px;
     border-radius: 2px;
   }
-
+  
   // ニックネーム入力フォーム
   #user_nickname {
     @include sign-up_form;
@@ -358,4 +360,25 @@
 #shipping_info_phone_number {
   @include sign-up_form;
   @include form-border;
+}
+
+// エラーメッセージの実装
+#error_explanation {
+  color: $sign-up-color;
+  font-size: 16px;
+  text-align: center;
+  display: inline;
+}
+
+#error_explanation > h2{
+  color: $sign-up-color;
+  margin-bottom: 5px;
+}
+
+#error_explanation li {
+  color: $sign-up-color;
+}
+
+.field_with_errors {
+  display: contents
 }
