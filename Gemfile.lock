@@ -283,8 +283,11 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+<<<<<<< Updated upstream
   devise-i18n
   devise-i18n-views
+=======
+>>>>>>> Stashed changes
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
