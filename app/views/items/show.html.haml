@@ -1,3 +1,10 @@
 .item-show-page
   = render partial: "render/header"
-  = render partial: "render/navigation"
+  .login-page__menu-bar
+    %nav.login-page__menu
+      %ol.login-page__menu__navigations
+        %li.login-page__menu__first-navigation
+          %a{:href => root_path} furima >
+        %li.login-page__menu__second-navigation
+          %a{:href => root_path} トップページ >
+        %li.login-page__menu__third-navigation 商品詳細ページ
