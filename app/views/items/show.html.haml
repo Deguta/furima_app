@@ -32,6 +32,34 @@
       .item-show-page__link-btn
         = link_to "#", class: "item-show-page__link" do
           購入画面へ進む
+      .item-show-page__item-description__title-box
+        %h2.item-show-page__item-description__title 商品説明
+      .item-show-page__item-description__text-box
+        %p.item-show-page__item-description__text
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストパスタテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
+          テストテストテストテストテストテストテストテストテスト
       .item-show-page__item-show__box
         %h2.item-show-page__item-show 商品詳細
       %table.table
@@ -62,18 +90,26 @@
         %tr.shipping_day
           %th 発送日の目安
           %td 2〜3日で発送
-      = form_for("#") do |f|
-        .item-show-page__comment-box
-          .item-show-page__comment-form
-            = f.text_field :comment, autofocus: true, placeholder:"コメントを入力", rows: "10"
-          .item-show-page__caution-box
-            %p.item-show-page__caution 
-              相手のことを考え丁寧なコメントを心がけましょう。
-              %br
-              不快な言葉遣いなどは利用制限や退会処分になることがあります。
-          .item-show-page__btn-box
-            = f.submit "コメントを送信する", class: 'item-show-page__btn'
-        .item-show-page__comment-list__title-box
-          %h2.item-show-page__comment-list-title コメント一覧
-        .item-show-page__comment-lists__box
+      - if current_user
+        = form_for("#") do |f|
+          .item-show-page__comment-box
+            .item-show-page__comment-form
+              = f.text_area :comment, autofocus: true, placeholder:"コメントを入力", rows: "5"
+            .item-show-page__caution-box
+              %p.item-show-page__caution 
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br
+                不快な言葉遣いなどは利用制限や退会処分になることがあります。
+            .item-show-page__btn-box
+              = f.submit "コメントを送信する", class: 'item-show-page__btn'
+          .item-show-page__comment-list__title-box
+            %h2.item-show-page__comment-list-title コメント一覧
+          .item-show-page__comment-lists__box
+      .item-show-page__btns-box
+        .item-show-page__destroy-btn
+          = link_to "#", class: "item-show-page__destroy-link" do
+            商品を削除する
+        .item-show-page__edit-btn
+          = link_to "#", class: "item-show-page__edit-link" do
+            商品を編集する
 
