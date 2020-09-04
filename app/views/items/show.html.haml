@@ -32,4 +32,48 @@
       .item-show-page__link-btn
         = link_to "#", class: "item-show-page__link" do
           購入画面へ進む
+      .item-show-page__item-show__box
+        %h2.item-show-page__item-show 商品詳細
+      %table.table
+        %tr
+          %th 出品者
+          %td ユーザー名
+        %tr.category
+          %th カテゴリー
+          %td メンズ・スポーツ
+        %tr.brand
+          %th ブランド
+          %td ミズノ
+        %tr.item_size
+          %th 商品のサイズ
+          %td 85cm
+        %tr.condition  
+          %th 商品の状態
+          %td 未開封
+        %tr.shipping_cost
+          %th 発送料の負担
+          %td 送料込み(出品者負担)
+        %tr.shipping_method
+          %th 発送の方法
+          %td 未定
+        %tr.prefecture
+          %th 発送元の地域
+          %td 兵庫県
+        %tr.shipping_day
+          %th 発送日の目安
+          %td 2〜3日で発送
+      = form_for("#") do |f|
+        .item-show-page__comment-box
+          .item-show-page__comment-form
+            = f.text_field :comment, autofocus: true, placeholder:"コメントを入力", rows: "10"
+          .item-show-page__caution-box
+            %p.item-show-page__caution 
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分になることがあります。
+          .item-show-page__btn-box
+            = f.submit "コメントを送信する", class: 'item-show-page__btn'
+        .item-show-page__comment-list__title-box
+          %h2.item-show-page__comment-list-title コメント一覧
+        .item-show-page__comment-lists__box
 
