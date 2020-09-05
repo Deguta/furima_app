@@ -1,9 +1,12 @@
 .shipping-page {
   width:100%;
+  height:200vh;
+  display: flex;
   background-color: #F5F5F5;
+  align-items: center;
   .item-container{
     background-color: white;
-    padding:100px;
+    height:90%;
     width: 600px;
     margin: 0 auto;
     .item-image{

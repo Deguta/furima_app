@@ -8,21 +8,20 @@
     %p.upload 最大10枚までアップロードできます
 
     .item-index
-      .field
-        .field__label
-          %p 商品名
-          %span.field__label__require
-            必須
-        .field__input--line
-          %input{:placeholder => "40文字まで", :type => "text",class:'text-form'}
-      .explanation
-        .explanation__label
-          %p 商品の説明
-          %span.explanation__label__require 必須
-        .explanation__input--line
-          %input{:placeholder => "1000文字まで", :type => "text_area",class:'text-form'}
-        .counter
-          %span
+      =form_for("#") do |f|
+        .field
+          .field__label
+            %p 商品名
+            %span.field__label__require
+              必須
+          .field__input--line
+            =f.text_field :name, placeholder: "40文字まで", class:'item-name'
+        .explanation
+          .explanation__label
+            %p 商品の説明
+            %span.explanation__label__require 必須
+          .explanation__input--line
+            =f.text_area :name, placeholder: "1000文字まで", class:'item-explanation'
     
     .item-info
     %h1 商品の詳細
@@ -32,29 +31,3 @@
       %span.item-field__require 必須
       .item-field__input--line
         %input{:placeholder => "1000文字まで", :type => "text_area",class:'text-form'}
-
-
-
-
-    .delivery-info
-    .pay-info
-    .exhibition-button
-  
-    -# .__explanation
-    -#   %h1 商品の説明
-    -# .__brand
-    -#   %h1 ブランド
-    -# .__condition
-    -#   %h1 商品の状態
-    -# .__delivery
-    -#   %h1 配送料の負担
-    -# .__area
-    -#   %h1 配送元の地域
-    -# .__appointed
-    -#   %h1 発送までの日数
-    -# .__price
-    -#   %h1 販売価格
-    -# .__btns
-    -#   %h1 出品
-    -# .__attentions
-    -#   禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
