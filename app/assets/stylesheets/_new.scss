@@ -1,14 +1,91 @@
 .shipping-page {
-  
   width:100%;
-  background-color: silver;
-  &__form{
-    margin-bottom: 10px;
-    width:600px;
+  background-color: #F5F5F5;
+  .item-container{
     background-color: white;
-    font-size:20px;
+    padding:100px;
+    width: 600px;
     margin: 0 auto;
-    height: 100vh;
+    .item-image{
+      display: flex;
+      p{
+        font-weight: bold;
+      }
+      span{
+        margin: 0 0 0 8px;
+        background-color: #3CCACE;
+        color: #ffffff;
+      }
+    }
+    .upload{
+      font-size:13px;
+      padding-bottom: 50px;
+      // 調整中です
 
-  }
-}
+    }
+    .item-index{
+      .field{
+        &__label{
+          display: flex;
+          p{
+            font-weight: bold;
+          }
+          span{
+            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            color: #ffffff;
+          }
+          }
+        &__input--line{
+          margin-top: 10px;
+            .text-form{
+              width:98%;
+              padding-left:10px;
+            }
+        }
+      }
+      .explanation{
+        &__label{
+          display: flex;
+          margin-top:30px;
+          p{
+            font-weight: bold;
+          }
+          span{
+            margin: 0 0 0 8px;
+            background-color: #3CCACE;
+            color: #ffffff;
+          }
+          }
+        &__input--line{
+            margin-top: 10px;
+              .text-form{
+                width:98%;
+                height:140px;
+                padding-left:10px;
+              }
+              ::placeholder{
+                color:gray;
+              }
+          }
+      }
+    }
+    
+    .item-info{
+      padding-top: 40px;
+    }
+    .item-field{
+        display: flex;
+        margin-top:30px;
+        p{
+          font-weight: bold;
+        }
+        span{
+          margin: 0 0 0 8px;
+          background-color: #3CCACE;
+          color: #ffffff;
+        }
+        }
+
+    }
+    }
