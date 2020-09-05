@@ -1,2 +1,79 @@
 .wrapper
   = render partial: "items/header_login"
+
+
+.hierarchy
+
+  .hierarchy__bar
+    .hierarchy__bar--top
+      = link_to root_path, class: 'hierarchy-top' do
+        furima 
+        %i.fas.fa-angle-right.fa-2x
+    .hierarchy__bar--my-page
+      = link_to root_path, class: 'hierarchy-top' do
+        トップページ
+        %i.fas.fa-angle-right.fa-2x
+    .hierarchy__bar--present-location
+      マイページ
+
+
+.contents
+  .contents__index
+    .contents__index__left-contents
+      .contents__index__left-contents--my-page
+        マイページ
+      .contents__index__left-contents--put-up
+        = link_to root_path, class: 'link-tag1' do
+          出品する
+          %i.fas.fa-angle-right.fa-2x
+      .contents__index__left-contents--list-product
+        = link_to root_path, class: 'link-tag1' do
+          出品した商品
+          %i.fas.fa-angle-right.fa-2x
+      .contents__index__left-contents--purchased-product
+        = link_to root_path, class: 'link-tag1' do
+          購入した商品
+          %i.fas.fa-angle-right.fa-2x
+      .contents__index__left-contents--contact-us
+        = link_to root_path, class: 'link-tag1' do
+          お問い合わせ
+          %i.fas.fa-angle-right.fa-2x
+      .contents__index__left-contents--notice
+        = link_to root_path, class: 'link-tag1' do
+          お知らせ
+          %i.fas.fa-angle-right.fa-2x
+
+      .contents__index__left-contents__config
+        .contents__index__left-contents__config--display
+          設定
+        .contents__index__left-contents__config--credit-card-reg
+          = link_to "/cards/new", class: 'link-tag2' do
+            クレジットカード登録
+            %i.fas.fa-angle-right.fa-2x
+        .contents__index__left-contents__config--rog-out
+          = link_to root_path, class: 'link-tag2' do
+            ログアウト
+            %i.fas.fa-angle-right.fa-2x
+        
+
+    .contents__index__right-contents
+      .contents__index__right-contents--user-image
+        = link_to root_path, class: 'link-tag2' do
+          = image_tag 'logo/mako.png', alt: 'title', height: '60', width: '60'
+      .contents__index__right-contents--user-name
+        社長
+      .contents__index__right-contents--todo-list
+        やることリスト
+      .contents__index__right-contents--todo-index
+        〇〇日までに、発送
+        %i.fas.fa-angle-right.fa-2x
+      .contents__index__right-contents--todo-index
+        〇〇日までに、発送
+        %i.fas.fa-angle-right.fa-2x
+      .contents__index__right-contents--purchase-history
+        購入したもの
+      .contents__index__right-contents--during-trading
+        取引中
+      .contents__index__right-contents--purchase-item
+        レディース、Tシャツ (S)
+        %i.fas.fa-angle-right.fa-2x

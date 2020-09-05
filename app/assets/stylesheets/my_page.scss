@@ -68,3 +68,227 @@
     cursor: pointer;
   }
 }
+
+
+.hierarchy {
+  width: 100vw;
+  height: 30px;
+  // 上下中央よせ
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+
+  i { 
+    font-size: 14px; 
+    margin: 0 5px 0 5px;
+  }
+
+  &__bar {
+    padding-left: 56px;
+    width: auto;
+    align-items: center;
+    display: flex;
+    padding-top: 4px;
+
+    &--top {}
+    &--my-page {}
+    &--present-location {}
+  }
+}
+
+.contents {
+  width: 100vw;
+  height: 100vh;
+
+  &__index {
+    padding-top: 24px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;  
+
+    &__left-contents {
+      width: 280px;
+      height: 830px;
+      padding-top: 24px;
+      margin-right: 100px;
+      flex-direction: column;
+
+      &--my-page {
+        width: 280px;
+        height: 40px;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: top;
+        color: #333333;
+      }
+
+      i {
+        display: flex;
+        float: right;
+        padding-right: 12px;
+        font-size: 16px;
+        line-height: 50px;
+      }
+
+      .link-tag1 { color: #4e5863; }
+
+        &--put-up {
+          width: 250px;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          border-bottom: 1px solid #333;
+          font-size: 14px;          
+        }
+        &--list-product {
+          width: 250px;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          border-bottom: 1px solid #333;
+          font-size: 14px;        
+        }
+        &--purchased-product { 
+          width: 250px;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          border-bottom: 1px solid #333;
+          font-size: 14px;        
+        }
+        &--contact-us {
+          width: 250px;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          border-bottom: 1px solid #333;
+          font-size: 14px;          
+        }
+        &--notice {
+          width: 250px;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 10px;
+          border-bottom: 1px solid #333;
+          font-size: 14px;          
+        }
+
+      &__config {
+          width: 280px;
+          height: 40px;
+          line-height: 50px;
+          margin-top: 50px;
+          color: #333;
+
+          &--display {
+            padding: 0 10px;
+            text-align: center;
+            font-weight: bold;
+          }
+
+          .link-tag2 { color: #4e5863; }
+          &--credit-card-reg { 
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 10px;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+          }
+          &--rog-out { 
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 10px;
+            border-bottom: 1px solid #333;
+            font-size: 14px;          
+          }
+      }
+    }
+
+    &__right-contents {
+      width: 700px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      i {
+        display: flex;
+        float: right;
+        padding-right: 40px;
+        font-size: 20px;
+        line-height: 80px;
+      }
+
+      &--user-image {
+        width: 700px;
+        height: 80px;
+        line-height: 100px;
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      &--user-name {
+        width: 700px;
+        line-height: 16x;
+        padding-bottom: 26px;
+        text-align: center;
+        vertical-align: text-top;
+        color:#4e5863;
+      }
+
+      &--todo-list {
+        color: #333333;
+        width: 700px;
+        height: 70px;
+        line-height: 70px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #3ccace;
+        text-align: center;
+      }
+
+      &--todo-index {
+        width: 690px;
+        height: 80px;
+        line-height: 80px;
+        padding-left: 10px;
+        border-bottom: 1px solid #333;
+        font-size: 14px;
+        color: #4e5863;
+      }
+
+      &--purchase-history {
+        color: #333333;
+        line-height: 70px;
+        margin-top: 170px;
+        line-height: 70px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #3ccace;
+        // 上下中央揃え
+        text-align: center;
+      }
+
+      &--during-trading {
+        line-height: 40px;
+        margin-top: 3px;
+        color: #333333;
+        background-color: #77abc0;
+        text-align: center;
+      }
+
+      &--purchase-item { 
+        width: 690px;
+        height: 80px;
+        line-height: 80px;
+        padding-left: 10px;
+        border-bottom: 1px solid #333;
+        font-size: 14px;
+        color: #4e5863;
+      }
+    }
+  }
+}
