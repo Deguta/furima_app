@@ -78,3 +78,7 @@ end
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'devise'
+gem 'active_hash'
+gem 'pry-rails'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

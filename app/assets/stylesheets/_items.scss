@@ -1,8 +1,9 @@
 .header__main {
   display: flex;
   align-items: center;
-  padding: 20px 55px 0 55px;
+  padding: 20px 60px 0 55px;
   margin-bottom: 0 auto;
+  background-color: $white-color;
   
   &__icon {
     padding: 5px 0;
@@ -24,7 +25,8 @@
   }
   
   &__search-btn {
-    background-color: rgb(0, 251, 255);
+    background-color: $main-color;
+    color: $white-color;
     font-size: 6px;
     padding: 10px 12px;
     border-style: none;
@@ -32,40 +34,50 @@
 }
 
 .header__list {
+  font-size: 14px;
+  padding-bottom: 10px;
   display: flex;
-  font-size: 15px;
-  padding-bottom: 5px;
-
+  justify-content: space-between;
+  
   &__left-items {
-    display: flex;
     line-height: 30px;
+    padding-left: 60px;
+    display: flex;
   }
+  
   &__category {
-    padding: 0 0 0 55px;
     cursor: pointer;
+    &:hover {
+      color: $hover-color;
+    }
   }
 
   &__brand {
-    line-height: 30px;
-    cursor: pointer;
-    padding: 0 0 0 35px;
+    padding-left: 35px;
+    &:hover {
+      color: $hover-color;
+    }
   }
-
+  
   &__right-items {
+    width: 200px;
+    margin-right: 70px;
     display: flex;
-    margin-left: auto;
+    justify-content: space-between;
     line-height: 30px;
   }
     
-  &__login {
-    line-height: 30px;
-    padding-right: 30px;
-    cursor: pointer;
+  &__login-btn {
+    color: $font-black;
+    &:hover {
+      color: $hover-color;
+    }
   }
-
-  &__sign-up {
-    line-height: 30px;
-    padding-right: 65px;
-    cursor: pointer;
+  
+  &__sign-up-btn {
+    color: $font-black;
+    &:hover {
+      color: $hover-color;
+    }
   }
 }
