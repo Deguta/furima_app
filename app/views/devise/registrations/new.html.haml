@@ -4,9 +4,11 @@
     %nav.login-page__menu
       %ol.login-page__menu__navigations
         %li.login-page__menu__first-navigation
-          %a{:href => root_path} furima >
+          = link_to root_path do
+            %P.login-page__menu__navigation-one furima >
         %li.login-page__menu__second-navigation
-          %a{:href => root_path} トップページ >
+          = link_to root_path do
+            %P.login-page__menu__navigation-two トップページ >
         %li.login-page__menu__third-navigation 新規会員登録
   .sign-up-page__form
     .sign-up-page__login-form
