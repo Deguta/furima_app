@@ -4,9 +4,11 @@
     %nav.login-page__menu
       %ol.login-page__menu__navigations
         %li.login-page__menu__first-navigation
-          %a{:href => root_path} furima >
+          = link_to root_path do
+            %P.login-page__menu__navigation-one furima >
         %li.login-page__menu__second-navigation
-          %a{:href => root_path} トップページ >
+          = link_to root_path do
+            %P.login-page__menu__navigation-two トップページ >
         %li.login-page__menu__third-navigation 商品詳細ページ
   .item-show-page__background
     .item-show-page__form
@@ -90,21 +92,20 @@
         %tr.shipping_day
           %th 発送日の目安
           %td 2〜3日で発送
-      - if current_user
-        = form_for("#") do |f|
-          .item-show-page__comment-box
-            .item-show-page__comment-form
-              = f.text_area :comment, autofocus: true, placeholder:"コメントを入力", rows: "5"
-            .item-show-page__caution-box
-              %p.item-show-page__caution 
-                相手のことを考え丁寧なコメントを心がけましょう。
-                %br
-                不快な言葉遣いなどは利用制限や退会処分になることがあります。
-            .item-show-page__btn-box
-              = f.submit "コメントを送信する", class: 'item-show-page__btn'
-          .item-show-page__comment-list__title-box
-            %h2.item-show-page__comment-list-title コメント一覧
-          .item-show-page__comment-lists__box
+      = form_for("#") do |f|
+        .item-show-page__comment-box
+          .item-show-page__comment-form
+            = f.text_area :comment, autofocus: true, placeholder:"コメントを入力", rows: "5"
+          .item-show-page__caution-box
+            %p.item-show-page__caution 
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+              不快な言葉遣いなどは利用制限や退会処分になることがあります。
+          .item-show-page__btn-box
+            = f.submit "コメントを送信する", class: 'item-show-page__btn'
+        .item-show-page__comment-list__title-box
+          %h2.item-show-page__comment-list-title コメント一覧
+        .item-show-page__comment-lists__box
       .item-show-page__btns-box
         .item-show-page__destroy-btn
           = link_to "#", class: "item-show-page__destroy-link" do
@@ -112,4 +113,3 @@
         .item-show-page__edit-btn
           = link_to "#", class: "item-show-page__edit-link" do
             商品を編集する
-
