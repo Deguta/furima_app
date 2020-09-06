@@ -75,7 +75,6 @@
 //メインコンテンツ部分
 .main__contents {
   background-image: url(pict/bg-mainVisual-pict_pc.jpg);
-  // background-image: url(pict/test2.jpg);
   background-position: center;
   background-size: cover;
   height: 560px;
@@ -290,15 +289,15 @@
 //サードコンテンツ部分
 .third__contents {
   background-image: url(pict/bg-topMiddleDl-pict.jpg);
-  // background-position: center;
-  // background-size: cover;
-  // height: 400px;
-  // background-repeat: no-repeat;
-  // position: relative;
-  // padding: 0 55px;
-  // align-items: center;
-  // display: flex;
-  @include image();
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0 55px;
+  align-items: center;
+  display: flex;
+  // @include image();
 
 
   &__box{
@@ -451,9 +450,9 @@
 }
 
 //ピックアップコンテンツ部分
-.pickup__contents {
+.pickup__category {
   height: 100%;
-  padding: 80px 0 0;
+  padding: 80px 0 10px 80px;
   background-color: #f8f8f8;
 
   &__title {
@@ -474,17 +473,42 @@
       color: #3CCACE;
       padding: 10px 0;
     }
-
-  &__image {
-    display: flex;
-    
-  }
-
   }
   .image {
     width: 15%;
   }
 }
+
+.pickup__brand {
+  height: 100%;
+  padding: 80px 0 10px 80px;
+  background-color: #f8f8f8;
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  &__box {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    &__sub-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #3CCACE;
+      padding: 10px 0;
+    }
+  }
+  .image {
+    width: 15%;
+  }
+}
+
+
 //ダウンロードコンテンツ部分
 .dl__contents {
   background-image: url(pict/bg-appBanner-pict.jpg);
