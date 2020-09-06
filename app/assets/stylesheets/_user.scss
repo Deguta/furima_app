@@ -29,7 +29,7 @@
     @include space-between;
   }
 
-  &__menu__first-navigation > a {
+  &__menu__navigation-one {
     color: $font-black;
     font-size: 14px;
     &:hover {
@@ -37,7 +37,7 @@
     }
   }
   
-  &__menu__second-navigation > a{
+  &__menu__navigation-two {
     color: $font-black;
     font-size: 14px;
     &:hover {
@@ -79,7 +79,7 @@
     color: $white-color;
     margin: 0 auto;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
     border-radius: 4px;
     border: solid 1px $sign-up-color;
     &:hover {
