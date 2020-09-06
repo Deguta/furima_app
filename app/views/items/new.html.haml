@@ -2,13 +2,12 @@
   = render "items/header_login"
 .shipping-page
   .item-container
-    .item-image
-      %p 商品画像
-      %span.__label 必須
-    %p.upload 最大10枚までアップロードできます
-
-    .item-index
-      =form_for("#") do |f|
+    =form_for("#") do |f|
+      .item-image
+        %p 商品画像
+        %span.__label 必須
+      %p.upload 最大10枚までアップロードできます
+      .item-index
         .field
           .field__label
             %p 商品名
@@ -22,12 +21,16 @@
             %span.explanation__label__require 必須
           .explanation__input--line
             =f.text_area :name, placeholder: "1000文字まで", class:'item-explanation'
-    
-    .item-info
-    %h1 商品の詳細
-    .item-field
-      .item-field__category
-      %p カテゴリー
-      %span.item-field__require 必須
-      .item-field__input--line
-        %input{:placeholder => "1000文字まで", :type => "text_area",class:'text-form'}
+        .item-field
+          .item-field__category
+            %p カテゴリー
+            %span.item-field__require 必須
+          .item-field__input--line
+            =f.text_field :name, placeholder: "kariokiba", class:'item-category'
+        .field
+          .field__label
+            %p ブランド
+            %span.field__label__any
+              任意
+          .field__input--line
+            = f.text_field :brand_name, class:"brand-name", placeholder: "例）シャネル"
