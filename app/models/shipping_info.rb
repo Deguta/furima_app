@@ -10,4 +10,7 @@ class ShippingInfo < ApplicationRecord
   validates :first_name,        presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :first_name_kana,   presence: true, format: {with: /\A[ァ-ヶー－]+\z/ }
   validates :prefecture,        presence: true
+  validates :postal_code,       presence: true
+  validates :city,              presence: true
+  validates :address,           presence: true
 end
