@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+// 商品詳細ページの実装
+.item-show-page {
+  width: 100%;
+  height: 100%;
+
+  &__background {
+    width: 100vw;
+    height: 450vh;
+    background-color: $background-white;
+    @include align-items;
+  }
+  
+  &__form {
+    width: 50%;
+    height: 90%;
+    background-color: $white-color;
+    margin: 0 auto;
+  }
+
+  // 商品名
+  &__item-name__box {
+    width: 90%;
+    height: 80px;
+    margin: 10px auto;
+  }
+  
+  &__item-name {
+    color: $font-black;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    margin: 0 2%;
+  }
+  
+  // 写真掲載箇所
+  &__image-box {
+    border: 1px solid gray ;
+    width: 90%;
+    height: 17%;
+    margin: 10px auto;
+    @include space-between;
+  }
+  
+  &__main-image-box {
+    border: 1px solid gray ;
+    width: 60%;
+    height: 95%;
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+  
+  &__sub-image-box {
+    width: 20%;
+    height: 95%;
+    margin-top: 2%;
+    margin-left: 1px;
+  }
+
+  &__sub-image1 {
+    @include sub-image-box;
+  }
+  
+  &__sub-image2 {
+    @include sub-image-box;
+  }
+
+  &__sub-image3 {
+    @include sub-image-box;
+  }
+
+  &__sub-image4 {
+    @include sub-image-box;
+  }
+
+  &__sub-image5 {
+    @include sub-image-box;
+  }
+
+  &__sub-image-box2 {
+    width: 20%;
+    height: 95%;
+    margin-top: 2%;
+    margin-right: 2%;
+  }
+  
+  &__sub-image6 {
+    @include sub-image-box;
+  }
+  
+  &__sub-image7 {
+    @include sub-image-box;
+  }
+
+  &__sub-image8 {
+    @include sub-image-box;
+  }
+
+  &__sub-image9 {
+    @include sub-image-box;
+  }
+
+  &__sub-image10 {
+    @include sub-image-box;
+  }
+
+  // 値段表示
+  &__price-box {
+    color: $font-black;
+    width: 90%;
+    height: 50px;
+    margin: 10px auto;
+    @include justify-center;
+  }
+
+  &__price {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 2%;
+  }
+
+  &__tax {
+    color: $border-color;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  // 購入画面遷移ボタン
+  &__link-btn {
+    width: 90%;
+    height: 60px;
+    background-color: $sign-up-color;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 4px;
+    border: solid 1px $sign-up-color;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__link {
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  // 商品説明欄
+  &__item-description__title-box {
+    @include title-box;
+  }
+  
+  &__item-description__title {
+    color: $font-black;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  &__item-description__text-box {
+    width: 90%;
+    height: 10%;
+    margin: 0 auto;
+    overflow: scroll;   
+  }
+
+  &__item-description__text {
+    color: $font-black;
+    font-size: 18px;
+    display: inline-block;
+  }
+
+  // 商品詳細
+  &__item-show__box {
+    @include title-box;
+  }
+  
+  &__item-show {
+    color: $font-black;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  table {
+    color: $font-black;
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  table tr{
+    border: solid 1px $border-color;
+  }
+  
+  table th{
+    background-color: #eee;
+    text-align: center;
+  }
+  
+  table td{
+    background-color: $white-color;
+    width: 70%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  // コメント入力フォーム
+  &__comment-box {
+    width: 90%;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+
+  &__comment-form {
+    width: 100%;
+    height: 15vh;
+    margin: 0 auto;
+  }
+
+  #_comment{
+    width: 100%;
+    height: 100%;
+    @include form-border;
+    padding-top: 2%;
+  }
+
+  &__caution-box {
+    color: $font-black;
+    font-size: 14px;
+    background-color: #eee;
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+  
+  &__btn-box {
+    width: 100%;
+    margin-top: 5%;
+    @include justify-center;
+    align-items: center;
+  }
+
+  &__btn {
+    width: 50%;
+    height: 50px;
+    background-color: $main-color;
+    color: $white-color;
+    font-size: 14px;
+    margin: 0 auto;
+    border-radius: 4px;
+    border: solid 1px $main-color;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__comment-list__title-box {
+    @include title-box;
+    margin-top: 10%;
+  }
+
+  &__comment-list-title {
+    color: $font-black;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  &__comment-lists__box {
+    border: 1px solid gray;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: scroll;
+  }
+
+  // 商品削除ボタン
+  &__btns-box {
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 5%;
+    @include space-between;
+  }
+
+  &__destroy-btn {
+    width: 40%;
+    height: 60px;
+    background-color: $sign-up-color;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 4px;
+    border: solid 1px $sign-up-color;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__destroy-link {
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  // 商品編集ボタン
+  &__edit-btn {
+    width: 40%;
+    height: 60px;
+    background-color: $sign-up-color;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 4px;
+    border: solid 1px $sign-up-color;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__edit-link {
+    color: $white-color;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}

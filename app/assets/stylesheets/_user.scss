@@ -1,0 +1,384 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+// ログインページの実装 ▼
+.login-page {
+  width: 100%;
+  height: 100%;
+
+  &__menu-bar {
+    width: 100%;
+    height: 40px;
+    background-color: $white-color;
+    border-top: solid 1px $border-color;
+    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.20);
+  }
+
+  &__menu {
+    width: 300px;
+    height: 40px;
+    margin-left: 50px;
+  }
+
+  &__menu__navigations {
+    line-height: 40px;
+    @include space-between;
+  }
+
+  &__menu__navigation-one {
+    color: $font-black;
+    font-size: 14px;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+  
+  &__menu__navigation-two {
+    color: $font-black;
+    font-size: 14px;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+  
+  &__menu__third-navigation {
+    color: $font-black;
+    font-size: 14px;
+  }
+
+  &__form {
+    width: 100vw;
+    height: 80vh;
+    background-color: $background-white;
+    @include align-items;
+  }
+  
+  &__login-form {
+    width: 50%;
+    height: 80%;
+    background-color: $white-color;
+    margin: 0 auto;
+  }
+
+  &__sign-up-form {
+    width: 100%;
+    height: 25%;
+    background-color: none;
+    border-bottom: solid 1px $border-color;
+    @include align-items;
+  }
+
+  &__sign-up-form__link {
+    width: 50%;
+    height: 50px;
+    background-color: $sign-up-color;
+    color: $white-color;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 4px;
+    border: solid 1px $sign-up-color;
+    &:hover {
+      background-color: $white-color;
+      color: $sign-up-color;
+      border: solid 1px $sign-up-color;
+      transition: all  0.4s ease;
+    }
+  }
+  
+  .new_user {
+    width: 100%;
+    height: 75%;
+  }
+
+  &__field-email {
+    text-align: center;
+  }
+  
+  // email入力フォーム
+  #user_email {
+    @include login_form;
+    @include form-border;
+    margin-top: 50px;
+  }
+
+  &__field-pass {
+    text-align: center;
+  }
+  
+  // pass入力フォーム
+  #user_pass {
+    @include login_form;
+    @include form-border;
+  }
+
+  &__actions {
+    text-align: center;
+  }
+  
+  &__actions__btn {
+    width: 50%;
+    height: 50px;
+    background-color: $main-color;
+    color: $white-color;
+    font-size: 14px;
+    margin: 20px;
+    border-radius: 4px;
+    border: solid 1px $main-color;
+    &:hover {
+      @include hover_animation;
+    }
+  }
+}
+
+// 新規会員登録ページの実装 ▼
+
+// 入力フォームの実装
+.sign-up-page {
+  width: 100%;
+  height: 100%;
+  
+  &__form {
+    width: 100vw;
+    height: 200vh;
+    background-color: $background-white;
+    @include align-items;
+  }
+  
+  &__login-form {
+    width: 50%;
+    height: 90%;
+    background-color: $white-color;
+    margin: 0 auto;
+  }
+  
+  &__text-box {
+    width: 100%;
+    height: 8%;
+    border-bottom: solid 1px $border-color;
+    @include align-items;
+  }
+  
+  &__text {
+    color: $font-black;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+  }
+  
+  #new_user {
+    margin-top: 5%;
+    @include align-items;
+  }
+  
+  &__field {
+    width: 100%;
+    text-align: center;
+  }
+  
+  &__list {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  &__text-list {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 25%;
+    @include form-text;
+  }
+  
+  &__required {
+    line-height: 20px;
+    color: $white-color;
+    background-color: $main-color;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0.3px 4px;
+    border-radius: 2px;
+  }
+  
+  // ニックネーム入力フォーム
+  #user_nickname {
+    @include sign-up_form;
+    @include form-border;
+  }
+  
+  // email入力フォーム
+  #user_email {
+    @include sign-up_form;
+    @include form-border;
+  }
+  
+  // pass入力フォーム
+  #user_password {
+    @include sign-up_form;
+    @include form-border;
+  }
+  
+  // 確認用pass入力フォーム
+  #user_encrypted_password {
+    @include sign-up_form;
+    @include form-border;
+  }
+  
+  // ここから本人確認 ▼
+  &__identification-heading {
+    color: $font-black;
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 25%;
+    font-weight: 600;
+  }
+  
+  &__identification-text {
+    color: $font-black;
+    font-size: 14px;
+    text-align: left;
+    margin: 5px 0 5% 25%;
+  }
+  
+  // 苗字入力フォーム
+  #user_family_name {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 名前入力フォーム
+  #user_first_name {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 苗字カナ入力フォーム
+  #user_family_name_kana {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 名前カナ入力フォーム
+  #user_first_name_kana {
+    @include full-name_form;
+    @include form-border;
+  }
+  
+  // 誕生日入力フォーム(year)
+  #user_birth_day_1i {
+    @include birth_form;
+    @include form-border;
+  }
+  
+  // 誕生日入力フォーム(month)
+  #user_birth_day_2i {
+    @include birth_form;
+    @include form-border;
+  }
+  
+  // 誕生日入力フォーム(day)
+  #user_birth_day_3i {
+    @include birth_form;
+    @include form-border;
+  }
+  
+  &__actions__btn {
+    width: 50%;
+    height: 50px;
+    background-color: $main-color;
+    color: $white-color;
+    font-size: 14px;
+    margin: 15px;
+    border-radius: 4px;
+    border: solid 1px $main-color;
+    &:hover {
+      @include hover_animation;
+    }
+  }
+}
+
+// 配送情報入力ホームの実装 ▼
+
+// 苗字入力フォーム
+#shipping_info_family_name {
+  @include full-name_form;
+  @include form-border;
+}
+
+// 名前入力フォーム
+#shipping_info_first_name {
+  @include full-name_form;
+  @include form-border;
+}
+
+// 苗字カナ入力フォーム
+#shipping_info_family_name_kana {
+  @include full-name_form;
+  @include form-border;
+}
+
+// 名前カナ入力フォーム
+#shipping_info_first_name_kana {
+  @include full-name_form;
+  @include form-border;
+}
+
+// 郵便番号入力フォーム
+#shipping_info_postal_code {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// 都道府県入力フォーム
+#shipping_info_prefecture_id {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// 市町村入力フォーム
+#shipping_info_city {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// 番地入力フォーム
+#shipping_info_address {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// 建物名入力フォーム
+#shipping_info_building {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// 電話番号入力フォーム
+#shipping_info_phone_number {
+  @include sign-up_form;
+  @include form-border;
+}
+
+// エラーメッセージの実装
+#error_explanation {
+  color: $sign-up-color;
+  font-size: 16px;
+  text-align: center;
+  display: inline;
+}
+
+#error_explanation > h2{
+  color: $sign-up-color;
+  margin-bottom: 5px;
+}
+
+#error_explanation li {
+  color: $sign-up-color;
+}
+
+.field_with_errors {
+  display: contents
+}

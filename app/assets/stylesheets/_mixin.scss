@@ -1,0 +1,85 @@
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin align-items {
+  display: flex;
+  align-items: center;
+}
+
+// フォームの枠で使用
+@mixin form-border {
+  padding-left: 2%;
+  border: solid 1px $border-color;
+  border-radius: 4px;
+}
+
+// フォーム左上テキストで使用
+@mixin form-text {
+  color: $font-black;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// 誕生日入力フォームで使用
+@mixin birth_form {
+  width: 16.3%;
+  height: 50px;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+// フルネーム入力フォームで使用
+@mixin full-name_form {
+  width: 25%;
+  height: 50px;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+// ログイン入力フォームで使用
+@mixin login_form {
+  width: 50%;
+  height: 50px;
+  font-size: 14px;
+  margin: 20px;
+}
+
+// 新規登録入力フォームで使用
+@mixin sign-up_form {
+  width: 50%;
+  height: 50px;
+  font-size: 14px;
+  margin: 5px 10px 10px 10px;
+}
+
+// ボタンhoverで使用
+@mixin hover_animation {
+  background-color: $white-color;
+  color: $main-color;
+  border: solid 1px $main-color;
+  transition: all  0.4s ease;
+}
+
+// 商品詳細ページサブ画像ボッツクスで使用
+@mixin sub-image-box {
+  border: 1px solid gray;
+  width: 100%;
+  height: 20%;
+}
+
+// 商品詳細ページ各項目見出しで使用
+@mixin title-box {
+  width: 90%;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
