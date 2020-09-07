@@ -1,7 +1,7 @@
 .header__main {
   display: flex;
   align-items: center;
-  padding: 20px 160px 0 160px;
+  padding: 20px 170px 0 160px;
   margin-bottom: 0 auto;
   background-color: $white-color;
   
@@ -27,24 +27,25 @@
   &__search-btn {
     background-color: $main-color;
     color: $white-color;
-    font-size: 6px;
-    padding: 10px 12px;
+    font-size: 11px;
+    padding: 6px 9px;
     border-style: none;
   }
 }
 .header__list {
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   
   &__left-items {
     line-height: 30px;
-    padding-left: 60px;
     display: flex;
+    padding-left: 60px;
   }
   
   &__category {
+    padding: 0 0 0 100px;
     cursor: pointer;
     &:hover {
       color: $hover-color;
@@ -53,6 +54,7 @@
 
   &__brand {
     padding-left: 35px;
+    cursor: pointer;
     &:hover {
       color: $hover-color;
     }
@@ -60,14 +62,14 @@
   
   &__right-items {
     width: 200px;
-    margin-right: 70px;
+    margin-right: 170px;
     display: flex;
-    justify-content: space-between;
     line-height: 30px;
   }
     
   &__login-btn {
     color: $font-black;
+    cursor: pointer;
     &:hover {
       color: $hover-color;
     }
@@ -104,15 +106,15 @@
     &__title {
       font-size: 60px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      color: white;
       font-weight: normal;
       padding: 20px 0 10px 10px;
       margin: 0 auto;
       line-height: 1.2;
+      color: #fff;
     }
     &__subtitle {
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      color: white;
+      color: $white-color;
       line-height: 1.5;
       padding: 20px 0 10px 10px;
       font-size: 20px;
@@ -128,12 +130,14 @@
 
   &__box {
     margin-bottom: 20px;
+
     &--title {
       font-size: 27px;
       text-align: center;
       font-weight: bold;
       padding-bottom: 10px;
     }
+
     &--liner {
     content: "";
     width: 70px;
@@ -145,6 +149,7 @@
 
     }
   }
+
   .seconds__contents__box__image {
     display: flex;
     align-items: center;
@@ -183,17 +188,14 @@
 
       &--number {
         position: absolute;
-        padding: 10px 20px;
+        padding: 15px 20px;
         font-size: 30px;
-        height: 30px;
-        width: 30px;
         top: 0;
         border-radius: 3%;
         background-color: #20e4eb;
         left: 0;
-        text-align: center;
         line-height: 30px;
-        color: white;
+        color: $white-color;
       }
     }
 
@@ -228,17 +230,14 @@
 
       &--number {
         position: absolute;
-        padding: 10px 20px;
+        padding: 15px 15px;
         font-size: 30px;
-        height: 30px;
-        width: 30px;
         top: 0;
         border-radius: 3%;
         background-color: #20e4eb;
         left: 0;
-        text-align: center;
         line-height: 30px;
-        color: white;
+        color: $white-color;
       }
     }
     
@@ -275,17 +274,14 @@
 
       &--number {
         position: absolute;
-        padding: 10px 20px;
+        padding: 15px 15px;
         font-size: 30px;
-        height: 30px;
-        width: 30px;
         top: 0;
         border-radius: 3%;
         background-color: #20e4eb;
         left: 0;
-        text-align: center;
         line-height: 30px;
-        color: white;
+        color: $white-color;
       }
     }
   }
@@ -306,8 +302,6 @@
   padding: 0 55px;
   align-items: center;
   display: flex;
-  // @include image();
-
 
   &__box{
     max-width: 1280px;
@@ -319,7 +313,7 @@
     &__title {
       font-size: 30px;
       font-weight: bold;
-      color: white;
+      color: $white-color;
       text-shadow: 0 0 5px rgba(0,0,0,0.6);
 
     }
@@ -327,7 +321,7 @@
     &__sub-title {
       font-size: 16px;
       font-weight: bold;
-      color: white;
+      color: $white-color;
       text-shadow: 0 0 5px rgba(0,0,0,0.6);
       padding-top: 10px;
     }
@@ -490,7 +484,7 @@
 
 .pickup__brand {
   height: 100%;
-  padding: 80px 0 10px 80px;
+  padding: 80px 0 50px 80px;
   background-color: #f8f8f8;
 
   &__title {
@@ -529,16 +523,16 @@
 
   &__title {
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     line-height: 1.4;
-    color: #ffffff;
+    color: $white-color;
   }
 
   &__sub-title {
     font-size: 35px;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    color: #ffffff;
+    color: $white-color;
     padding-bottom: 10px;
 }
 
@@ -549,7 +543,7 @@
 }
 
 .footer__contents__list--menu {
-  color: white;
+  color: $white-color;
   text-decoration: none;
   font-size: 12px;
   line-height: 32px;
@@ -558,9 +552,10 @@
 .footer__contents__list--menu:hover {
   text-decoration: underline;
 }
+
 .footer {
   padding: 60px 0;
-  color: #fff;
+  color: $white-color;
   background-color: #272727;
   text-align: center;
 
@@ -576,6 +571,7 @@
       text-align: center;
 
       &--title {
+        color: $white-color;
         margin: 0 0 20px;
         font-size: 16px;
         font-weight: bold;
@@ -584,10 +580,10 @@
   }
   
   &__logo {
+    }
     &__logo {
       margin: 0 2% 0 0;
       width: 20%;
       text-align: center;
     }
   }
-}
