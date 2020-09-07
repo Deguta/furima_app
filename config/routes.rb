@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'shipping_infos', to: 'users/registrations#create_shipping_info'
   end
   root 'items#index'
-    resources :users, only: [:index]
+    resources :users, only: [:index, :new]
     resources :items, only: [:index, :show] do
       resources :comments, only: [:create ,:update, :destroy]
     end
