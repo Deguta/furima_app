@@ -181,4 +181,4 @@ has_many : items
 has_many : items
 
 ## ER図
-https://i.gyazo.com/bb1581bd89d34f3845525af9bc6ba06e.png
+https://gyazo.com/2a344c9b32bae7da8cbd19e9f5566c08
