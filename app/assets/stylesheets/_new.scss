@@ -4,93 +4,84 @@
   display: flex;
   background-color: #F5F5F5;
   align-items: center;
-  .item-container{
+
+  &__box {
     background-color: white;
     height:90%;
     width: 600px;
     margin: 0 auto;
-    .item-image{
-      display: flex;
-      p{
-        font-weight: bold;
-      }
-      span{
-        margin: 0 0 0 8px;
-        background-color: #3CCACE;
-        color: #ffffff;
-      }
-    }
-    .upload{
-      font-size:13px;
-      padding-bottom: 50px;
-      // 調整中です
 
+    &__image {
+      display: flex;
+  
+      &--text {
+        font-weight:bold;
+        
+      }
+      &--label {
+        background-color:$main-color;
+        color:$white-color;
+      }
     }
-    .item-index{
-      .field{
-        &__label{
-          display: flex;
-          p{
-            font-weight: bold;
-          }
-          span{
-            margin: 0 0 0 8px;
-            background-color: #3CCACE;
-            color: #ffffff;
-          }
-          }
-        &__input--line{
-          margin-top: 10px;
-            .text-form{
-              width:98%;
-              padding-left:10px;
-            }
+    &__image {
+      color: green;
+      display: flex;
+    }
+
+
+
+
+    &__field {
+      border-left:4px solid;
+      border-color:red;
+      display: flex;
+
+      &--label {
+        color:indigo;
+        display: flex;
+      }
+      &--require {
+        color: blue;
+        display: flex;
+      }
+    }
+    &__name {
+      border-left:4px solid;
+      border-color:yellow;
+      display: flex;
+    }
+
+
+
+    
+    &__explanation {
+      border-left:4px solid;
+      border-color:red;
+      display: flex;
+
+      &--label {
+        color: black;
+        display: flex;}
+      &--require {
+        color: blue;
+        display: flex;}
+    }
+
+    &__exp {
+      margin-top: 10px;
+      padding-left: 10px;
+      border: 10px solid brown;
+      // クラス名でしているのは『card-num』のみ .で始めること
+      .card-num {
+        border: 10px solid aqua;
+        ::placeholder {
+          color: blue;
+          font-size: 40px;
+        .lll {
+          border: 10px solid indigo;
         }
+        }     
       }
-      .explanation{
-        &__label{
-          display: flex;
-          margin-top:30px;
-          p{
-            font-weight: bold;
-          }
-          span{
-            margin: 0 0 0 8px;
-            background-color: #3CCACE;
-            color: #ffffff;
-          }
-          }
-        &__input--line{
-            margin-top: 10px;
-              .text-form{
-                width:98%;
-                height:140px;
-                padding-left:10px;
-              }
-          }
-      }
-      .item-field{
-        &__category{
-          display: flex;
-          margin-top:30px;
-          p{
-            font-weight: bold;
-          }
-          span{
-            margin: 0 0 0 8px;
-            background-color: #3CCACE;
-            color: #ffffff;
-          }
-          }
-        &__input--line{
-            margin-top: 10px;
-              .text-form{
-                width:98%;
-                height:140px;
-                padding-left:10px;
-              }
-          }
-      }
-    }
     }
   }
+}
