@@ -2,6 +2,7 @@ class Item < ApplicationRecord
 
   # アソシエーション
   has_many               :comments,  dependent: :destroy
+  has_many               :item_image
   belongs_to             :user
   belongs_to             :category
   belongs_to             :brand
