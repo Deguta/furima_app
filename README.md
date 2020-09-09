@@ -20,6 +20,7 @@ has_many :cards, dependent::destroy
 has_many :shipping_infos, dependent::destroy
 has_many :comments, dependent::destroy
 has_many :items
+belongs_to :buyer
 
 
 ## cardsテーブル
@@ -44,8 +45,8 @@ belongs_to :user
 |first_name_kana|string|null: false|
 |postal_code|integer|
 |prefecture|string|null: false|
-|city|string|
-|address|string|
+|city|string|null: false|
+|address|string|null: false|
 |building|string|
 |phone_number|integer|
 |user|references|null: false, foreign_key: true|
@@ -97,6 +98,7 @@ belongs_to :shipping_day
 belongs_to :item_size
 belongs_to :shipping_method
 belongs_to :user
+belongs_to :buyer
 
 
 ## item_imagesテーブル
@@ -125,7 +127,7 @@ has_many : items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|string|null: false|
+|name|string|
 
 #### アソシエーション
 has_many : items
@@ -165,7 +167,7 @@ has_many : items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|size|string|null: false|
+|size|string|
 
 #### アソシエーション
 has_many : items
@@ -175,7 +177,7 @@ has_many : items
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|method|string|null: false|
+|method|string|
 
 #### アソシエーション
 has_many : items
