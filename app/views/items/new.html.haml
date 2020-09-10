@@ -7,95 +7,86 @@
       .shipping-page__box__image
         .shipping-page__box__image--text
           商品画像
-        .shipping-page__box__image--label
+        .shipping-page__box__image--require
           必須
       .shipping-page__box__message
         画像を10枚までアップロードできます
       .shipping-page__box__image
         =f.text_area :name, placeholder: "アップロードできます", class:'upload'
 
+      .shipping-page__box__field
+        .shipping-page__box__field--name
+          商品名
+        .shipping-page__box__field--require
+          必須
+      .shipping-page__box__text
+        =f.text_field :name, placeholder: "商品名入力", class:'item-name'
 
-      .item-name
-        .item-name__field
-          .item-name__field__text
-          %p 商品名
-          %span.area__field__text__require 必須
-          .item-name__field__text-line
-            =f.text_area :name, placeholder: "1000文字まで投稿可能", class:'item-name'
-      
-      .item-details
-        .item-details__field
-          .item-details__field__category
-            %p カテゴリー
-            %span.item-details__field__category__require 
-              必須
-            .item-details__field__category__input-line
-              =f.text_field :name, placeholder: "kariokiba", class:'item-category'
-          .item-field__brand
-            .item-field__field__brand__label
-              %p ブランド
-              %span.field__brand__label__any
-                任意
-            .field__input--line
-              = f.text_field :brand_name, class:"brand-name", placeholder: "例）シャネル"
+      .shipping-page__box__explanation
+        .shipping-page__box__explanation--text
+          商品の説明
+        .shipping-page__box__explanation--require
+          必須
+      .shipping-page__box__text-line
+        =f.text_area :name, placeholder: "1000文字まで投稿可能", class:'item-name'
 
-      .delivery
-        .delivery__field
-          .delivery__field__fee
-            %p 配送料の負担
-          %span.delivery__field__fee__require 必須
-          .delivery__field__input-line
-            =f.text_field :name, placeholder: "選択その1", class:'delivery-fee'
+
+      .shipping-page__box__item-details
+        .shipping-page__box__item-details--category
+          カテゴリー
+        .shipping-page__box__item-details--require
+          必須
+      .shipping-page__box__item-details--select-line
+        =f.select :category, [["レディース ", "レディース "], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["その他", "その他"]], include_blank: "選択して下さい"
+
+
+      .shipping-page__box__brand
+        .shipping-page__box__brand--text
+          ブランド
+        .shipping-page__box__brand--any
+          任意
+      .shipping-page__box__brand--line
+        = f.text_field :brand_name, class:"brand-name", placeholder: "例）シャネル"
+
+
+      .shipping-page__box__delivery
+        .shipping-page__box__delivery--text
+          配送料の負担
+          .shipping-page__box__delivery--require
+            必須
+      .shipping-page__box__delivery--select-line
+        =f.select :delivery, [["送料込み(出品者負担) ", " 送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], include_blank: "選択して下さい"
+    
+
+      .shipping-page__box__area
+        .shipping-page__box__area--text
+          発送元の地域
+        .shipping-page__box__area--require
+          必須
+      .shipping-page__box__area--select-line
+        =f.select :field, [["北海道", " 北海道"], ["青森", "青森"]], include_blank: "選択して下さい"
+    
+
+      .shipping-page__box__date
+        .shipping-page__box__date--text
+          配送までの日数
+        .shipping-page__box__data--require
+          必須
+      .shipping-page__box__data--select-line
+        =f.select :field, [["1日から2日で発送", "1日から2日で発送"], ["3日から4日で発送", "3日から4日で発送"],["5日から7日で発送", "5日から7日で発送"]], include_blank: "選択して下さい"
       
-        .delivery__area__field
-          .area__field__text
-          %p 発送元の地域
-          %span.area__field__text__require 必須
-          .area__field__input-line
-            =f.text_field :name, placeholder: "選択その2", class:'area'
+      .shipping-page__box__price
+        .shipping-page__box__price__text
+          販売価格
+        .shipping-page__box__price__require
+          必須
+      .shipping-page__box__price--select-line
+        =f.number_field :price, class:"price"
       
-        .delivery__date__field
-          .date__field__text
-          %p 配送までの日程
-          %span.date__field__text__require 必須
-          .date__field__text__input-line
-            =f.text_field :name, placeholder: "選択その3", class:'date'
-      
-      .price
-        .price__field
-          .price__field__text
-          %p 販売価格
-          %span.price__field__text__require 必須
-          .price__field__text__input-line
-            =f.text_field :name, placeholder: "選択その4", class:'price'
-      
-      .btn
-        .btn__shipping_
+      .shipping-page__box__btn
+        .shipping-page__box__shipping
           = link_to "#", class: "shipping-btn" do
             出品する
-        .btn__back
+        .shipping-page__box__back
           = link_to "#", class: "back-page" do
             戻る
-
-
-
-
-      
-    .shipping-page__box__field
-      .shipping-page__box__field--label
-        商品名
-      .shipping-page__box__field--require
-        必須
-    .shipping-page__box__name
-      = form_with(url: "#", local: true, method: :get, class: "card-num") do |form|
-        = form.text_field :keyword, placeholder: "半角英数字のみ", class: "lll"
-
-    .shipping-page__box__explanation
-      .shipping-page__box__explanation--label
-        商品の説明
-      .shipping-page__box__explanation--require 
-        必須
-    .shipping-page__box__exp
-      = form_with(url: "#", local: true, method: :get, class: "card-num") do |form|
-        = form.text_field :keyword, placeholder: "半角英数字のみ", class: "lll"
--

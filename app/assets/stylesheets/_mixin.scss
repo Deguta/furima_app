@@ -83,3 +83,13 @@
   margin: 0 auto;
   margin-top: 5%;
 }
+
+
+//南川 mixin
+//  _new.scss
+// 必須と書かれている色とマージン調整で使用
+@mixin  text-require {
+  background-color:$main-color;
+  color:$white-color;
+  margin-left:10px;
+}

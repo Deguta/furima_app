@@ -2,7 +2,7 @@
   width:100%;
   height:200vh;
   display: flex;
-  background-color: #F5F5F5;
+  background-color:$background-white;
   align-items: center;
 
   &__box {
@@ -13,75 +13,39 @@
 
     &__image {
       display: flex;
-  
+
       &--text {
         font-weight:bold;
-        
-      }
-      &--label {
-        background-color:$main-color;
-        color:$white-color;
-      }
-    }
-    &__image {
-      color: green;
-      display: flex;
-    }
-
-
-
-
-    &__field {
-      border-left:4px solid;
-      border-color:red;
-      display: flex;
-
-      &--label {
-        color:indigo;
-        display: flex;
       }
       &--require {
-        color: blue;
-        display: flex;
+        @include text-require;
       }
     }
-    &__name {
-      border-left:4px solid;
-      border-color:yellow;
+  
+
+    &__field {
       display: flex;
+
+      &--name {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
     }
 
+    &__explanation {
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
 
 
     
-    &__explanation {
-      border-left:4px solid;
-      border-color:red;
-      display: flex;
-
-      &--label {
-        color: black;
-        display: flex;}
-      &--require {
-        color: blue;
-        display: flex;}
-    }
-
-    &__exp {
-      margin-top: 10px;
-      padding-left: 10px;
-      border: 10px solid brown;
-      // クラス名でしているのは『card-num』のみ .で始めること
-      .card-num {
-        border: 10px solid aqua;
-        ::placeholder {
-          color: blue;
-          font-size: 40px;
-        .lll {
-          border: 10px solid indigo;
-        }
-        }     
-      }
-    }
   }
 }
