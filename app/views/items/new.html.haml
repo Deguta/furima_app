@@ -11,8 +11,15 @@
           必須
       .shipping-page__box__message
         画像を10枚までアップロードできます
+      .shipping-page__box__previews
+        .shipping-page__box__previews__text
+          ここに写真が表示されます
       .shipping-page__box__image
-        =f.text_area :name, placeholder: "アップロードできます", class:'upload'
+        = f.fields_for :images do |i|
+          = i.file_field :src
+      .shipping-page__box__delete
+        削除する
+
 
       .shipping-page__box__field
         .shipping-page__box__field--name
@@ -37,7 +44,7 @@
         .shipping-page__box__item-details--require
           必須
       .shipping-page__box__item-details--select-line
-        =f.select :category, [["レディース ", "レディース "], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["その他", "その他"]], include_blank: "選択して下さい"
+        =f.select :category, [["レディース ", "レディース "], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"], ["本・音楽・ゲーム", "本・音楽・ゲーム"], ["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット", "チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"]], include_blank: "選択して下さい"
 
 
       .shipping-page__box__brand
@@ -47,13 +54,21 @@
           任意
       .shipping-page__box__brand--line
         = f.text_field :brand_name, class:"brand-name", placeholder: "例）シャネル"
+      
+      .shipping-page__box__item-condition
+        .shipping-page__box__item-condition--text
+          商品の状態
+        .shipping-page__box__item-condition--require
+          必須
+      .shipping-page__box__item-condition--select-line
+        =f.select :category, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れ無し", "目立った傷や汚れ無し"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], include_blank: "選択して下さい"
 
 
       .shipping-page__box__delivery
         .shipping-page__box__delivery--text
           配送料の負担
-          .shipping-page__box__delivery--require
-            必須
+        .shipping-page__box__delivery--require
+          必須
       .shipping-page__box__delivery--select-line
         =f.select :delivery, [["送料込み(出品者負担) ", " 送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], include_blank: "選択して下さい"
     
@@ -64,21 +79,21 @@
         .shipping-page__box__area--require
           必須
       .shipping-page__box__area--select-line
-        =f.select :field, [["北海道", " 北海道"], ["青森", "青森"]], include_blank: "選択して下さい"
+        =f.collection_select :prefecture_id, Prefecture.all, :id,:name
     
 
       .shipping-page__box__date
         .shipping-page__box__date--text
           配送までの日数
-        .shipping-page__box__data--require
+        .shipping-page__box__date--require
           必須
       .shipping-page__box__data--select-line
         =f.select :field, [["1日から2日で発送", "1日から2日で発送"], ["3日から4日で発送", "3日から4日で発送"],["5日から7日で発送", "5日から7日で発送"]], include_blank: "選択して下さい"
       
       .shipping-page__box__price
-        .shipping-page__box__price__text
+        .shipping-page__box__price--text
           販売価格
-        .shipping-page__box__price__require
+        .shipping-page__box__price--require
           必須
       .shipping-page__box__price--select-line
         =f.number_field :price, class:"price"
@@ -88,5 +103,5 @@
           = link_to "#", class: "shipping-btn" do
             出品する
         .shipping-page__box__back
-          = link_to "#", class: "back-page" do
+          = link_to root_path, class: "back-page" do
             戻る

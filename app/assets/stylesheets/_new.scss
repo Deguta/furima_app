@@ -21,6 +21,26 @@
         @include text-require;
       }
     }
+    &__message {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    &__previews {
+      width: 80%;
+      height: 250px;
+      border: 1px dashed;
+      margin: auto;
+
+      &__text{
+        text-align: center;
+        line-height: 250px;
+      }
+    }
+    &__select-btn{
+      border: 1px dashed;
+
+    }
   
 
     &__field {
@@ -45,7 +65,86 @@
       }
     }
 
+    &__item-details{
+      display: flex;
 
-    
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
+
+    &__brand {
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--any {
+        background-color:#c9c6c6;
+        color:$white-color;
+        margin-left:10px;
+      }
+    }
+
+    &__item-condition{
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
+
+    &__delivery{
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
+
+    &__area{
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
+
+    &__date {
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+    }
+
+    &__price{
+      display: flex;
+
+      &--text {
+        font-weight:bold;
+      }
+      &--require {
+        @include text-require;
+      }
+
+    }
+
+
   }
 }
