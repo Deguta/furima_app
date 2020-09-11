@@ -1,7 +1,7 @@
 .header__main {
   display: flex;
   align-items: center;
-  padding: 20px 60px 0 55px;
+  padding: 20px 170px 0 160px;
   margin-bottom: 0 auto;
   background-color: $white-color;
   
@@ -27,25 +27,25 @@
   &__search-btn {
     background-color: $main-color;
     color: $white-color;
-    font-size: 6px;
-    padding: 10px 12px;
+    font-size: 11px;
+    padding: 6px 9px;
     border-style: none;
   }
 }
-
 .header__list {
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   
   &__left-items {
     line-height: 30px;
-    padding-left: 60px;
     display: flex;
+    padding-left: 60px;
   }
   
   &__category {
+    padding: 0 0 0 100px;
     cursor: pointer;
     &:hover {
       color: $hover-color;
@@ -54,6 +54,7 @@
 
   &__brand {
     padding-left: 35px;
+    cursor: pointer;
     &:hover {
       color: $hover-color;
     }
@@ -61,14 +62,14 @@
   
   &__right-items {
     width: 200px;
-    margin-right: 70px;
+    margin-right: 170px;
     display: flex;
-    justify-content: space-between;
     line-height: 30px;
   }
     
   &__login-btn {
     color: $font-black;
+    cursor: pointer;
     &:hover {
       color: $hover-color;
     }
@@ -81,3 +82,508 @@
     }
   }
 }
+
+//メインコンテンツ部分
+.main__contents {
+  background-image: url(pict/bg-mainVisual-pict_pc.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 560px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  padding: 0 55px;
+  align-items: center;
+  display: flex;
+
+  &__body {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    height: 150px;
+
+    &__title {
+      font-size: 60px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-weight: normal;
+      padding: 20px 0 10px 10px;
+      margin: 0 auto;
+      line-height: 1.2;
+      color: #fff;
+    }
+    &__subtitle {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: $white-color;
+      line-height: 1.5;
+      padding: 20px 0 10px 10px;
+      font-size: 20px;
+    }
+    &__snsbtn {
+      padding-top: 15px;
+    }
+  }
+}
+//セカンドコンテンツ部分
+.seconds__contents {
+  padding: 60px 25px;
+
+  &__box {
+    margin-bottom: 20px;
+
+    &--title {
+      font-size: 27px;
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    &--liner {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: #3CCACE;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    }
+  }
+
+  .seconds__contents__box__image {
+    display: flex;
+    align-items: center;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+    &__left {
+      width: 30%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+
+      &--sub-title {
+        font-size: 25px;
+        font-weight: bold;
+
+        &--green {
+          color: #20e4eb;
+          font-size: 25px;
+          font-weight: bold;
+        }
+
+        &--black {
+          color: black;
+          font-size: 25px;
+          font-weight: bold;
+        }
+      }
+      &--text {
+        margin: 22px 0 0;
+        font-size: 17px;
+      }
+
+      &--number {
+        position: absolute;
+        padding: 15px 20px;
+        font-size: 30px;
+        top: 0;
+        border-radius: 3%;
+        background-color: #20e4eb;
+        left: 0;
+        line-height: 30px;
+        color: $white-color;
+      }
+    }
+
+    &__center {
+      width: 30%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+
+      &--sub-title {
+        font-size: 25px;
+        font-weight: bold;
+
+        &--green {
+          color: #20e4eb;
+          font-size: 25px;
+          font-weight: bold;
+        }
+
+        &--black {
+          color: black;
+          font-size: 25px;
+          font-weight: bold;
+        }
+      }
+      &--text {
+        margin: 22px 0 0;
+        font-size: 17px;
+      }
+
+      &--number {
+        position: absolute;
+        padding: 15px 15px;
+        font-size: 30px;
+        top: 0;
+        border-radius: 3%;
+        background-color: #20e4eb;
+        left: 0;
+        line-height: 30px;
+        color: $white-color;
+      }
+    }
+    
+    &__right {
+      width: 30%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 24.5px;
+      margin: 0 auto;
+
+      &--sub-title {
+        font-size: 25px;
+        font-weight: bold;
+
+        &--green {
+          color: #20e4eb;
+          font-size: 25px;
+          font-weight: bold;
+        }
+
+        &--black {
+          color: black;
+          font-size: 25px;
+          font-weight: bold;
+        }
+      }
+
+      &--text {
+        margin: 22px 0 0;
+        font-size: 17px;
+      }
+
+      &--number {
+        position: absolute;
+        padding: 15px 15px;
+        font-size: 30px;
+        top: 0;
+        border-radius: 3%;
+        background-color: #20e4eb;
+        left: 0;
+        line-height: 30px;
+        color: $white-color;
+      }
+    }
+  }
+  .seconds-image {
+    width: 100%;
+    padding-bottom: 18px;
+  }
+}
+
+//サードコンテンツ部分
+.third__contents {
+  background-image: url(pict/bg-topMiddleDl-pict.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0 55px;
+  align-items: center;
+  display: flex;
+
+  &__box{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    height: 150px;
+
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+      color: $white-color;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+
+    }
+
+    &__sub-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: $white-color;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+      padding-top: 10px;
+    }
+
+    &__sns-list {
+      padding-top: 25px;
+    }
+  }
+}
+
+//インフォメーション部分
+.information__contents {
+  padding: 60px 100px;
+  background-color: #fff;
+
+  &__box {
+    margin-bottom: 20px;
+
+    &__title {
+      font-size: 26px;
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    &__liner {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3CCACE;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .information__contents__box__image {
+    display: flex;
+    align-items: center;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-top: 10px;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      text-align: center;
+      padding: 0 20px;
+
+    &__sub-title {
+      margin: 38px 0 10px;
+      font-size: 19px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &__text {
+      margin: 0 0 40px;
+      font-size: 17px;
+      font-weight: 200;
+      text-align: left;
+    }
+  }
+}
+  .information__contents__box__image {
+    display: flex;
+    align-items: center;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+    &__center {
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      text-align: center;
+      padding: 0 20px;
+
+    &__sub-title {
+      margin: 38px 0 10px;
+      font-size: 19px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &__text {
+      margin: 0 0 40px;
+      font-size: 17px;
+      font-weight: 200;
+      text-align: left;
+    }
+  }
+}
+  .information__contents__box__image {
+    display: flex;
+    align-items: center;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding-top: 10px;
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      width: calc(1 / 3 * 100%);
+      text-align: center;
+      padding: 0 20px;
+
+    &__sub-title {
+      margin: 38px 0 10px;
+      font-size: 19px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &__text {
+      margin: 0 0 40px;
+      font-size: 17px;
+      // font-weight: 200;
+      text-align: left;
+
+    }
+  }
+}
+  .icon {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 120px;
+  }
+}
+
+//ピックアップコンテンツ部分
+.pickup__category {
+  height: 100%;
+  padding: 80px 0 10px 80px;
+  background-color: #f8f8f8;
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  &__box {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    &__sub-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #3CCACE;
+      padding: 10px 0;
+    }
+  }
+  .image {
+    width: 15%;
+  }
+}
+
+.pickup__brand {
+  height: 100%;
+  padding: 80px 0 50px 80px;
+  background-color: #f8f8f8;
+
+  &__title {
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  &__box {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    &__sub-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: #3CCACE;
+      padding: 10px 0;
+    }
+  }
+  .image {
+    width: 15%;
+  }
+}
+
+
+//ダウンロードコンテンツ部分
+.dl__contents {
+  background-image: url(pict/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__title {
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: $white-color;
+  }
+
+  &__sub-title {
+    font-size: 35px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    color: $white-color;
+    padding-bottom: 10px;
+}
+
+}
+
+.footer__contents__list {
+  list-style: none;
+}
+
+.footer__contents__list--menu {
+  color: $white-color;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 32px;
+}
+
+.footer__contents__list--menu:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  padding: 60px 0;
+  color: $white-color;
+  background-color: #272727;
+  text-align: center;
+
+  &__contents {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    &__list {
+      margin: 0 2% 0 0;
+      width: calc(1 / 3 * 100%);
+      text-align: center;
+
+      &--title {
+        color: $white-color;
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  &__logo {
+    }
+    &__logo {
+      margin: 0 2% 0 0;
+      width: 20%;
+      text-align: center;
+    }
+  }

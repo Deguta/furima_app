@@ -1,2 +1,140 @@
 .wrapper
   = render partial: "render/header"
+  
+  .main__contents
+    .main__contents__body
+      .main__contents__body__title
+        %p 人生を変えるフリマアプリ
+      .main__contents__body__subtitle
+        %p FURIMAは誰でも簡単に出品・購入できる
+        %p フリマアプリです
+      .main__contents__body__snsbtn
+        = link_to root_path do
+          = image_tag 'icon/appstore.png', size: "180x53"
+          = image_tag 'icon/gogle.png', size: "180x53"
+
+  .seconds__contents
+    .seconds__contents__box
+      .seconds__contents__box--title
+        FURIMAが選ばれる3つの理由
+      .seconds__contents__box--liner
+    %ul.seconds__contents__box__image
+      %li.seconds__contents__box__image__left
+        = image_tag 'pict/pict-reason-01.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__left--sub-title
+          .seconds__contents__box__image__left--sub-title--green
+            3分
+            %span.seconds__contents__box__image__left--sub-title--black
+              ですぐに出品
+        %p.seconds__contents__box__image__left--text
+          スマホで入力するだけで簡単に出品できる！
+        .seconds__contents__box__image__left--number
+          1
+      %li.seconds__contents__box__image__center
+        = image_tag 'pict/pict-reason-02.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__center--sub-title
+          .seconds__contents__box__image__center--sub-title--green
+            シンプル
+            %span.seconds__contents__box__image__center--sub-title--black
+              で使いやすい
+        %p.seconds__contents__box__image__center--text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        .seconds__contents__box__image__center--number
+          ２
+      %li.seconds__contents__box__image__right
+        = image_tag 'pict/pict-reason-03.jpg', class: 'seconds-image'
+        .seconds__contents__box__image__right--sub-title
+          .seconds__contents__box__image__right--sub-title--black
+            手数料
+            %span.seconds__contents__box__image__right--sub-title--green
+              業界最安
+        %p.seconds__contents__box__image__right--text
+          最大３％でお得に出品＆購入！
+        .seconds__contents__box__image__right--number
+          ３
+
+  .third__contents
+    .third__contents__box
+      .third__contents__box__title
+        %p 会員数世界一
+      .third__contents__box__sub-title
+        %p FURIMAは、フリマアプリで最も人気。
+        %p 出品・購入回数も業界最多です！
+        %p 欲しかったあの商品に出会えるかもしれません。
+      .third__contents__box__sns-list
+        = link_to root_path do
+          = image_tag 'icon/appstore.png', size: "180x53"
+          = image_tag 'icon/gogle.png', size: "180x53"
+
+  .information__contents
+    .information__contents__box
+      .information__contents__box__title
+        FURIMAの特徴
+      .information__contents__box__liner
+    %ul.information__contents__box__image
+      %li.information__contents__box__image__left
+        = image_tag 'icon/icon-01.png', class: 'icon'
+        .information__contents__box__image__left__sub-title
+          簡単に売り買いできる
+        .information__contents__box__image__left__text
+          %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.information__contents__box__image__center
+        = image_tag 'icon/icon-03.png', class: 'icon'
+        .information__contents__box__image__center__sub-title
+          売上金は即日振込みに対応
+        .information__contents__box__image__center__text
+          %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします
+      %li.information__contents__box__image__right
+        = image_tag 'icon/icon-04.png', class: 'icon'
+        .information__contents__box__image__right__sub-title
+          様々な支払いに対応
+        .information__contents__box__image__right__text
+          %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  .pickup__category
+    .pickup__category__title
+      ピックアップカテゴリー
+    .pickup__category__box
+      .pickup__category__box__sub-title
+        = link_to "#", class: 'pickup__category__box__sub-title' do
+          新規投稿商品
+    .pickup__category__image
+      %ul.pickup__category__image__box
+        %li.pickup__category__image__box__list
+          = link_to "#", class: 'pickup__category__images__box__list' do
+            = image_tag 'icon/daitaidokei.png', class: 'image'
+            = image_tag 'icon/kakarotto.png', class: 'image'
+            = image_tag 'icon/syuzu.png', class: 'image'
+            = image_tag 'icon/carry.png', class: 'image'
+            = image_tag 'icon/kapuriko.png', class: 'image'
+            = image_tag 'icon/carry.png', class: 'image'
+
+  .pickup__brand
+    .pickup__brand__title
+      ピックアップブランド
+    .pickup__brand__box
+      .pickup__brand__box__sub-title
+        = link_to "#", class: 'pickup__brand__box__sub-title' do
+          アーカイバ
+    .pickup__brand__image
+      %ul.pickup__brand__image__box
+        %li.pickup__brand__image__box__list
+          = link_to "#", class: 'pickup__brand__images__box__list' do
+            = image_tag 'icon/daitaidokei.png', class: 'image'
+            = image_tag 'icon/kakarotto.png', class: 'image'
+            = image_tag 'icon/syuzu.png', class: 'image'
+            = image_tag 'icon/carry.png', class: 'image'
+            = image_tag 'icon/kapuriko.png', class: 'image'
+            = image_tag 'icon/syuzu.png', class: 'image'
+
+  .dl__contents
+    .dl__contents__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .dl__contents__sub-title
+      今すぐ無料ダウンロード！
+    .dl__contents__sns-list
+      = link_to root_path do
+        = image_tag 'icon/appstore.png', size: "180x53"
+        = image_tag 'icon/gogle.png', size: "180x53"
+
+  = render partial: "footer"
