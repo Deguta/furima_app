@@ -85,11 +85,35 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //南川 mixin
 //  _new.scss
 // 必須と書かれている色とマージン調整で使用
-@mixin  text-require {
+@mixin text-require {
   background-color:$main-color;
   color:$white-color;
   margin-left:10px;
+}
+
+// 文字と説明文または選択の間を空けるのに使用
+@mixin text-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+// カテゴリーごとの空間を空けるのに使用
+@mixin category-margin {
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
