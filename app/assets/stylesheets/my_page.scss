@@ -1,12 +1,12 @@
 * {
   text-decoration: none;
-  color: #333333;
+  // color: #333333;
 }
 
 .header__main {
   display: flex;
   align-items: center;
-  padding: 20px 55px 0 55px;
+  padding: 20px 170px 0 160px;
   margin-bottom: 0 auto;
   
   &__icon {
@@ -30,8 +30,8 @@
   
   &__search-btn {
     background-color: $main-color;
-    font-size: 6px;
-    padding: 10px 12px;
+    font-size: 11px;
+    padding: 6px 9px;
     border-style: none;
   }
 }
@@ -39,34 +39,42 @@
 .header__list {
   display: flex;
   font-size: 15px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 
   &__left-items {
     display: flex;
     line-height: 30px;
+    padding-left: 60px;
   }
   &__category {
-    padding: 0 0 0 55px;
+    padding: 0 0 0 100px;
     cursor: pointer;
+    &:hover {
+      color: $hover-color;
+    }
   }
 
   &__brand {
-    line-height: 30px;
+    padding-left: 35px;
     cursor: pointer;
-    padding: 0 0 0 35px;
+    &:hover {
+      color: $hover-color;
   }
+}
 
   &__right-items {
+    width: 200px;
+    margin-right: 170px;
     display: flex;
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-end;
     line-height: 30px;
   }
     
   &__my-page {
     line-height: 30px;
     cursor: pointer;
+    &:hover {
+      color: $hover-color;
+    }
   }
 }
 
@@ -253,17 +261,3 @@
     }
   }
 }
-
-
-
-// すぐに消す
-
-
-// a { margin: 0 0 0 8px;
-//   padding: 2px 4px;
-//   border-radius: 2px;
-//   font-size: 12px;
-//   background-color: red;
-//   color: white;
-//   border-radius: 2px;
-// }
