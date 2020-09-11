@@ -1,9 +1,6 @@
 .wrapper
-  = render partial: "items/header_login"
-
-
+  = render partial: "render/header_login"
 .hierarchy
-
   .hierarchy__bar
     .hierarchy__bar--top
       = link_to root_path, class: 'hierarchy-top' do
@@ -15,8 +12,6 @@
         %i.fas.fa-angle-right.fa-2x
     .hierarchy__bar--present-location
       マイページ
-
-
 .contents
   .contents__index
     .contents__index__left-contents
@@ -42,20 +37,17 @@
         = link_to root_path, class: 'link-tag1' do
           お知らせ
           %i.fas.fa-angle-right.fa-2x
-
       .contents__index__left-contents__config
         .contents__index__left-contents__config--display
           設定
         .contents__index__left-contents__config--credit-card-reg
-          = link_to "/cards/new", class: 'link-tag2' do
+          = link_to "/card/new", class: 'link-tag2' do
             クレジットカード登録
             %i.fas.fa-angle-right.fa-2x
         .contents__index__left-contents__config--rog-out
-          = link_to root_path, class: 'link-tag2' do
+          = link_to edit_user_path(current_user), class: 'link-tag2' do
             ログアウト
             %i.fas.fa-angle-right.fa-2x
-        
-
     .contents__index__right-contents
       .contents__index__right-contents--user-image
         = link_to root_path, class: 'link-tag2' do

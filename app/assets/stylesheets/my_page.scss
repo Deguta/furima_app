@@ -59,12 +59,13 @@
   &__right-items {
     display: flex;
     margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
     line-height: 30px;
   }
     
   &__my-page {
     line-height: 30px;
-    padding-right: 65px;
     cursor: pointer;
   }
 }
@@ -73,10 +74,9 @@
 .hierarchy {
   width: 100vw;
   height: 30px;
-  // 上下中央よせ
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0, 0.16);
 
   i { 
     font-size: 14px; 
@@ -85,20 +85,20 @@
 
   &__bar {
     padding-left: 56px;
-    width: auto;
+    width: 100vw;
     align-items: center;
     display: flex;
     padding-top: 4px;
 
-    &--top {}
-    &--my-page {}
+    &--top              {}
+    &--my-page          {}
     &--present-location {}
   }
 }
 
 .contents {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 
   &__index {
     padding-top: 24px;
@@ -113,16 +113,18 @@
       margin-right: 100px;
       flex-direction: column;
 
-      &--my-page {
-        width: 280px;
+      @mixin title {
         height: 40px;
-        line-height: 16px;
-        font-size: 16px;
+        line-height: 15px;
+        size: 15px;
         font-weight: bold;
         text-align: center;
         vertical-align: top;
         color: #333333;
+        cursor: pointer;
       }
+
+      &--my-page { @include title }
 
       i {
         display: flex;
@@ -134,53 +136,28 @@
 
       .link-tag1 { color: #4e5863; }
 
-        &--put-up {
-          width: 250px;
-          height: 50px;
-          line-height: 50px;
-          padding-left: 10px;
-          border-bottom: 1px solid #333;
-          font-size: 14px;          
-        }
-        &--list-product {
-          width: 250px;
-          height: 50px;
-          line-height: 50px;
-          padding-left: 10px;
-          border-bottom: 1px solid #333;
-          font-size: 14px;        
-        }
-        &--purchased-product { 
-          width: 250px;
-          height: 50px;
-          line-height: 50px;
-          padding-left: 10px;
-          border-bottom: 1px solid #333;
-          font-size: 14px;        
-        }
-        &--contact-us {
-          width: 250px;
-          height: 50px;
-          line-height: 50px;
-          padding-left: 10px;
-          border-bottom: 1px solid #333;
-          font-size: 14px;          
-        }
-        &--notice {
-          width: 250px;
-          height: 50px;
-          line-height: 50px;
-          padding-left: 10px;
-          border-bottom: 1px solid #333;
-          font-size: 14px;          
-        }
+      @mixin my_page-column {
+        width: 250px;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 10px;
+        border-bottom: 1px solid #333333;
+        font-size: 14px;
+        cursor: pointer;
+      }
+        
+        &--put-up            { @include my_page-column }
+        &--list-product      { @include my_page-column }
+        &--purchased-product { @include my_page-column }
+        &--contact-us        { @include my_page-column }
+        &--notice            { @include my_page-column }
 
       &__config {
           width: 280px;
           height: 40px;
           line-height: 50px;
           margin-top: 50px;
-          color: #333;
+          color: #333333;
 
           &--display {
             padding: 0 10px;
@@ -189,22 +166,19 @@
           }
 
           .link-tag2 { color: #4e5863; }
-          &--credit-card-reg { 
+
+          @mixin config-column {
             width: 250px;
             height: 50px;
             line-height: 50px;
             padding-left: 10px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #333333;
             font-size: 14px;
+            cursor: pointer;
           }
-          &--rog-out { 
-            width: 250px;
-            height: 50px;
-            line-height: 50px;
-            padding-left: 10px;
-            border-bottom: 1px solid #333;
-            font-size: 14px;          
-          }
+
+          &--credit-card-reg { @include config-column }
+          &--rog-out         { @include config-column }
       }
     }
 
@@ -223,7 +197,6 @@
       }
 
       &--user-image {
-        width: 700px;
         height: 80px;
         line-height: 100px;
         padding-top: 20px;
@@ -231,17 +204,34 @@
       }
 
       &--user-name {
-        width: 700px;
         line-height: 16x;
-        padding-bottom: 26px;
+        padding-top: 10px;
+        margin-bottom: 16px;
         text-align: center;
-        vertical-align: text-top;
         color:#4e5863;
       }
 
+      @mixin do-pur-column {
+        width: 690px;
+        height: 80px;
+        line-height: 80px;
+        padding-left: 10px;
+        border-bottom: 1px solid #333333;
+        font-size: 14px;
+        color: #4e5863;
+      }
+      @mixin user-do-history {
+        line-height: 70px;
+        margin-top: 170px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: $font-black;
+        background-color: #3ccace;
+      }
+
       &--todo-list {
-        color: #333333;
-        width: 700px;
+        color: $font-black;
         height: 70px;
         line-height: 70px;
         font-size: 20px;
@@ -250,45 +240,30 @@
         text-align: center;
       }
 
-      &--todo-index {
-        width: 690px;
-        height: 80px;
-        line-height: 80px;
-        padding-left: 10px;
-        border-bottom: 1px solid #333;
-        font-size: 14px;
-        color: #4e5863;
-      }
-
-      &--purchase-history {
-        color: #333333;
-        line-height: 70px;
-        margin-top: 170px;
-        line-height: 70px;
-        font-size: 20px;
-        font-weight: bold;
-        background-color: #3ccace;
-        // 上下中央揃え
-        text-align: center;
-      }
-
-      &--during-trading {
+      &--todo-index        { @include do-pur-column }
+      &--purchase-history  { @include user-do-history }
+      &--during-trading    {
         line-height: 40px;
         margin-top: 3px;
-        color: #333333;
+        color: $font-black;
         background-color: #77abc0;
         text-align: center;
       }
-
-      &--purchase-item { 
-        width: 690px;
-        height: 80px;
-        line-height: 80px;
-        padding-left: 10px;
-        border-bottom: 1px solid #333;
-        font-size: 14px;
-        color: #4e5863;
-      }
+      &--purchase-item { @include do-pur-column }
     }
   }
 }
+
+
+
+// すぐに消す
+
+
+// a { margin: 0 0 0 8px;
+//   padding: 2px 4px;
+//   border-radius: 2px;
+//   font-size: 12px;
+//   background-color: red;
+//   color: white;
+//   border-radius: 2px;
+// }
