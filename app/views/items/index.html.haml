@@ -1,6 +1,5 @@
 .wrapper
   = render partial: "render/header"
-  
   .main__contents
     .main__contents__body
       .main__contents__body__title
@@ -136,5 +135,12 @@
       = link_to root_path do
         = image_tag 'icon/appstore.png', size: "180x53"
         = image_tag 'icon/gogle.png', size: "180x53"
+
+
+  .purchase_btn
+    =link_to new_item_path do
+      .purchase_btn_text
+        出品する
+      .purchase_btn_icon
 
   = render partial: "footer"
