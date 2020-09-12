@@ -84,21 +84,6 @@
   margin-top: 5%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//南川 mixin
-//  _new.scss
 // 必須と書かれている色とマージン調整で使用
 @mixin text-require {
   background-color:$main-color;
@@ -119,4 +104,11 @@
 @mixin category-margin {
   margin-top: 50px;
   margin-bottom: 10px;
+}
+
+// テキストボックスの大きさを調整
+@mixin text-adjustment {
+  width: 90%;
+  padding: 5px;
+  font-size: 13px;
 }
