@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'buyers/index'
+  get 'buyers/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
