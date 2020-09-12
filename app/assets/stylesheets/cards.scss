@@ -1,0 +1,184 @@
+.contents {
+  height: 100vh;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    width: 700px;
+    height: 70px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3ccace;
+    font-size: 20px;
+    line-height: 80px;
+    font-weight: bold;
+    background-color: white;
+    }
+
+  @mixin span {
+    width: 32px;
+    height: 20px;
+    line-height: 17px;
+    display: flex;
+    align-items: 16px;
+    margin-left: 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+  }
+
+  &__box {
+    width: 700px;
+    height: 500px;
+    padding-left: 100px;
+    text-align: center;
+    color: #3ccace;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    background-color: white;
+
+    &__input {
+      display: flex;
+      align-items: center;
+
+      &--label {}
+      &--span { @include span }
+    }
+
+    &__input-form {
+      display: flex;
+
+      &--card-num {
+
+        .input-curd-num {
+          height: 48px;
+          width: 350px;
+          border-radius: 5px;
+          padding: 10px 18px 8px;
+          margin: 10px 0px;
+          display: flex;
+          justify-content: center;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          font-size: 16px;
+        }
+        ::placeholder {
+          color: blue;
+          font-size: 16px;
+        }
+      }
+    }
+
+
+    &__cred-img {
+      padding-top: 20px;
+      text-align: start;
+    }
+
+    &__effective-date {
+      display: flex;
+      &--span { @include span }
+    }
+
+    &__input-effective-date {
+      display: flex;
+      margin: 0 10px 0 10px;
+      color: red;
+
+      @mixin select-tag {
+        background-color: #fff;
+        width: 48px;
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #807c7c;
+        margin-top: 10px;
+      }
+
+      &--month-select { 
+        display: flex;
+        @include select-tag;
+      }
+      &--month-text {
+        margin-top: 10px;
+      }
+
+      &--year-select { 
+        display: flex;
+        @include select-tag;
+      }     
+      &--year-text {
+        margin-top: 10px;
+      }
+    }
+
+    &__security-code {
+      display: flex;
+      &--span { @include span }
+    }
+    &__input-code {
+      display: flex;
+      justify-content: flex-start;
+      &--security {
+        .input-security-num {
+          height: 48px;
+          width: 350px;
+          border-radius: 5px;
+          padding: 10px 18px 8px;
+          margin: 10px 0px;
+          display: flex;
+          justify-content: center;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          font-size: 16px;
+        }
+        ::placeholder {
+          color: blue;
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__question {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 250px;
+
+      &--q {
+        width: 30px;
+        height: 30px;
+        background-color: yellow;
+        border-radius: 15px;
+        font-size: 16px;
+        color: #3ccace;
+      }
+      &--help-code {
+      // &--span { @include span } 
+      font-size: 16px;
+      color: #3ccace;
+      }
+    }
+
+    &__regster {
+
+      &--new {
+        width: 350px;
+        height: 50px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        color: white;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+}

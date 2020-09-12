@@ -1,0 +1,28 @@
+.contents {
+  height: 100vh;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__sign-out {
+    width: 700px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn-sign-out {
+      width: 280px;
+      height: 40px;
+      background-color: turquoise;
+      color: rgb(245, 245, 245);
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
