@@ -1,8 +1,7 @@
 .contents {
   height: 100vh;
-  background-color: rgb(245, 245, 245);
-  display: flex;
-  align-items: center;
+  background-color: $background-white;
+  @include align-items;
   flex-direction: column;
 
   &__sign-out {
@@ -10,18 +9,16 @@
     height: 200px;
     margin-left: 100px;
     margin-top: 40px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+    background-color: $background-white;
+    @include justify-center;
     align-items: center;
     .btn-sign-out {
       width: 280px;
       height: 40px;
-      background-color: turquoise;
-      color: rgb(245, 245, 245);
+      background-color: $main-color;
+      color: $white-color;
       font-size: 20px;
-      display: flex;
-      justify-content: center;
+      @include justify-center;
       align-items: center;
     }
   }
