@@ -1,6 +1,7 @@
 .wrapper
   = render partial: "render/header"
   .main__contents
+    = image_tag 'pict/bg-mainVisual-pict_pc.jpg', size: "1420x560"
     .main__contents__body
       .main__contents__body__title
         %p 人生を変えるフリマアプリ
@@ -11,7 +12,6 @@
         = link_to root_path do
           = image_tag 'icon/appstore.png', size: "180x53"
           = image_tag 'icon/gogle.png', size: "180x53"
-
   .seconds__contents
     .seconds__contents__box
       .seconds__contents__box--title
@@ -51,8 +51,8 @@
           最大３％でお得に出品＆購入！
         .seconds__contents__box__image__right--number
           ３
-
   .third__contents
+    = image_tag 'pict/bg-topMiddleDl-pict.jpg', size: "1420x400"
     .third__contents__box
       .third__contents__box__title
         %p 会員数世界一
@@ -64,7 +64,6 @@
         = link_to root_path do
           = image_tag 'icon/appstore.png', size: "180x53"
           = image_tag 'icon/gogle.png', size: "180x53"
-
   .information__contents
     .information__contents__box
       .information__contents__box__title
@@ -89,7 +88,6 @@
           様々な支払いに対応
         .information__contents__box__image__right__text
           %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-
   .pickup__category
     .pickup__category__title
       ピックアップカテゴリー
@@ -107,7 +105,6 @@
             = image_tag 'icon/carry.png', class: 'image'
             = image_tag 'icon/kapuriko.png', class: 'image'
             = image_tag 'icon/carry.png', class: 'image'
-
   .pickup__brand
     .pickup__brand__title
       ピックアップブランド
@@ -125,22 +122,15 @@
             = image_tag 'icon/carry.png', class: 'image'
             = image_tag 'icon/kapuriko.png', class: 'image'
             = image_tag 'icon/syuzu.png', class: 'image'
-
   .dl__contents
-    .dl__contents__title
-      だれでもかんたん、人生を変えるフリマアプリ
-    .dl__contents__sub-title
-      今すぐ無料ダウンロード！
-    .dl__contents__sns-list
-      = link_to root_path do
-        = image_tag 'icon/appstore.png', size: "180x53"
-        = image_tag 'icon/gogle.png', size: "180x53"
-
-
-  .purchase_btn
-    =link_to new_item_path do
-      .purchase_btn_text
-        出品する
-      .purchase_btn_icon
-
+    = image_tag 'pict/bg-appBanner-pict.jpg', size: "1420x400"
+    .dl__contents__boby
+      .dl__contents__boby__title
+        %p だれでもかんたん、人生を変えるフリマアプリ
+      .dl__contents__boby__sub-title
+        %p 今すぐ無料ダウンロード！
+      .dl__contents__boby__sns-list
+        = link_to root_path do
+          = image_tag 'icon/appstore.png', size: "180x53"
+          = image_tag 'icon/gogle.png', size: "180x53"
   = render partial: "footer"
