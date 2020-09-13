@@ -20,4 +20,4 @@
     %li.header__list__sign-up
     = link_to new_user_registration_path, class: "header__list__sign-up-btn" do
       新規会員登録
-      = link_destroy_user_session_path, method: :delete, class: 'btn'to "ログアウト", 
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
