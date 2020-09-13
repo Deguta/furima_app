@@ -534,39 +534,17 @@
 
 }
 
-.purchase_btn{
-  width: 120px;
-  background: $main-color;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-  box-sizing: border-box;
-  text-decoration: none;
-  display: block;
-  a{
-    text-decoration: none;
-  }
-  &:hover {
-    background:$main-color;
-  }
-  &_text{
-    display: block;
+.purchase {
+  &__btn {
+    width: 120px;
+    background: $main-color;
+    text-align: center;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
     color: $white-color;
-    display: block;
-    font-size: 18px;
-    text-decoration: none;
-    margin-bottom: 5px;
-  }
-  &_icon{
-    text-decoration: none;
-    height: 54px;
-    width: 54px;
-    background-image: image-url(icon/icon_camera);
-    background-size: cover;
-    margin: 0 auto;
+    cursor: pointer;
   }
 }
 
