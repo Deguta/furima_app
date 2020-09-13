@@ -382,3 +382,11 @@
 .field_with_errors {
   display: contents
 }
+
+// 本人確認ページのエラーメッセージ
+.alert.alert-warning {
+  color: $sign-up-color;
+  font-size: 16px;
+  text-align: center;
+  display: inline;
+}
