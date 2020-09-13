@@ -111,7 +111,7 @@
   }
 
   // pass入力フォーム
-  #user_pass {
+  #user_password {
     @include login_form;
     @include form-border;
   }
