@@ -1,10 +1,9 @@
 .header__main {
-  display: flex;
-  align-items: center;
+  @include align-items;
   padding: 20px 170px 0 160px;
   margin-bottom: 0 auto;
   background-color: $white-color;
-  
+
   &__icon {
     padding: 5px 0;
   }
@@ -23,7 +22,7 @@
     width: 100%;
     height: 35px;
   }
-  
+
   &__search-btn {
     background-color: $main-color;
     color: $white-color;
@@ -33,17 +32,16 @@
   }
 }
 .header__list {
+  @include space-between;
   font-size: 15px;
   padding-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  
+
   &__left-items {
     line-height: 30px;
     display: flex;
     padding-left: 60px;
   }
-  
+
   &__category {
     padding: 0 0 0 100px;
     cursor: pointer;
@@ -59,14 +57,14 @@
       color: $hover-color;
     }
   }
-  
+
   &__right-items {
     width: 200px;
     margin-right: 170px;
     display: flex;
     line-height: 30px;
   }
-    
+
   &__login-btn {
     color: $font-black;
     cursor: pointer;
@@ -74,9 +72,10 @@
       color: $hover-color;
     }
   }
-  
+
   &__sign-up-btn {
     color: $font-black;
+    padding-left: 40px;
     &:hover {
       color: $hover-color;
     }
@@ -85,23 +84,21 @@
 
 //メインコンテンツ部分
 .main__contents {
-  background-image: url(pict/bg-mainVisual-pict_pc.jpg);
   background-position: center;
   background-size: cover;
-  height: 560px;
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;
-  padding: 0 55px;
-  align-items: center;
-  display: flex;
+  @include align-items;
 
   &__body {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 35px 0 0 0;
     height: 150px;
+    position: absolute;
+    bottom: 220px;
+    left: 60px;
 
     &__title {
       font-size: 60px;
@@ -110,7 +107,7 @@
       padding: 20px 0 10px 10px;
       margin: 0 auto;
       line-height: 1.2;
-      color: #fff;
+      color:$white-color;
     }
     &__subtitle {
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -142,17 +139,15 @@
     content: "";
     width: 70px;
     height: 4px;
-    background-color: #3CCACE;
+    background-color: $main-color;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
     }
   }
 
   .seconds__contents__box__image {
-    display: flex;
-    align-items: center;
+    @include align-items;
     max-width: 1020px;
     margin: 0 auto;
     padding-top: 10px;
@@ -160,9 +155,8 @@
     &__left {
       width: 30%;
       position: relative;
-      display: flex;
+      @include align-items;
       flex-direction: column;
-      align-items: center;
       margin: 0 auto;
 
       &--sub-title {
@@ -170,13 +164,13 @@
         font-weight: bold;
 
         &--green {
-          color: #20e4eb;
+          color: $main-color;
           font-size: 25px;
           font-weight: bold;
         }
 
         &--black {
-          color: black;
+          color: $font-black;
           font-size: 25px;
           font-weight: bold;
         }
@@ -192,7 +186,7 @@
         font-size: 30px;
         top: 0;
         border-radius: 3%;
-        background-color: #20e4eb;
+        background-color: $main-color;
         left: 0;
         line-height: 30px;
         color: $white-color;
@@ -202,9 +196,8 @@
     &__center {
       width: 30%;
       position: relative;
-      display: flex;
+      @include align-items;
       flex-direction: column;
-      align-items: center;
       margin: 0 auto;
 
       &--sub-title {
@@ -212,13 +205,13 @@
         font-weight: bold;
 
         &--green {
-          color: #20e4eb;
+          color: $main-color;
           font-size: 25px;
           font-weight: bold;
         }
 
         &--black {
-          color: black;
+          color: $font-black;
           font-size: 25px;
           font-weight: bold;
         }
@@ -234,19 +227,18 @@
         font-size: 30px;
         top: 0;
         border-radius: 3%;
-        background-color: #20e4eb;
+        background-color: $main-color;
         left: 0;
         line-height: 30px;
         color: $white-color;
       }
     }
-    
+
     &__right {
       width: 30%;
       position: relative;
-      display: flex;
+      @include align-items;
       flex-direction: column;
-      align-items: center;
       padding-bottom: 24.5px;
       margin: 0 auto;
 
@@ -255,13 +247,13 @@
         font-weight: bold;
 
         &--green {
-          color: #20e4eb;
+          color: $main-color;
           font-size: 25px;
           font-weight: bold;
         }
 
         &--black {
-          color: black;
+          color:$font-black;
           font-size: 25px;
           font-weight: bold;
         }
@@ -278,7 +270,7 @@
         font-size: 30px;
         top: 0;
         border-radius: 3%;
-        background-color: #20e4eb;
+        background-color: $main-color;
         left: 0;
         line-height: 30px;
         color: $white-color;
@@ -293,22 +285,22 @@
 
 //サードコンテンツ部分
 .third__contents {
-  background-image: url(pict/bg-topMiddleDl-pict.jpg);
   background-position: center;
   background-size: cover;
   height: 400px;
   background-repeat: no-repeat;
   position: relative;
-  padding: 0 55px;
-  align-items: center;
-  display: flex;
+  @include align-items;
 
   &__box{
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 35px 0 0 0;
     height: 150px;
+    position: absolute;
+    top: 85px;
+    left: 30px;
+    
 
     &__title {
       font-size: 30px;
@@ -335,7 +327,7 @@
 //インフォメーション部分
 .information__contents {
   padding: 60px 100px;
-  background-color: #fff;
+  background-color: $white-color;
 
   &__box {
     margin-bottom: 20px;
@@ -350,15 +342,14 @@
       content: "";
       width: 70px;
       height: 4px;
-      background-color: #3CCACE;
+      background-color: $main-color;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
     }
   }
   .information__contents__box__image {
-    display: flex;
-    align-items: center;
+    @include align-items;
     max-width: 1020px;
     margin: 0 auto;
     padding-top: 10px;
@@ -387,8 +378,7 @@
   }
 }
   .information__contents__box__image {
-    display: flex;
-    align-items: center;
+    @include align-items;
     max-width: 1020px;
     margin: 0 auto;
     padding-top: 10px;
@@ -416,8 +406,7 @@
   }
 }
   .information__contents__box__image {
-    display: flex;
-    align-items: center;
+    @include align-items;
     max-width: 1020px;
     margin: 0 auto;
     padding-top: 10px;
@@ -439,7 +428,6 @@
     &__text {
       margin: 0 0 40px;
       font-size: 17px;
-      // font-weight: 200;
       text-align: left;
 
     }
@@ -456,7 +444,7 @@
 .pickup__category {
   height: 100%;
   padding: 80px 0 10px 80px;
-  background-color: #f8f8f8;
+  background-color: $background-white;
 
   &__title {
     text-align: center;
@@ -464,7 +452,7 @@
     line-height: 1.4;
     font-weight: bold;
   }
-  
+
   &__box {
     text-align: center;
     margin: 0;
@@ -473,7 +461,7 @@
     &__sub-title {
       font-weight: bold;
       font-size: 20px;
-      color: #3CCACE;
+      color: $main-color;
       padding: 10px 0;
     }
   }
@@ -485,7 +473,7 @@
 .pickup__brand {
   height: 100%;
   padding: 80px 0 50px 80px;
-  background-color: #f8f8f8;
+  background-color: $background-white;
 
   &__title {
     text-align: center;
@@ -493,7 +481,7 @@
     line-height: 1.4;
     font-weight: bold;
   }
-  
+
   &__box {
     text-align: center;
     margin: 0;
@@ -502,7 +490,7 @@
     &__sub-title {
       font-weight: bold;
       font-size: 20px;
-      color: #3CCACE;
+      color: $main-color;
       padding: 10px 0;
     }
   }
@@ -514,28 +502,50 @@
 
 //ダウンロードコンテンツ部分
 .dl__contents {
-  background-image: url(pict/bg-appBanner-pict.jpg);
-  padding: 100px 40px;
-  position: relative;
   background-size: cover;
-  background-position: center;
-  text-align: center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
-  &__title {
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.4;
-    color: $white-color;
+  &__boby {
+    position: absolute;
+    text-align: center;
+    
+
+    &__title {
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.4;
+      color: $white-color;
+    }
+    &__sub-title {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      color: $white-color;
+      padding-bottom: 10px;
   }
-
-  &__sub-title {
-    font-size: 35px;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    color: $white-color;
-    padding-bottom: 10px;
 }
 
+
+
+}
+
+.purchase {
+  &__btn {
+    width: 120px;
+    background: $main-color;
+    text-align: center;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    color: $white-color;
+    cursor: pointer;
+  }
 }
 
 .footer__contents__list {
@@ -562,8 +572,7 @@
   &__contents {
     max-width: 840px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    @include justify-center;
 
     &__list {
       margin: 0 2% 0 0;
@@ -578,9 +587,6 @@
       }
     }
   }
-  
-  &__logo {
-    }
     &__logo {
       margin: 0 2% 0 0;
       width: 20%;

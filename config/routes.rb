@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'buyers/index'
   get 'buyers/create'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -10,18 +11,17 @@ Rails.application.routes.draw do
     post 'shipping_infos', to: 'users/registrations#create_shipping_info'
   end
 
-  resources :card, only: [:new, :show] do
+  resources :cards, only: [:new, :show] do
     collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
     end
   end
 
   root 'items#index'
-    resources :users, only: [:index, :new]
-    resources :items, only: [:index, :show] do
+    resources :users, only: [:index, :new, :edit]
+    resources :items, only: [:index, :new, :show] do
       resources :comments, only: [:create ,:update, :destroy]
     end
-
 end

@@ -1,24 +1,22 @@
 // クレジットカード登録画面
 
-.contents {
+.card-contents {
   height: 100vh;
-  background-color: rgb(245, 245, 245);
-  display: flex;
-  align-items: center;
+  background-color: $background-white;
+  @include align-items;
   flex-direction: column;
 
   &__title {
     width: 700px;
     height: 70px;
     margin: 10px auto;
-    display: flex;
-    justify-content: center;
+    @include justify-center;
     align-items: center;
-    color: #3ccace;
+    color: $main-color;
     font-size: 20px;
     line-height: 80px;
     font-weight: bold;
-    background-color: white;
+    background-color: $background-white;
   }
 
   @mixin require {
@@ -31,24 +29,23 @@
     padding: 2px 4px;
     border-radius: 2px;
     font-size: 12px;
-    background-color: red;
-    color: white;
+    background-color: $sign-up-color;
+    color:$white-color;
   }
 
   &__box {
     width: 700px;
     height: 500px;
     padding-left: 180px;
-    color: #3ccace;
+    color: $main-color;
     font-size: 24px;
     line-height: 32px;
     font-weight: bold;
-    background-color: white;
+    background-color: $background-white;
 
     // カード番号
     &__input {
-      display: flex;
-      align-items: center;
+      @include align-items;
       font-size: 16px;
 
       &--require { @include require }
@@ -63,10 +60,9 @@
         width: 350px;
         border-radius: 5px;
         padding: 10px 18px 8px;
-        display: flex;
-        justify-content: center;
-        border: 1px solid #ccc;
-        background-color: #fff;
+        @include justify-center;
+        border: 1px solid $border-color;
+        background-color: $background-white;
         font-size: 16px;
       }
     }
@@ -80,60 +76,54 @@
 
     // 有効期限
     &__effective-date {
-      display: flex;
-      align-items: center;
+      @include align-items;
       font-size: 16px;
       padding-top: 10px;
-
-      &--label {}
       &--require { @include require }
     }
 
     // 有効期限_select-box
     &__select-date {
-      display: flex;
-      align-items: center;
+      @include align-items;
       font-size: 16px;
       margin: 0 10px 0 10px;
-      color: red;
+      color: $sign-up-color;
 
       @mixin select-tag {
-        background-color: #fff;
+        background-color: $background-white;
         width: 48px;
         height: 30px;
-        border: 1px solid #ccc;
+        border: 1px solid $border-color;
         border-radius: 5px;
         color: #807c7c;
         margin-top: 10px;
         padding-left: 50px;
       }
 
-      #exp_month { 
+      #exp_month {
         border-radius: 5px;
-        border: 1px solid #ccc;
+        border: 1px solid $border-color;
       }
       &--month {
         margin: 0px 2px 0 2px;
       }
 
-      #exp_year { 
+      #exp_year {
         border-radius: 5px;
-        border: 1px solid #ccc;
-      }     
+        border: 1px solid $border-color;
+      }
       &--year { margin: 0px 2px 0 2px }
     }
 
     // セキュリティコード
     &__security-code {
-      display: flex;
-      align-items: center;
+      @include align-items;
       font-size: 16px;
       padding: 10px 0;
       &--require { @include require }
     }
     &__input-code {
-      display: flex;
-      align-items: center;
+      @include align-items;
       justify-content: flex-start;
 
       &--security {
@@ -142,10 +132,9 @@
           width: 350px;
           border-radius: 5px;
           padding: 10px 18px 8px;
-          display: flex;
-          justify-content: center;
-          border: 1px solid #ccc;
-          background-color: #fff;
+          @include justify-center;
+          border: 1px solid $border-color;
+          background-color: $background-white;
           font-size: 16px;
         }
       }
@@ -153,27 +142,25 @@
 
     // ？とカード裏面の番号とは？
     &__question {
-      display: flex;
+      @include align-items;
       justify-content: flex-end;
-      align-items: center;
       margin: 10px 0;
       padding-right: 270px;
 
       &--q {
         width: 20px;
         height: 20px;
-        display: flex;
         align-items: center;
-        justify-content: center;
-        color: white;
-        background-color: #3ccace;
+        @include justify-center;
+        color: $white-color;
+        background-color: $main-color;
         border-radius: 15px;
         font-size: 16px;
       }
       &--help-code {
         font-size: 16px;
         padding-left: 5px;
-        color: #3ccace;
+        color: $main-color;
       }
     }
 
@@ -184,18 +171,17 @@
         width: 350px;
         height: 50px;
         margin-top: 10px;
-        display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: red;
-        color: white;
-        border: 1px solid #ccc;
+        @include justify-center;
+        background-color: $sign-up-color;
+        color: $white-color;
+        border: 1px solid $border-color;
       }
       .regster {
-        border: 1px solid red;
-        background-color: red;
+        border: 1px solid $sign-up-color;
+        background-color: $sign-up-color;
         font-size: 16px;
-        color: white;
+        color: $white-color;
       }
     }
   }

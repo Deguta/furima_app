@@ -1,5 +1,5 @@
 .wrapper
-  = render partial: "render/header_login"
+  = render partial: "render/header"
 .hierarchy
   .hierarchy__bar
     .hierarchy__bar--top
@@ -16,31 +16,31 @@
         %i.fas.fa-angle-right.fa-2x
     .hierarchy__bar--present-location
       クレジットカード情報入力
-.contents
-  = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-    .contents__title
+.card-contents
+  = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+    .card-contents__title
       クレジットカード入力画面
-    .contents__box
-      .contents__box__input
-        .contents__box__input--label
+    .card-contents__box
+      .card-contents__box__input
+        .card-contents__box__input--label
           %label カード番号
-        .contents__box__input--require
+        .card-contents__box__input--require
           必須
-      .contents__box__span
+      .card-contents__box__span
         = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-      .contents__box__cred-img
+      .card-contents__box__cred-img
         = image_tag 'logo/cre-logo_visa.png',        alt: 'title', height: '30', width: '40'
         = image_tag 'logo/cre-logo_mc.png',          alt: 'title', height: '30', width: '40'
         = image_tag 'logo/cre-logo_discover.png',    alt: 'title', height: '30', width: '40'
         = image_tag 'logo/cre-logo_jcb.png',         alt: 'title', height: '30', width: '40'
         = image_tag 'logo/cre-logo_amexpre.png',     alt: 'title', height: '30', width: '40'
         = image_tag 'logo/cre-logo_diners-club.png', alt: 'title', height: '30', width: '40'
-      .contents__box__effective-date
-        .contents__box__effective-date-label
+      .card-contents__box__effective-date
+        .card-contents__box__effective-date-label
           %label 有効期限
-        .contents__box__effective-date--require
+        .card-contents__box__effective-date--require
           必須
-      .contents__box__select-date
+      .card-contents__box__select-date
         %select#exp_month{name: "exp_month", type: "text"}
           %option{value: ""} --
           %option{value: "1"}01
@@ -55,7 +55,7 @@
           %option{value: "10"}10
           %option{value: "11"}11
           %option{value: "12"}12
-        .contents__box__select-date--month
+        .card-contents__box__select-date--month
           %span 月
         %select#exp_year{name: "exp_year", type: "text"}
           %option{value: ""} --
@@ -70,22 +70,22 @@
           %option{value: "2027"}27
           %option{value: "2028"}28
           %option{value: "2029"}29
-        .contents__box__select-date--year
+        .card-contents__box__select-date--year
           %span 年
           %br      
-      .contents__box__security-code
+      .card-contents__box__security-code
         %label セキュリティコード
-        .contents__box__security-code--require
+        .card-contents__box__security-code--require
           必須
-      .contents__box__input-code
-        .contents__box__input-code--security
+      .card-contents__box__input-code
+        .card-contents__box__input-code--security
           = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           #card_token
-      .contents__box__question
-        .contents__box__question--q
+      .card-contents__box__question
+        .card-contents__box__question--q
           ?
-        .contents__box__question--help-code
+        .card-contents__box__question--help-code
           カード裏面の番号とは？
-      .contents__box__regster
-        .contents__box__regster--new
+      .card-contents__box__regster
+        .card-contents__box__regster--new
           = submit_tag "登録する", class: "regster", id: "token_submit"

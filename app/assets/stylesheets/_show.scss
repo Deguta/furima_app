@@ -16,7 +16,7 @@
     background-color: $background-white;
     @include align-items;
   }
-  
+
   &__form {
     width: 50%;
     height: 90%;
@@ -30,7 +30,7 @@
     height: 80px;
     margin: 10px auto;
   }
-  
+
   &__item-name {
     color: $font-black;
     font-size: 24px;
@@ -39,24 +39,24 @@
     line-height: 40px;
     margin: 0 2%;
   }
-  
+
   // 写真掲載箇所
   &__image-box {
-    border: 1px solid gray ;
+    border: 1px solid $border-color ;
     width: 90%;
     height: 17%;
     margin: 10px auto;
     @include space-between;
   }
-  
+
   &__main-image-box {
-    border: 1px solid gray ;
+    border: 1px solid $border-color ;
     width: 60%;
     height: 95%;
     margin-top: 2%;
     margin-left: 2%;
   }
-  
+
   &__sub-image-box {
     width: 20%;
     height: 95%;
@@ -67,7 +67,7 @@
   &__sub-image1 {
     @include sub-image-box;
   }
-  
+
   &__sub-image2 {
     @include sub-image-box;
   }
@@ -90,11 +90,11 @@
     margin-top: 2%;
     margin-right: 2%;
   }
-  
+
   &__sub-image6 {
     @include sub-image-box;
   }
-  
+
   &__sub-image7 {
     @include sub-image-box;
   }
@@ -159,7 +159,7 @@
   &__item-description__title-box {
     @include title-box;
   }
-  
+
   &__item-description__title {
     color: $font-black;
     font-size: 18px;
@@ -172,7 +172,7 @@
     width: 90%;
     height: 10%;
     margin: 0 auto;
-    overflow: scroll;   
+    overflow: scroll;
   }
 
   &__item-description__text {
@@ -185,7 +185,7 @@
   &__item-show__box {
     @include title-box;
   }
-  
+
   &__item-show {
     color: $font-black;
     font-size: 18px;
@@ -200,16 +200,16 @@
     width: 90%;
     margin: 0 auto;
   }
-  
+
   table tr{
     border: solid 1px $border-color;
   }
-  
+
   table th{
-    background-color: #eee;
+    background-color: $background-white;
     text-align: center;
   }
-  
+
   table td{
     background-color: $white-color;
     width: 70%;
@@ -241,13 +241,13 @@
   &__caution-box {
     color: $font-black;
     font-size: 14px;
-    background-color: #eee;
+    background-color: $background-white;
     width: 90%;
     height: 40px;
     margin: 0 auto;
     margin-top: 5%;
   }
-  
+
   &__btn-box {
     width: 100%;
     margin-top: 5%;
@@ -283,7 +283,7 @@
   }
 
   &__comment-lists__box {
-    border: 1px solid gray;
+    border: 1px solid $border-color;
     width: 90%;
     height: 100vh;
     margin: 0 auto;
