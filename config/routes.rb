@@ -17,7 +17,5 @@ Rails.application.routes.draw do
 
   root 'items#index'
     resources :users, only: [:index, :new, :edit]
-    resources :items, only: [:index, :new, :show] do
-      resources :comments, only: [:create ,:update, :destroy]
-    end
+    resources :items
 end
