@@ -36,7 +36,7 @@
       color: $hover-color;
     }
   }
-  
+
   &__menu__navigation-two {
     color: $font-black;
     font-size: 14px;
@@ -44,7 +44,7 @@
       color: $hover-color;
     }
   }
-  
+
   &__menu__third-navigation {
     color: $font-black;
     font-size: 14px;
@@ -56,7 +56,7 @@
     background-color: $background-white;
     @include align-items;
   }
-  
+
   &__login-form {
     width: 50%;
     height: 80%;
@@ -89,7 +89,7 @@
       transition: all  0.4s ease;
     }
   }
-  
+
   .new_user {
     width: 100%;
     height: 75%;
@@ -98,7 +98,7 @@
   &__field-email {
     text-align: center;
   }
-  
+
   // email入力フォーム
   #user_email {
     @include login_form;
@@ -109,9 +109,9 @@
   &__field-pass {
     text-align: center;
   }
-  
+
   // pass入力フォーム
-  #user_pass {
+  #user_password {
     @include login_form;
     @include form-border;
   }
@@ -119,7 +119,7 @@
   &__actions {
     text-align: center;
   }
-  
+
   &__actions__btn {
     width: 50%;
     height: 50px;
@@ -141,57 +141,57 @@
 .sign-up-page {
   width: 100%;
   height: 100%;
-  
+
   &__form {
     width: 100vw;
-    height: 200vh;
+    height: 220vh;
     background-color: $background-white;
     @include align-items;
   }
-  
+
   &__login-form {
     width: 50%;
     height: 90%;
     background-color: $white-color;
     margin: 0 auto;
   }
-  
+
   &__text-box {
     width: 100%;
     height: 8%;
     border-bottom: solid 1px $border-color;
     @include align-items;
   }
-  
+
   &__text {
     color: $font-black;
     font-size: 20px;
     font-weight: 600;
     margin: 0 auto;
   }
-  
+
   #new_user {
     margin-top: 5%;
     @include align-items;
   }
-  
+
   &__field {
     width: 100%;
     text-align: center;
   }
-  
+
   &__list {
     display: flex;
     margin-top: 20px;
   }
-  
+
   &__text-list {
     text-align: left;
     margin-top: 10px;
     margin-left: 25%;
     @include form-text;
   }
-  
+
   &__required {
     line-height: 20px;
     color: $white-color;
@@ -202,31 +202,31 @@
     padding: 0.3px 4px;
     border-radius: 2px;
   }
-  
+
   // ニックネーム入力フォーム
   #user_nickname {
     @include sign-up_form;
     @include form-border;
   }
-  
+
   // email入力フォーム
   #user_email {
     @include sign-up_form;
     @include form-border;
   }
-  
+
   // pass入力フォーム
   #user_password {
     @include sign-up_form;
     @include form-border;
   }
-  
+
   // 確認用pass入力フォーム
   #user_encrypted_password {
     @include sign-up_form;
     @include form-border;
   }
-  
+
   // ここから本人確認 ▼
   &__identification-heading {
     color: $font-black;
@@ -235,56 +235,56 @@
     margin-left: 25%;
     font-weight: 600;
   }
-  
+
   &__identification-text {
     color: $font-black;
     font-size: 14px;
     text-align: left;
     margin: 5px 0 5% 25%;
   }
-  
+
   // 苗字入力フォーム
   #user_family_name {
     @include full-name_form;
     @include form-border;
   }
-  
+
   // 名前入力フォーム
   #user_first_name {
     @include full-name_form;
     @include form-border;
   }
-  
+
   // 苗字カナ入力フォーム
   #user_family_name_kana {
     @include full-name_form;
     @include form-border;
   }
-  
+
   // 名前カナ入力フォーム
   #user_first_name_kana {
     @include full-name_form;
     @include form-border;
   }
-  
+
   // 誕生日入力フォーム(year)
   #user_birth_day_1i {
     @include birth_form;
     @include form-border;
   }
-  
+
   // 誕生日入力フォーム(month)
   #user_birth_day_2i {
     @include birth_form;
     @include form-border;
   }
-  
+
   // 誕生日入力フォーム(day)
   #user_birth_day_3i {
     @include birth_form;
     @include form-border;
   }
-  
+
   &__actions__btn {
     width: 50%;
     height: 50px;
@@ -381,4 +381,12 @@
 
 .field_with_errors {
   display: contents
+}
+
+// 本人確認ページのエラーメッセージ
+.alert.alert-warning {
+  color: $sign-up-color;
+  font-size: 16px;
+  text-align: center;
+  display: inline;
 }

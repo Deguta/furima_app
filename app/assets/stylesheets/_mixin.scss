@@ -83,3 +83,32 @@
   margin: 0 auto;
   margin-top: 5%;
 }
+
+// 必須と書かれている色とマージン調整で使用
+@mixin text-require {
+  background-color:$main-color;
+  color:$white-color;
+  margin-left:10px;
+  padding: 1px 4px;
+}
+
+// 文字と説明文または選択の間を空けるのに使用
+@mixin text-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size:15px;
+  padding: 1px 4px;
+}
+
+// カテゴリーごとの空間を空けるのに使用
+@mixin category-margin {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+// テキストボックスの大きさを調整
+@mixin text-adjustment {
+  width: 90%;
+  padding: 5px;
+  font-size: 13px;
+}

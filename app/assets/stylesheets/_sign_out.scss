@@ -1,0 +1,25 @@
+.contents {
+  height: 100vh;
+  background-color: $background-white;
+  @include align-items;
+  flex-direction: column;
+
+  &__sign-out {
+    width: 700px;
+    height: 200px;
+    margin-left: 100px;
+    margin-top: 40px;
+    background-color: $background-white;
+    @include justify-center;
+    align-items: center;
+    .btn-sign-out {
+      width: 280px;
+      height: 40px;
+      background-color: $main-color;
+      color: $white-color;
+      font-size: 20px;
+      @include justify-center;
+      align-items: center;
+    }
+  }
+}
