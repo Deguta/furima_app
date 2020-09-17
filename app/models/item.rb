@@ -1,8 +1,9 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
 
   # アソシエーション
   has_many               :comments,  dependent: :destroy
-  has_many               :item_image
+  has_many               :item_images
   belongs_to             :user
   belongs_to             :category
   belongs_to             :brand
@@ -16,4 +17,5 @@ class Item < ApplicationRecord
 
   # バリデーション
   validates :prefecture,    presence: true
+  accepts_nested_attributes_for :item_images, allow_destroy: true
 end
