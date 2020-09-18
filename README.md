@@ -75,28 +75,21 @@ belongs_to :item
 |id|integer|null: false|
 |name|string|null: false|
 |description|text|null: false|
-|category|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
-|condition|references|null: false, foreign_key: true|
-|shipping_cost|references|null: false, foreign_key: true|
+|category|string|null: false|
+|brand|string|
+|condition|string|null: false|
+|shipping_cost|string|null: false|
 |prefecture|string|null: false|
-|shipping_day|references|null: false, foreign_key: true|
-|shipping_method|references|null: false, foreign_key: true|
+|shipping_day|string|null: false|
+|shipping_method|string|
 |price|string|null: false|
-|item_size|references|foreign_key: true|
+|item_size|string|
 |user|references|null: false, foreign_key: true|
 
 #### アソシエーション
 has_many : item_images, dependent::destroy
 has_many : comments, dependent::destroy
-belongs_to :category
-belongs_to :brand
-belongs_to :condition
-belongs_to :shipping_cost
 belongs_to_active_hash :prefecture
-belongs_to :shipping_day
-belongs_to :item_size
-belongs_to :shipping_method
 belongs_to :user
 belongs_to :buyer
 
@@ -112,76 +105,6 @@ belongs_to :buyer
 belongs_to :item
 
 
-## categorysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|name|string|null: false|
-|ancestry|string|
-
-#### アソシエーション
-has_many : items
-
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|name|string|
-
-#### アソシエーション
-has_many : items
-
-
-## conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|condition|string|null: false|
-
-#### アソシエーション
-has_many : items
-
-
-## shipping_costsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|cost|integer|null: false|
-
-#### アソシエーション
-has_many : items
-
-
-## shipping_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|day|string|null: false|
-
-#### アソシエーション
-has_many : items
-
-
-## item_sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|size|string|
-
-#### アソシエーション
-has_many : items
-
-
-## shipping_methodsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|method|string|
-
-#### アソシエーション
-has_many : items
-
 ## buyersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -194,4 +117,4 @@ has_one : item
 
 
 ## ER図
-https://gyazo.com/2a344c9b32bae7da8cbd19e9f5566c08
+https://gyazo.com/0c0ee05bf96a1d599aa7c99923247a20
