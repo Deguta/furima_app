@@ -5,5 +5,5 @@ class ItemImage < ApplicationRecord
     belongs_to :item
 
     # バリデーション
-    validates  :image,       presence: true
+    # validates  :image,       presence: true
 end

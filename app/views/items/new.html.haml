@@ -15,10 +15,11 @@
         .shipping-page__box__previews__text
           ここに写真が表示されます
       .shipping-page__box__file
-        = f.fields_for :images do |i|
-          = i.file_field :image
-      .shipping-page__box__delete
-        削除する
+        = f.fields_for :item_images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :image, class: 'js-file'
+            %br/
+            %span.js-remove 削除
       .shipping-page__box__item-name
         .shipping-page__box__item-name--text
           商品名

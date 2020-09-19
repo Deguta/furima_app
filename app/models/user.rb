@@ -18,5 +18,5 @@ class User < ApplicationRecord
     has_many   :shipping_infos, dependent: :destroy
     has_many   :comments,       dependent: :destroy
     has_many   :items
-    belongs_to :buyer
+    belongs_to :buyer,          optional: true         
 end
