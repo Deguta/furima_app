@@ -5,13 +5,12 @@ class Item < ApplicationRecord
   has_many               :comments,  dependent: :destroy
   has_many               :item_images
   belongs_to             :user
+  belongs_to             :buyer, optional: true
   belongs_to_active_hash :prefecture
-  belongs_to             :buyer
 
   # バリデーション
-  validates :descriptio,    presence: true
+  validates :description,   presence: true
   validates :category,      presence: true
-  validates :brand,         presence: true
   validates :condition,     presence: true
   validates :shipping_cost, presence: true
   validates :prefecture,    presence: true
