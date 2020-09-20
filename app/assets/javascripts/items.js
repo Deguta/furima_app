@@ -8,12 +8,31 @@ $(document).on('turbolinks:load', ()=> {
                   </div>`;
     return html;
   }
+  // プレビュー用のimgタグを生成する関数
+  const buildImg = (index, url)=> {
+    const html = `<img date-index="${index}" src="${url}">`
+    return html;
+  }
   
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   $('.shipping-page__box').on('change', '.js-file', function(e) {
+    //追記
+    // debugger
+    const targetIndex = $(this).parent().data('index');
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+    // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else { // 新規画像追加の処理
+      console.log(blobUrl);
+      $('.shipping-page__box__image').append(buildImg(targetIndex, blobUrl));
+      // fileIndexの先頭の数字を使ってinputを作る
+      $('.shipping-page__box__image').append(buildFileField(fileIndex[0]));
+    }
     // fileIndexの先頭の数字を使ってinputを作る
     $('.shipping-page__box__file').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
