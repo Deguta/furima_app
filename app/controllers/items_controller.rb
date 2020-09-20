@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+before_action :set_item, except: [:index, :new, :create]
+
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
   end
@@ -24,6 +26,11 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -34,5 +41,9 @@ end
 private
 
 def item_params
-  params.require(:item).permit(:name, :description, :category, :brand, :condition, :shipping_cost, :prefecture_id, :shipping_day, :price, item_images_attributes: [:image]).merge(user_id: current_user.id)
+  params.require(:item).permit(:name, :description, :category, :brand, :condition, :shipping_cost, :prefecture_id, :shipping_day, :price, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+end
+
+def set_item
+  @item = Item.find(params[:id])
 end
