@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', ()=> {
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img date-index="${index}" src="${url}">`
+    const html = `<img class="js-img" date-index="${index}" src="${url}">`
     return html;
   }
   
