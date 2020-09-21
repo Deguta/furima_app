@@ -18,6 +18,7 @@
     &__image {
       display: flex;
       @include text-margin;
+      display: none;
       &--text {
         font-weight:bold;
       }
