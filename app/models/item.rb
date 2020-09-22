@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   # アソシエーション
   has_many               :comments,  dependent: :destroy
-  has_many               :item_images
+  has_many               :item_images, dependent: :destroy
   belongs_to             :user
   belongs_to             :buyer, optional: true
   belongs_to_active_hash :prefecture
