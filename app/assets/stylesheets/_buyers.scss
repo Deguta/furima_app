@@ -56,7 +56,6 @@
       &--item-image {
         margin-left: 10px;
         margin-right: 20px;
-        // border: 0.5px solid rebeccapurple;
       }
       &__purchase-info {
         padding-top: 30px;
@@ -95,8 +94,6 @@
         font-weight: bold;
       }
     }
-
-
 
     &__method-of-payment {
       display: flex;
@@ -171,7 +168,6 @@
           height: 200px;
           margin-top: 20px;
           padding-left: 60px;
-          // border: 5px solid yellowgreen;
 
           &--post-num {}
           &--user-address {}
@@ -186,7 +182,6 @@
     &__bottom {
       width: 100%;
       height: 60px;
-      // margin-top: 30px;
       padding: auto;
       display: flex;
       justify-content: center;
