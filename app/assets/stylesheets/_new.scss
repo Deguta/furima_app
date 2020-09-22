@@ -1,24 +1,21 @@
-.js-img {
-  width: 80px;
-  height: 90px;
-}
 .shipping-page {
   width:100%;
   height:260vh;
   @include align-items;
   background-color:$background-white;
-
+  
   &__box {
     background-color: $white-color;
     height:90%;
     width: 600px;
     margin: 0 auto;
     padding: 20px 30px;
-
+    
+    
     &__image {
       display: flex;
       @include text-margin;
-      display: none;
+
       &--text {
         font-weight:bold;
       }
@@ -26,18 +23,35 @@
         @include text-require;
       }
     }
+      .js-file_group {
+
+        .label {
+          position: absolute;
+          bottom: 5px;
+          right: 10px;
+          font-size: 25px;
+
+        }
+        input {
+          display: none;
+        }
+      }
+
     &__upload {
       font-size: 13px;
       margin-top: 10px;
       margin-bottom: 10px;
+      display: flex;
     }
     &__previews {
       width: 80%;
-      height: 250px;
+      height: 145px;
       border: 1px dashed;
       margin: auto;
       margin-bottom: 10px;
-
+      display: flex;
+      position: relative;
+      
       &__text{
         text-align: center;
         line-height: 250px;

@@ -29,6 +29,7 @@ before_action :set_item, except: [:index, :new, :create]
     if @item.update(item_params)
       redirect_to root_path
     else
+      flash.now[:alert] = '画像を１枚以上添付してください'
       render :edit
     end
   end

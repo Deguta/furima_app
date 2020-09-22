@@ -9,21 +9,21 @@
           商品画像
         .shipping-page__box__image--require
           必須
+      .shipping-page__box__previews
+        .shipping-page__box_images
+          = f.fields_for :item_images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              %label.label
+                %i.fa.fa-camera-retro
+                = image.file_field :image, class: 'js-file'
+                = image.check_box :_destroy, data:{ index: image.index }, class: '.hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.images.count}"}
+              = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+              .js-remove 削除
       .shipping-page__box__upload
-        画像を10枚までアップロードできます
-      .shipping-page__box__file
-        = f.fields_for :item_images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            = image.file_field :image, class: 'js-file'
-            %br/
-            %span.js-remove 削除
-          - if @item.persisted?
-            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          - if @item.persisted?
-            .js-file_group{"data-index" => "#{@item.images.count}"}
-            = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
-            .js-remove
-            = link_to '削除', item_path(item), method: :delete
+        画像を5枚までアップロードできます
+        .shipping-page__box__file
       .shipping-page__box__item-name
         .shipping-page__box__item-name--text
           商品名
