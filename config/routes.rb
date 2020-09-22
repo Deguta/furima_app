@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users
+  root "cards#index"
+  resources :cards
+end
+
   root 'items#index'
     resources :users, only: [:index, :new, :edit]
     resources :items, only: [:index, :new, :show] do

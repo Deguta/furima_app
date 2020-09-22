@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # カードとユーザーは1対1の関係を示すため、has_oneでアソーシエーションをくむ。
+  has_one :card, optional: true
+
     # バリデーションの設定(空の文字列を保存させない為と一意性制約)
     validates :nickname,               presence: true
     validates :encrypted_password,     presence: true, length: { minimum: 7 }
