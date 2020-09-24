@@ -51,11 +51,11 @@ $(document).on('turbolinks:load', ()=> {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`#item_item_images_attributes_${targetIndex}__destroy`);
-    console.log(hiddenCheck)
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    $(`#item_item_images_attributes_${targetIndex}_image`).remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
