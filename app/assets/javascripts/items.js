@@ -11,9 +11,9 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `<div data-index="${index}">
-                    <img class="js-img" id="image-box" src="${url}" width="90px" height="90px">
+                    <img class="js-img" id="image-box" src="${url}" width="90px" height="110px">
                     <div class="js-remove">削除</div>
-                  </div>`
+                  </div>`;
     return html;
   }
 
@@ -23,7 +23,6 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
-  
   
   $('.shipping-page__box').on('change', '.js-file', function(e) {
     //追記
@@ -51,10 +50,11 @@ $(document).on('turbolinks:load', ()=> {
   $(document).on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    const hiddenCheck = $(`#item_item_images_attributes_${targetIndex}__destroy`);
+    console.log(hiddenCheck)
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-    $(this).prev().remove();
+    $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
