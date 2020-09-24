@@ -1,9 +1,9 @@
 .header
   = render "render/header"
-
 .shipping-page
   .shipping-page__box
     =form_for @item do |f|
+      = render 'render/error_message', model: f.object
       .shipping-page__box__image
         .shipping-page__box__image--text
           商品画像
@@ -16,7 +16,7 @@
               %label.label
                 %i.fa.fa-camera-retro
                 = image.file_field :image, class: 'js-file'
-                = image.check_box :_destroy, data:{ index: image.index }, class: '.hidden-destroy'
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             - if @item.persisted?
               .js-file_group{"data-index" => "#{@item.images.count}"}
               = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'

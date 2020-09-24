@@ -15,7 +15,7 @@ before_action :set_item, except: [:index, :new, :create]
 
   def create 
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to root_path
     else
       render :new
@@ -26,12 +26,6 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to root_path
-    else
-      flash.now[:alert] = '画像を１枚以上添付してください'
-      render :edit
-    end
   end
 
   def destroy
