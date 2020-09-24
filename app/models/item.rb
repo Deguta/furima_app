@@ -8,14 +8,14 @@ class Item < ApplicationRecord
   belongs_to             :buyer, optional: true
   belongs_to_active_hash :prefecture
 
-  # バリデーション
+  # バリデーション #priceは300〜9999999に設定
   validates :description,   presence: true
   validates :category,      presence: true
   validates :condition,     presence: true
   validates :shipping_cost, presence: true
   validates :prefecture,    presence: true
   validates :shipping_day,  presence: true
-  validates :price,         presence: true
+  validates :price,         presence: true ,numericality: { only_integer: true,greater_than: 300, less_than: 9999999}
 
   # 出品機能で記述
   accepts_nested_attributes_for :item_images, allow_destroy: true
