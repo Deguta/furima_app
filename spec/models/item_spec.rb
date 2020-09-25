@@ -60,5 +60,21 @@ describe Item do
       item.valid?
       expect(item.errors[:price]).to include("を入力してください")
     end
+
+
+    # price 300〜9999999のテスト ▼
+
+    it "priceが300未満は登録できないこと" do
+      item = build(:item, price: 299)
+      item.valid?
+      expect(item.errors[:price]).to include("は300より大きい値にしてください")
+    end
+
+    it "priceが9999999を超過する場合は登録できないこと" do
+      item = build(:item, price: 10000000)
+      item.valid?
+      expect(item.errors[:price]).to include("は9999999より小さい値にしてください")
+    end
+    
   end
 end
