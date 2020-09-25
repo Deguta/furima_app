@@ -1,2 +1,0 @@
-class ShippingCost < ApplicationRecord
-end
