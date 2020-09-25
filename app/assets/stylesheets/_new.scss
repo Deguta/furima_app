@@ -27,9 +27,9 @@
 
         .label {
           position: absolute;
-          bottom: 5px;
+          bottom: 4px;
           right: 10px;
-          font-size: 25px;
+          font-size: 23px;
 
         }
         input {
@@ -44,7 +44,7 @@
       display: flex;
     }
     &__previews {
-      width: 80%;
+      width: 84%;
       height: 145px;
       border: 1px dashed;
       margin: auto;
