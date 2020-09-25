@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to             :buyer, optional: true
   belongs_to_active_hash :prefecture
 
-  # バリデーション #priceは300〜9999999に設定
+  # バリデーション
   validates :name,          presence: true
   validates :description,   presence: true
   validates :category,      presence: true
