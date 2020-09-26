@@ -11,7 +11,6 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def show
-    # binding.pry
   end
 
   def create 
@@ -30,8 +29,11 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
 end
