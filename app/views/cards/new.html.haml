@@ -16,8 +16,9 @@
         %i.fas.fa-angle-right.fa-2x
     .hierarchy__bar--present-location
       クレジットカード情報入力
+
 .card-contents
-  = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+  = form_tag(pay_cards_path(@current_user), method: :post, id: 'charge-form',  name: "inputForm") do
     .card-contents__title
       クレジットカード入力画面
     .card-contents__box
