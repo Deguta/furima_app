@@ -16,11 +16,17 @@
         %h2.item-show-page__item-name
           = @item.name
       .item-show-page__image-box
-        .item-show-page__main-image-box1
-        .item-show-page__main-image-box2
-        .item-show-page__main-image-box3
-        .item-show-page__main-image-box4
-        .item-show-page__main-image-box5
+        - @item.item_images.each do |image|
+          .item-show-page__main-image-box1
+            = image_tag image.image.url
+          .item-show-page__main-image-box2
+            = image_tag image.image.url
+          .item-show-page__main-image-box3
+            = image_tag image.image.url
+          .item-show-page__main-image-box4
+            = image_tag image.image.url
+          .item-show-page__main-image-box5
+            = image_tag image.image.url
       .item-show-page__price-box
         %h2.item-show-page__price
           = @item.price
