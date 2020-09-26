@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, except: [:index, :new, :create]
+before_action :set_item, except: [:index, :new, :create, :edit, :update]
 
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
@@ -23,7 +23,7 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:id]) 
   end
 
   def update
