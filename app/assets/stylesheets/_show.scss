@@ -44,71 +44,33 @@
   &__image-box {
     border: 1px solid $border-color ;
     width: 90%;
-    height: 17%;
+    height: 6%;
     margin: 10px auto;
-    @include space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  &__main-image-box {
-    border: 1px solid $border-color ;
-    width: 60%;
-    height: 95%;
-    margin-top: 2%;
-    margin-left: 2%;
+  &__main-image-box1 {
+    @include main-image-box;
+    margin-left: 1%;
+  }
+  
+  &__main-image-box2 {
+    @include main-image-box;
   }
 
-  &__sub-image-box {
-    width: 20%;
-    height: 95%;
-    margin-top: 2%;
-    margin-left: 1px;
+  &__main-image-box3 {
+    @include main-image-box;
   }
 
-  &__sub-image1 {
-    @include sub-image-box;
+  &__main-image-box4 {
+    @include main-image-box;
   }
 
-  &__sub-image2 {
-    @include sub-image-box;
-  }
-
-  &__sub-image3 {
-    @include sub-image-box;
-  }
-
-  &__sub-image4 {
-    @include sub-image-box;
-  }
-
-  &__sub-image5 {
-    @include sub-image-box;
-  }
-
-  &__sub-image-box2 {
-    width: 20%;
-    height: 95%;
-    margin-top: 2%;
-    margin-right: 2%;
-  }
-
-  &__sub-image6 {
-    @include sub-image-box;
-  }
-
-  &__sub-image7 {
-    @include sub-image-box;
-  }
-
-  &__sub-image8 {
-    @include sub-image-box;
-  }
-
-  &__sub-image9 {
-    @include sub-image-box;
-  }
-
-  &__sub-image10 {
-    @include sub-image-box;
+  &__main-image-box5 {
+    @include main-image-box;
+    margin-right: 1%;
   }
 
   // 値段表示
