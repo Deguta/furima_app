@@ -4,7 +4,6 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div class="js-file_group" data-index="${index}">
                   <input class="js-file" type="file" name="item[item_images_attributes][${index}][image]" id="item_item_images_attributes_${index}_image">
                   </div>
-                  <input data-index="${index}" class="destroy" type="checkbox" value="${index}" name="item[item_images_attributes][${index}][_destroy]" id="item_item_images_attributes_${index}__destroy">
                   `;
     return html;
   }
