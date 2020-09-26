@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root 'items#index'
     resources :users, only: [:index, :new, :edit]
     resources :buyers, only: [:index, :create]
-    resources :items, only: [:index, :new, :show, :create] do
+    resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
     resources :comments, only: [:create ,:update, :destroy]
     end
 end
