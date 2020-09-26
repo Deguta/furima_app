@@ -107,9 +107,8 @@
           %h2.item-show-page__comment-list-title コメント一覧
         .item-show-page__comment-lists__box
       .item-show-page__btns-box
-        .item-show-page__destroy-btn
-          = link_to "#", class: "item-show-page__destroy-link" do
-            商品を削除する
-        .item-show-page__edit-btn
-          = link_to "#", class: "item-show-page__edit-link" do
-            商品を編集する
+        - if user_signed_in? && @item.user_id == current_user.id
+          .item-show-page__destroy-btn
+            = link_to "商品を削除する", item_path(@item), method: :delete, class: "item-show-page__destroy-link"
+          .item-show-page__edit-btn
+            = link_to "商品を編集する", "#", class: "item-show-page__edit-link"

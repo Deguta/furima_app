@@ -36,6 +36,11 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
 end
