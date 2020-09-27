@@ -11,6 +11,7 @@ before_action :set_item, except: [:index, :new, :create, :edit, :update]
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def create 
