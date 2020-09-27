@@ -12,17 +12,16 @@
       .shipping-page__box__previews
         .shipping-page__box_images
         - @item.item_images.each do |image|
-          = image_tag image.image.url
-        = f.fields_for :item_images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            %label.label
-              %i.fa.fa-camera-retro
-              = image.file_field :image, class: 'js-file'
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          - if @item.persisted?
-            .js-file_group{"data-index" => "#{@item.item_images.count}"}
-            = file_field_tag :src, name: "item[images_attributes][#{@item.item_images.count}][src]", class: 'js-file'
-            .js-remove 削除
+          = image_tag image.image.url, size: "90x100"
+          .js-remove 削除
+      = f.fields_for :item_images do |image|
+        .js-file_group{"data-index" => "#{image.index}"}
+          %label.label
+            %i.fa.fa-camera-retro
+            = image.file_field :image, class: 'js-file'
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+        .js-file_group{"data-index" => "#{@item.item_images.count}"}
+          = file_field_tag :src, name: "item[images_attributes][#{@item.item_images.count}][src]", class: 'js-file'
       .shipping-page__box__upload
         画像を5枚までアップロードできます
         .shipping-page__box__file

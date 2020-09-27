@@ -14,7 +14,7 @@
     &__image {
       display: flex;
       @include text-margin;
-
+      
       &--text {
         font-weight:bold;
       }
@@ -25,10 +25,11 @@
       .js-file_group {
         .label {
           position: absolute;
-          bottom: 4px;
-          right: 10px;
+          bottom: 10px;
+          top: 385px;
           font-size: 23px;
           color: $main-color;
+          right: 490px;
         }
         input {
           display: none;
