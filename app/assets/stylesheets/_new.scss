@@ -3,15 +3,14 @@
   height:260vh;
   @include align-items;
   background-color:$background-white;
-
+  
   &__box {
-    background-color: $background-white;
+    background-color: $white-color;
     height:90%;
     width: 600px;
     margin: 0 auto;
     padding: 20px 30px;
-
-
+    
     &__image {
       display: flex;
       @include text-margin;
@@ -23,18 +22,34 @@
         @include text-require;
       }
     }
+      .js-file_group {
+        .label {
+          position: absolute;
+          bottom: 4px;
+          right: 10px;
+          font-size: 23px;
+          color: $main-color;
+        }
+        input {
+          display: none;
+        }
+      }
+
     &__upload {
       font-size: 13px;
       margin-top: 10px;
       margin-bottom: 10px;
+      display: flex;
     }
     &__previews {
-      width: 80%;
-      height: 250px;
+      width: 84%;
+      height: 145px;
       border: 1px dashed;
       margin: auto;
       margin-bottom: 10px;
-
+      display: flex;
+      position: relative;
+      
       &__text{
         text-align: center;
         line-height: 250px;
@@ -71,9 +86,7 @@
       margin-top: 10px;
       margin-bottom: 50px;
       font-size: 13px;
-
     }
-
 
     &__explanation {
       display: flex;
@@ -96,7 +109,6 @@
       }
     }
 
-
     &__item-category{
       display: flex;
       margin-top: 50px;
@@ -117,7 +129,6 @@
         @include text-adjustment
       }
     }
-
 
     &__brand {
       display: flex;
@@ -140,7 +151,6 @@
       }
     }
 
-
     &__item-condition {
       display: flex;
       @include text-margin;
@@ -158,7 +168,6 @@
         @include text-adjustment
       }
     }
-
 
     &__delivery {
       display: flex;
@@ -181,7 +190,6 @@
       }
     }
 
-
     &__area {
       display: flex;
       @include text-margin;
@@ -200,7 +208,6 @@
       }
     }
 
-
     &__date {
       display: flex;
       @include text-margin;
@@ -218,7 +225,6 @@
         @include text-adjustment
       }
     }
-
 
     &__price{
       display: flex;
@@ -265,6 +271,8 @@
         border-radius: 3px;
         .shipping-btn {
           color: $white-color;
+          border: none;
+          background-color: $sign-up-color;
         }
         }
 
@@ -284,7 +292,6 @@
           color: $white-color;
         }
       }
-
     }
   }
 }
