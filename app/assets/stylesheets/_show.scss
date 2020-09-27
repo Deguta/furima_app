@@ -97,6 +97,11 @@
     &:hover {
       opacity: 0.8;
     }
+    p {
+      color: $white-color;
+      font-size: 24px;
+      font-weight: 600;
+    }
   }
 
   &__link {
