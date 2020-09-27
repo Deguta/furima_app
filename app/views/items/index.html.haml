@@ -93,24 +93,25 @@
       ピックアップカテゴリー
     .pickup__category__box
       .pickup__category__box__sub-title
-        = link_to buyers_path, class: 'pickup__category__box__sub-title' do
+        = link_to root_path, class: 'pickup__category__box__sub-title' do
           新規投稿商品
     .pickup__category__image
-      %ul.pickup__category__image__box
-        %li.pickup__category__image__box__list
-          = link_to buyers_path, class: 'pickup__category__images__box__list' do
-            = image_tag 'icon/daitaidokei.png', class: 'image'
-            = image_tag 'icon/kakarotto.png', class: 'image'
-            = image_tag 'icon/syuzu.png', class: 'image'
-            = image_tag 'icon/carry.png', class: 'image'
-            = image_tag 'icon/kapuriko.png', class: 'image'
-            = image_tag 'icon/carry.png', class: 'image'
+      - @items.each do |item|
+        = link_to buyers_path(item.id) do
+          = image_tag item.item_images.first.image.url ,class: "item-image"
+          .pickup__category__image--name
+            = item.name
+          .pickup__category__image--price
+            = item.price
+            %p 円
+            %p (税込み)
+
   .pickup__brand
     .pickup__brand__title
       ピックアップブランド
     .pickup__brand__box
       .pickup__brand__box__sub-title
-        = link_to buyers_path, class: 'pickup__brand__box__sub-title' do
+        = link_to root_path, class: 'pickup__brand__box__sub-title' do
           アーカイブ
     .pickup__brand__image
       %ul.pickup__brand__image__box
@@ -139,4 +140,4 @@
       .purchase__btn
         出品する
         = image_tag "icon/icon_camera.png" , size: "60x60"
-  = render partial: "render/footer"
+= render partial: "render/footer"
