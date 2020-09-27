@@ -37,6 +37,7 @@ $(document).on('turbolinks:load', ()=> {
       $('.shipping-page__box__previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFileField(fileIndex[0]));
+      $('.label').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
     }
     // fileIndexの先頭の数字を使ってinputを作る
     $('.shipping-page__box__file').append(buildFileField(fileIndex[0]));
