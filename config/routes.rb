@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -9,20 +10,22 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:new, :show] do
     collection do
+      get 'cards/new'
+      get 'cards/show'
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
     end
   end
 
-  devise_for :users
-  root "cards#index"
-  resources :cards
-end
-
   root 'items#index'
-    resources :users, only: [:index, :new, :edit]
+    resources :users, only: [:index, :new, :edit] do
+      resources :cards, only: [:new, :show] 
+    end
     resources :items, only: [:index, :new, :show] do
       resources :comments, only: [:create ,:update, :destroy]
     end
 end
+
+# user/user_id/card/new
+# nestを使う
