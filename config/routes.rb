@@ -19,13 +19,9 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-    resources :users, only: [:index, :new, :edit] do
-      resources :cards, only: [:new, :show] 
-    end
-    resources :items, only: [:index, :new, :show] do
-      resources :comments, only: [:create ,:update, :destroy]
+    resources :users, only: [:index, :new, :edit]
+    resources :buyers, only: [:index, :create]
+    resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
+    resources :comments, only: [:create ,:update, :destroy]
     end
 end
-
-# user/user_id/card/new
-# nestを使う

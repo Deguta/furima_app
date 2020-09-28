@@ -13,85 +13,66 @@
   .item-show-page__background
     .item-show-page__form
       .item-show-page__item-name__box
-        %h2.item-show-page__item-name 商品名
+        %h2.item-show-page__item-name
+          = @item.name
       .item-show-page__image-box
-        .item-show-page__main-image-box
-        .item-show-page__sub-image-box 
-          .item-show-page__sub-image1
-          .item-show-page__sub-image2
-          .item-show-page__sub-image3
-          .item-show-page__sub-image4
-          .item-show-page__sub-image5
-        .item-show-page__sub-image-box2 
-          .item-show-page__sub-image6
-          .item-show-page__sub-image7
-          .item-show-page__sub-image8
-          .item-show-page__sub-image9
-          .item-show-page__sub-image10
+        - @item.item_images.each do |image|
+          .item-show-page__main-image-box
+            = image_tag image.image.url
       .item-show-page__price-box
-        %h2.item-show-page__price 18000円
+        %h2.item-show-page__price
+          = @item.price
         %p.item-show-page__tax (税込) 送料込み
       .item-show-page__link-btn
-        = link_to "#", class: "item-show-page__link" do
-          購入画面へ進む
+        - unless user_signed_in? && @item.user_id == current_user.id
+          = link_to buyers_path, class: "item-show-page__link" do
+            購入画面へ
+        - else
+          %p 出品者は購入できません
       .item-show-page__item-description__title-box
         %h2.item-show-page__item-description__title 商品説明
       .item-show-page__item-description__text-box
         %p.item-show-page__item-description__text
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストパスタテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
-          テストテストテストテストテストテストテストテストテスト
+          = @item.description
       .item-show-page__item-show__box
         %h2.item-show-page__item-show 商品詳細
       %table.table
         %tr
           %th 出品者
-          %td ユーザー名
+          %td
+            = @item.user.nickname
         %tr.category
           %th カテゴリー
-          %td メンズ・スポーツ
+          %td
+            = @item.category
         %tr.brand
           %th ブランド
-          %td ミズノ
+          %td
+            = @item.brand
         %tr.item_size
           %th 商品のサイズ
-          %td 85cm
+          %td
+            = @item.item_size
         %tr.condition  
           %th 商品の状態
-          %td 未開封
+          %td
+            = @item.condition
         %tr.shipping_cost
           %th 発送料の負担
-          %td 送料込み(出品者負担)
+          %td
+            = @item.shipping_cost
         %tr.shipping_method
           %th 発送の方法
-          %td 未定
+          %td
+            = @item.shipping_method
         %tr.prefecture
           %th 発送元の地域
-          %td 兵庫県
+          %td
+            = @item.prefecture.name
         %tr.shipping_day
           %th 発送日の目安
-          %td 2〜3日で発送
+          %td
+            = @item.shipping_day
       = form_for("#") do |f|
         .item-show-page__comment-box
           .item-show-page__comment-form
@@ -107,9 +88,8 @@
           %h2.item-show-page__comment-list-title コメント一覧
         .item-show-page__comment-lists__box
       .item-show-page__btns-box
-        .item-show-page__destroy-btn
-          = link_to "#", class: "item-show-page__destroy-link" do
-            商品を削除する
-        .item-show-page__edit-btn
-          = link_to "#", class: "item-show-page__edit-link" do
-            商品を編集する
+        - if user_signed_in? && @item.user_id == current_user.id
+          .item-show-page__destroy-btn
+            = link_to "商品を削除する", item_path(@item), method: :delete, class: "item-show-page__destroy-link"
+          .item-show-page__edit-btn
+            = link_to "商品を編集する", "#", class: "item-show-page__edit-link"
