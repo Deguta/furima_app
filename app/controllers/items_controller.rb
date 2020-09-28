@@ -11,7 +11,6 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def create 
@@ -27,6 +26,11 @@ before_action :set_item, except: [:index, :new, :create]
   end
 
   def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
