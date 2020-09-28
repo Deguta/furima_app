@@ -13,14 +13,10 @@
         .shipping-page__box_images
           = f.fields_for :item_images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
-              %label.label
+              %label.label{for: "item_item_images_attributes_#{image.index}_image"}
                 %i.fa.fa-camera-retro
                 = image.file_field :image, class: 'js-file'
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-            - if @item.persisted?
-              .js-file_group{"data-index" => "#{@item.images.count}"}
-              = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
-              .js-remove 削除
       .shipping-page__box__upload
         画像を5枚までアップロードできます
         .shipping-page__box__file
