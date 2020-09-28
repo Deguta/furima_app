@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, except: [:index, :new, :create, :edit, :update]
+before_action :set_item, except: [:index, :new, :create]
 
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
@@ -11,7 +11,6 @@ before_action :set_item, except: [:index, :new, :create, :edit, :update]
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def create 
@@ -24,11 +23,9 @@ before_action :set_item, except: [:index, :new, :create, :edit, :update]
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
