@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   validates :shipping_cost, presence: true
   validates :prefecture,    presence: true
   validates :shipping_day,  presence: true
+  validates :item_images,   presence: true
   validates :price,         presence: true ,numericality: { only_integer: true,greater_than: 300, less_than: 9999999}
 
   # 出品機能で記述
