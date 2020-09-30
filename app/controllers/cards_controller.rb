@@ -8,22 +8,16 @@ class CardsController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = "pk_test_2651fdbcc6b851d22b1e773e"
+    Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
     if params['payjp-token'].blank?
-      redirect_to action: "new"
+      redirect_to new_card_path
     else
-      customer = Payjp::Customer.create(
-        description: '登録テスト', #なくてもOK
-        email: current_user.email, #なくてもOK
-        card: params['payjp-token'],
-        metadata: {user_id: current_user.id}
-        ) #念の為metadataにuser_idを入れましたがなくてもOK
-      customer = Payjp::Customer
+      customer = Payjp::Customer.create(card: params['payjp-token'])
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to cards_path
       else
-        redirect_to action: "pay"
+        redirect_to root_path, notice: "クレジットカード登録に失敗しました"
       end
     end
   end
@@ -32,20 +26,20 @@ class CardsController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = "pk_test_2651fdbcc6b851d22b1e773e"
+      Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+    redirect_to new_card_path
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      redirect_to action: "new"
+      redirect_to new_card_path
     else
-      Payjp.api_key = "pk_test_2651fdbcc6b851d22b1e773e"
+      Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end

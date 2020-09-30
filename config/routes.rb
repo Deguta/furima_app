@@ -10,11 +10,9 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:new, :show] do
     collection do
-      get 'cards/new'
-      get 'cards/show'
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      delete 'delete', to: 'cards#delete'
     end
   end
 
