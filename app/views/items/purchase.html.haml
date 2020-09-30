@@ -19,30 +19,23 @@
   .contents__box
     .contents__box__product
       .contents__box__product--item-image
-        = image_tag 'pict/拳銃構えたチーバくん.jpg', alt: 'title', height: '150', width: '200'
+        = image_tag @item.images.first.image_url.to_s, class: "purchase-item-image"
       .contents__box__product__purchase-info
         .contents__box__product__purchase-info--item-name
-          商品名：チーバくん
-        .contents__box__product__purchase-info--item-price
-          ￥777（税込み）送料込み
+          = ＠item.name
     .contents__box__payment-table
       .contents__box__payment-table--text
         お支払い金額
       .contents__box__payment-table--total-payment
         ￥777（税込み）送料込み
     .contents__box__method-of-payment
-      .contents__box__method-of-payment__l-box
-        .contents__box__method-of-payment__l-box--payment-way
-          お支払い方法
-        .contents__box__method-of-payment__l-box__card-info
-          .contents__box__method-of-payment__l-box__card-info--cred-image
-            = image_tag 'logo/cre-logo_visa.png', alt: 'title', height: '50', width: '60'
-          .contents__box__method-of-payment__l-box__card-info--num-tail
-            **** **** **** 4242
-          .contents__box__method-of-payment__l-box__card-info--effective-text
-            有効期限
-          .contents__box__method-of-payment__l-box__card-info--effective-date
-            12 /20
+      - if @default_card_information.blank?
+        - else
+          -#以下カード情報を表示
+          = "**** **** **** " + @default_card_information.last4
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
       .contents__box__method-of-payment__r-box
         .contents__box__method-of-payment__r-box--shipping-address
           配送先
@@ -55,5 +48,5 @@
             氏名チーバくん
     .contents__box__bottom
       .contents__box__bottom--btn
-        = link_to root_path, class: 'purchase-btn' do
-          購入する
+        = form_tag(action: :pay, method: :post) do
+          カードで支払う

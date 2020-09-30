@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :new, :edit]
     resources :buyers, only: [:index, :create]
     resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
+      member do
+        get 'purchase', to: 'items#purchase'
+        get 'pay', to: 'items#pay'
+      end
     resources :comments, only: [:create ,:update, :destroy]
     end
 end
