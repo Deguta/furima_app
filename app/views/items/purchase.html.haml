@@ -25,9 +25,13 @@
           = ＠item.name
     .contents__box__payment-table
       .contents__box__payment-table--text
-        お支払い金額
+      送料込み
+        ¥
+          = number_to_currency(@item.price, :unit => "円")
       .contents__box__payment-table--total-payment
-        ￥777（税込み）送料込み
+        お支払い金額
+        ¥
+        = number_to_currency(@item.price, :unit => "円")
     .contents__box__method-of-payment
       - if @default_card_information.blank?
         - else
