@@ -35,6 +35,7 @@ before_action :set_item, except: [:index, :new, :create]
 
   # クレジットカードによる購入アクション
   def purchase
+    @shipping_info = ShippingInfo.where(user_id: current_user.id)
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to new_card_path, notice: "クレジットカード情報を入力してください"
@@ -49,15 +50,17 @@ before_action :set_item, except: [:index, :new, :create]
 
   def pay #支払いを完了させるアクション
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
     Payjp::Charge.create(
       amount: @item.price, #支払金額を入力
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
     )
-    @item.buyer_id = current_user.id
+
+    @item.user_id = current_user.id
     @item.save
-    redirect_to root_path, notice: "支払いが完了しました"
+    flash[:alert] = "支払いが完了しました"
+    redirect_to root_path
   end
 
   def destroy

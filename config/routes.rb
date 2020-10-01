@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       member do
         get 'purchase', to: 'items#purchase'
         get 'pay', to: 'items#pay'
+        post 'pay'
       end
     resources :comments, only: [:create ,:update, :destroy]
     end
