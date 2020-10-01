@@ -33,14 +33,6 @@ before_action :set_item, except: [:index, :new, :create]
     end
   end
 
-  def destroy
-    if @item.destroy
-      redirect_to root_path
-    else
-      render :show
-    end
-  end
-
   # クレジットカードによる購入アクション
   def purchase
     card = Card.where(user_id: current_user.id).first
@@ -67,7 +59,16 @@ before_action :set_item, except: [:index, :new, :create]
     @item.save
     redirect_to root_path, notice: "支払いが完了しました"
   end
-end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
+  
 
 private
 
@@ -75,6 +76,7 @@ def item_params
   params.require(:item).permit(:name, :description, :category, :brand, :condition, :shipping_cost, :prefecture_id, :shipping_day, :price, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
 end
 
-def set_item
-  @item = Item.find(params[:id])
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
