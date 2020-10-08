@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :new, :edit]
     resources :buyers, only: [:index, :create]
     resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
-    resources :comments, only: [:create ,:update, :destroy]
+      resources :comments, only: [:create ,:update, :destroy]
+      collection do
+        #ajaxで動くアクションのルートを設定
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+      end
     end
 end

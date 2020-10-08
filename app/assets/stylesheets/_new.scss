@@ -125,9 +125,37 @@
       }
     }
     &__category-select {
-      width:600px;
+      width: 400px;
+
       .category{
         @include text-adjustment
+      }
+      #parent_category {
+        width: 90%;
+      }
+      &--added1 {
+        height: 10px;
+        width: 600px;
+        margin-bottom: 50px;
+      }
+      &--arrow-down1 {
+        height: 10px;
+        width: 600px;
+      }
+      #child_category {
+        width: 90%;
+      }
+      &--added2 {
+        height: 10px;
+        width: 600px;
+        margin-bottom: 50px;
+      }
+      &--arrow-down2 {
+        height: 10px;
+        width: 600px;
+      }
+      #grandchild_category {
+        width: 90%;
       }
     }
 

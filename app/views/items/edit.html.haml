@@ -46,7 +46,7 @@
         .shipping-page__box__item-category--require
           必須
       .shipping-page__box__category-select
-        =f.select :category, [["レディース ", "レディース"], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"], ["本・音楽・ゲーム", "本・音楽・ゲーム"], ["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット", "チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"]], {},class: 'category',include_blank: "選択して下さい"
+        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
       .shipping-page__box__brand
         .shipping-page__box__brand--text
           ブランド
