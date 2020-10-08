@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   #before_action、『コントローラーの全てのアクションが実行される前に何らかの処理を行う時に使用するもの』
-  before_action :set_item, only: [:show, :destroy, :edit, :update, :purchase, :payment]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
 
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
