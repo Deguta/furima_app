@@ -465,8 +465,19 @@
       padding: 10px 0;
     }
   }
-  .image {
-    width: 15%;
+  &__image {
+    .item-image{
+      width: 200px;
+      height: 150px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+
+    &--price {
+      display: flex;
+      justify-content: start;
+    }
   }
 }
 
