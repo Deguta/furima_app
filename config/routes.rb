@@ -26,6 +26,10 @@ Rails.application.routes.draw do
         get 'pay', to: 'items#pay'
         post 'pay'
       end
-    resources :comments, only: [:create ,:update, :destroy]
+      collection do
+        #ajaxで動くアクションのルートを設定
+        get 'get_category_children', defaults: { format: 'json' }
+        get 'get_category_grandchildren', defaults: { format: 'json' }
+      end
     end
 end
