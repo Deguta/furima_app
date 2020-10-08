@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
       member do
         get 'purchase', to: 'items#purchase'
+        post 'purchaser'
         get 'pay', to: 'items#pay'
         post 'pay'
       end

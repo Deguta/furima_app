@@ -5,8 +5,11 @@ class Item < ApplicationRecord
   has_many               :comments,  dependent: :destroy
   has_many               :item_images, dependent: :destroy
   belongs_to             :user
-  belongs_to             :buyer, optional: true
+  # belongs_to             :buyer, optional: true
   belongs_to_active_hash :prefecture
+  has_many :buyers #中間テーブル
+  has_many :users, through: :buyers
+  
 
   # バリデーション
   validates :name,          presence: true

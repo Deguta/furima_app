@@ -105,13 +105,17 @@
             = item.price
             %p 円
             %p (税込み)
+          -if item.buyers.present?
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD
   .pickup__brand
     .pickup__brand__title
       ピックアップブランド
     .pickup__brand__box
       .pickup__brand__box__sub-title
         = link_to "#", class: 'pickup__brand__box__sub-title' do
-          アーカイバ
+          アーカイブ
     .pickup__brand__image
       %ul.pickup__brand__image__box
         %li.pickup__brand__image__box__list

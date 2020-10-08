@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_132628) do
+ActiveRecord::Schema.define(version: 2020_10_05_074218) do
 
   create_table "buyers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 2020_09_09_132628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_images_on_item_id"
+  end
+
+  create_table "item_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_users_on_item_id"
+    t.index ["user_id"], name: "index_item_users_on_user_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -106,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_09_09_132628) do
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "item_users", "items"
+  add_foreign_key "item_users", "users"
   add_foreign_key "items", "users"
   add_foreign_key "shipping_infos", "users"
 end

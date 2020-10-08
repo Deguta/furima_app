@@ -59,6 +59,7 @@ before_action :set_item, except: [:index, :new, :create]
 
     @item.user_id = current_user.id
     @item.save
+    Buyer.create(user_id: current_user.id, item_id: @item.id)
     flash[:alert] = "支払いが完了しました"
     redirect_to root_path
   end

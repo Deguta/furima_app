@@ -22,6 +22,8 @@
         = image_tag @item.item_images.first.image.url ,class: "purchase-item-image"
       .contents__box__product__purchase-info
         .contents__box__product__purchase-info--item-name
+          商品名
+        .contents__box__product__purchase-info--item-title
           = @item.name
     .contents__box__payment-table
       .contents__box__payment-table--text
@@ -30,23 +32,36 @@
       .contents__box__payment-table--total-payment
         お支払い金額
         = number_to_currency(@item.price, :unit => "円")
+    
     .contents__box__method-of-payment
-      - if @default_card_information.blank?
-      - else
-        -#以下カード情報を表示
-        = "**** **** **** " + @default_card_information.last4
-        - exp_month = @default_card_information.exp_month.to_s
-        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-        = exp_month + " / " + exp_year
+      .contents__box__method-of-payment--informarion
+        カード情報は以下になります
+        - if @default_card_information.blank?
+        - else
+          .contents__box__method-of-payment--informarion--box
+            -#以下カード情報を表示
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
       .contents__box__method-of-payment__r-box
+        配送情報は以下になります
         .contents__box__method-of-payment__r-box--shipping-address
           .contents__box__method-of-payment__r-box__user-adress--post-num
             = @shipping_info[0].city
           .contents__box__method-of-payment__r-box__user-adress--address
-            千葉県市川市出身 2-2-2
+            = @shipping_info[0].address
           .contents__box__method-of-payment__r-box__user-adress--user-name
-            氏名チーバくん
+            = @shipping_info[0].family_name
+            = @shipping_info[0].first_name
     .contents__box__bottom
       .contents__box__bottom--btn
-        = form_tag(action: :pay, method: :post) do
-          %button カードで支払う
+        -if @item.buyers.present?
+          .contents__box__bottom--btn--not
+            SOLD OUT
+          .contents__box__bottom--btn--back
+            = link_to root_path, class: "back-page" do
+              トップページに戻る
+        -else
+          = form_tag(action: :pay, method: :post) do
+            %button カードで支払う
