@@ -50,7 +50,7 @@ before_action :set_item, except: [:index, :new, :create]
 
   def pay #支払いを完了させるアクション
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
+    Payjp.api_key = ENV["PAYJP_PUBLIC_KEY"]
     Payjp::Charge.create(
       amount: @item.price, #支払金額を入力
       customer: card.customer_id, #顧客ID
