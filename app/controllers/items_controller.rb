@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
 
   # クレジットカードによる購入アクション
   def purchase
+    @item = Item.find(params[:id])
     @shipping_info = ShippingInfo.where(user_id: current_user.id)
     card = Card.where(user_id: current_user.id).first
     if card.blank?
@@ -75,6 +76,7 @@ class ItemsController < ApplicationController
   end
 
   def pay #支払いを完了させるアクション
+    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp::Charge.create(

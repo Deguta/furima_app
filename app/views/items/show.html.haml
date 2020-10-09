@@ -25,7 +25,7 @@
         %p.item-show-page__tax (税込) 送料込み
       .item-show-page__link-btn
         - unless user_signed_in? && @item.user_id == current_user.id
-          = link_to buyers_path, class: "item-show-page__link" do
+          = link_to purchase_item_path(@item.id), class: "item-show-page__link" do
             購入画面へ
         - else
           %p 出品者は購入できません
