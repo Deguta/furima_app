@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
     if card.blank?
       redirect_to new_card_path, notice: "クレジットカード情報を入力してください"
     else
-      Payjp.api_key = "sk_test_9796bba6da01aba335a8b770"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -76,7 +76,7 @@ class ItemsController < ApplicationController
 
   def pay #支払いを完了させるアクション
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PUBLIC_KEY"]
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp::Charge.create(
       amount: @item.price, #支払金額を入力
       customer: card.customer_id, #顧客ID
