@@ -8,6 +8,9 @@ class Item < ApplicationRecord
   belongs_to             :buyer,       optional: true
   belongs_to             :category
   belongs_to_active_hash :prefecture
+  has_many :buyers #中間テーブル
+  has_many :users, through: :buyers
+  
 
   # バリデーション
   validates :name,          presence: true

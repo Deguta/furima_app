@@ -27,3 +27,5 @@
 /config/master.key
 public/uploads/*
 
+# PAYJP_PRIVATE_KEY
+/.env

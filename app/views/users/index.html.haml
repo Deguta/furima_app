@@ -34,14 +34,14 @@
           お問い合わせ
           %i.fas.fa-angle-right.fa-2x
       .contents__index__left-contents--notice
-        = link_to root_path, class: 'link-tag1' do
+        = link_to users_path(current_user), class: 'link-tag1' do
           お知らせ
           %i.fas.fa-angle-right.fa-2x
       .contents__index__left-contents__config
         .contents__index__left-contents__config--display
           設定
         .contents__index__left-contents__config--credit-card-reg
-          = link_to "/card/new", class: 'link-tag2' do
+          = link_to new_card_path(current_user), class: 'link-tag2' do
             クレジットカード登録
             %i.fas.fa-angle-right.fa-2x
         .contents__index__left-contents__config--rog-out

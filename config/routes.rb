@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
+      delete 'delete', to: 'cards#delete'
     end
   end
 
@@ -20,7 +20,12 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :new, :edit]
     resources :buyers, only: [:index, :create]
     resources :items, only: [:index, :new, :show, :create, :destroy, :edit, :update] do
-      resources :comments, only: [:create ,:update, :destroy]
+      member do
+        get 'purchase', to: 'items#purchase'
+        post 'purchaser'
+        get 'pay', to: 'items#pay'
+        post 'pay'
+      end
       collection do
         #ajaxで動くアクションのルートを設定
         get 'get_category_children', defaults: { format: 'json' }

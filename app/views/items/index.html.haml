@@ -97,7 +97,8 @@
           新規投稿商品
     .pickup__category__image
       - @items.each do |item|
-        = link_to buyers_path(item.id) do
+
+        = link_to purchase_item_path(item.id) do
           = image_tag item.item_images.first.image.url ,class: "item-image"
           .pickup__category__image--name
             = item.name
@@ -105,7 +106,10 @@
             = item.price
             %p 円
             %p (税込み)
-
+          -if item.buyers.present?
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD
   .pickup__brand
     .pickup__brand__title
       ピックアップブランド

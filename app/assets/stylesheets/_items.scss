@@ -466,13 +466,34 @@
     }
   }
   &__image {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
     .item-image{
       width: 200px;
       height: 150px;
+      
     }
-
-    display: flex;
-    justify-content: space-between;
+    .items-box_photo__sold{
+      width: 0;
+      height: 0;
+      border-top: 60px solid #ea352d ;
+      border-right: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+      border-left: 60px solid #ea352d ;
+      z-index:100;
+      position: absolute;
+      top:0px;
+        &__inner{
+          transform: rotate(-45deg);
+          font-size: 28px;
+          margin:-35px 0px 0px -55px;
+          color: #fff;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+      }
 
     &--price {
       display: flex;
