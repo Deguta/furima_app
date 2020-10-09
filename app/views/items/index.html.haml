@@ -98,7 +98,7 @@
     .pickup__category__image
       - @items.each do |item|
 
-        = link_to purchase_item_path(item.id) do
+        = link_to item_path(item.id) do
           = image_tag item.item_images.first.image.url ,class: "item-image"
           .pickup__category__image--name
             = item.name
