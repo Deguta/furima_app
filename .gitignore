@@ -28,5 +28,6 @@
 public/uploads/*
 
 # PAYJP_PRIVATE_KEY
+/.env
 PAYJP_PRIVATE_KEY = 'sk_test_9796bba6da01aba335a8b770'
-
+PAYJP_PRIVATE_KEY = 'pk_test_1586a9d070e120b052dc9e0a'
