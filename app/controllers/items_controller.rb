@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item.item_images.new
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化、
     #親カテゴリーのパスは値が "nil" なので
