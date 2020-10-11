@@ -41,8 +41,6 @@
           必須
       .shipping-page__box__category-select
         = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
-        -# category_id (sequel pro上ではitemsのなかにcategoryのidが存在している。)
-        -# where 与えられた条件にマッチするレコードを全て返している。ここでは、{ancestry}が空になっているーつまり親カラム（一番上の）カテゴリーを全て引き出す。
       .shipping-page__box__brand
         .shipping-page__box__brand--text
           ブランド
