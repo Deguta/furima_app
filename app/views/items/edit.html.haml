@@ -17,8 +17,6 @@
             .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :image, class: 'js-file'
               = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-            -# .js-file_group{"data-index" => "#{@item.item_images.count}"}
-            -#   = file_field_tag :src, name: "item[images_attributes][#{@item.item_images.count}][src]", class: 'js-file'
         - @item.item_images.each_with_index do |image,i|
           - if image.persisted?
             %div{"data-index" => "#{i}"}
