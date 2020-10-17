@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
-before_action : check_user_signed_in [:new, :pay, :delete, :show]
- ## require "payjp"
+before_action :check_user_signed_in [:new, :pay, :delete, :show]
+## require "payjp"
 
   def new
     card = Card.where(user_id: current_user.id)
