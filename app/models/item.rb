@@ -11,7 +11,6 @@ class Item < ApplicationRecord
   has_many :buyers #中間テーブル
   has_many :users, through: :buyers
   
-
   # バリデーション
   validates :name,          presence: true
   validates :description,   presence: true
