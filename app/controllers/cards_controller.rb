@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-before_action :check_user_signed_in, only: [:new, :pay, :delete, :show]
+before_action :check_user_signed_in, only:[:new, :pay, :delete, :show]
 ## require "payjp"
 
   def new
