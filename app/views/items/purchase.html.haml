@@ -4,7 +4,7 @@
   .hierarchy__bar
     .hierarchy__bar--top
       = link_to root_path, class: 'hierarchy-top' do
-        furima 
+        furima
         %i.fas.fa-angle-right.fa-2x
     .hierarchy__bar--my-page
       = link_to root_path, class: 'hierarchy-top' do
@@ -32,7 +32,6 @@
       .contents__box__payment-table--total-payment
         お支払い金額
         = number_to_currency(@item.price, :unit => "円")
-    
     .contents__box__method-of-payment
       .contents__box__method-of-payment--informarion
         カード情報は以下になります

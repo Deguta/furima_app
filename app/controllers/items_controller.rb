@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   #before_action、『コントローラーの全てのアクションが実行される前に何らかの処理を行う時に使用するもの』
   before_action :set_item, only: [:show, :destroy, :edit, :update]
 
+
   def index
     @items = Item.includes(:item_images).order('created_at DESC')
   end
@@ -33,6 +34,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    # unless user_signed_in? && @item.user_id == current_user.id
+    # end
   end
 
   def create 
@@ -99,9 +102,8 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-  
-private
 
+  private
   def item_params
     params.require(:item).permit(:name, :category_id, :description, :category, :brand, :condition, :shipping_cost, :prefecture_id, :shipping_day, :price, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
