@@ -11,18 +11,17 @@
           必須
       .shipping-page__box__previews
         .shipping-page__box_images
-        - @item.item_images.each_with_index do |image,i|
-          %div{"data-index" => "#{i}"}
-            %img#image-box.js-img{:height => "110px", :src => image.image.url, :width => "90px"}
-            .js-remove 削除
-        = f.fields_for :item_images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            %label.label2
-              %i.fa.fa-camera-retro
+          %label.label{for: "item_item_images_attributes_#{@item.item_images.length-1}_image"}
+            %i.fa.fa-camera-retro
+          = f.fields_for :item_images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :image, class: 'js-file'
               = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          .js-file_group{"data-index" => "#{@item.item_images.count}"}
-            = file_field_tag :src, name: "item[images_attributes][#{@item.item_images.count}][src]", class: 'js-file'
+        - @item.item_images.each_with_index do |image,i|
+          - if image.persisted?
+            %div{"data-index" => "#{i}"}
+              %img#image-box.js-img{:height => "110px", :src => image.image.url, :width => "90px"}
+              .js-remove 削除
       .shipping-page__box__upload
         画像を5枚までアップロードできます
         .shipping-page__box__file

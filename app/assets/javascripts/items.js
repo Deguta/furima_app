@@ -15,18 +15,15 @@ $(document).on('turbolinks:load', ()=> {
                   </div>`;
     return html;
   }
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
-  fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
   
   $('.shipping-page__box').on('change', '.js-file', function(e) {
     //追記
     // debugger
-    const targetIndex = $(this).parent().parent().data('index');
+    
+    let targetIndex = $(this).parent().data('index');
+    console.log(targetIndex)
+    targetIndex = Number(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -36,27 +33,36 @@ $(document).on('turbolinks:load', ()=> {
     } else { // 新規画像追加の処理
       $('.shipping-page__box__previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#image-box').append(buildFileField(fileIndex[0]));
-      $('.label').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
+      // console.log(fileIndex[0])
+      targetIndex = targetIndex + 1;
+      console.log(targetIndex)
+      $('.shipping-page__box_images').append(buildFileField(targetIndex));
+      $('.label').attr('for', `item_item_images_attributes_${targetIndex}_image`)
     }
     // fileIndexの先頭の数字を使ってinputを作る
-    $('.shipping-page__box__file').append(buildFileField(fileIndex[0]));
-    fileIndex.shift();
+    // $('.shipping-page__box__file').append(buildFileField(targetIndex+1));
+    // fileIndex.shift();
     // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    // fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
   });
     //５１行目ページ全体の中のjs-removeがclickされたら58行目
     //this= js-remove 削除の事
   $(document).on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
+    console.log(targetIndex)
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`#item_item_images_attributes_${targetIndex}__destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
+    console.log(this)
     $(this).parent().remove();
-    $(`img[data-index="${targetIndex}"]`).remove();
-    $(`#item_item_images_attributes_${targetIndex}_image`).remove();
+    // $(`img[data-index="${targetIndex}"]`).remove();
+    // $(`#item_item_images_attributes_${targetIndex}_image`).remove();
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+    // if (!($('.js-file').length)){
+    //   console.log("ok")
+    //   $('#image-box').append(buildFileField(targetIndex+1));
+    // } 
+    // $('.label').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
   });
 });

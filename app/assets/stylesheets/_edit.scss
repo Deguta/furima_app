@@ -23,16 +23,17 @@
       }
     }
       .js-file_group {
-        .label2 {
-          position: absolute;
-          top: 105px;
-          font-size: 23px;
-          color: $main-color;
-          right: 20px;
-        }
+        
         input {
           display: none;
         }
+      }
+      .label {
+        position: absolute;
+        top: 105px;
+        font-size: 23px;
+        color: $main-color;
+        right: 20px;
       }
 
     &__upload {
