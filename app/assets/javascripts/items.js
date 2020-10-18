@@ -21,8 +21,9 @@ $(document).on('turbolinks:load', ()=> {
     //追記
     // debugger
     
-    let targetIndex = $(this).parent().data('index');
+    let targetIndex = $(this).parents('.js-file_group').data('index');
     console.log(targetIndex)
+    console.log(this)
     targetIndex = Number(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
