@@ -16,7 +16,8 @@
           = f.fields_for :item_images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
               = image.file_field :image, class: 'js-file'
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if image.object.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
         - @item.item_images.each_with_index do |image,i|
           - if image.persisted?
             %div{"data-index" => "#{i}"}
