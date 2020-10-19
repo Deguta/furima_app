@@ -1,10 +1,5 @@
 class CardsController < ApplicationController
 before_action :check_user_signed_in, only:[:new, :pay, :delete, :show]
-<<<<<<< Updated upstream
-## require "payjp"
-=======
- ## require "payjp"
->>>>>>> Stashed changes
 
   def new
     card = Card.where(user_id: current_user.id)
